@@ -70,28 +70,26 @@ HOURS = [
 ]
 
 
-# Create entry
-# for specific workspace and location
+# Create entry for specific workspace and location
 class Location(models.Model):
 
-    location_name = models.CharField(max_length=100, unique=True)
-    address = models.CharField(max_length=200, unique=True)
-    capacity = models.CharField(
+    # name = models.CharField(max_length=100, unique=True)
+    location_name = models.CharField(
         max_length=50,
         choices=OFFICE_LOCATION,
-        unique=True)
+        default="", unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    address = models.CharField(max_length=200, unique=True)
+    featured_image = CloudinaryField('image', default='placeholder')
 
     class Meta:
         ordering = ['location_name']
 
     def __str__(self):
-        return self.name
-
-    def __str__(self):
-        return f"{self.capacity}"
+        return self.location_name
 
 
-class Space_type(models.Model):
+class Service(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     space = models.ForeignKey(
@@ -119,22 +117,29 @@ class Booking(models.Model):
     client = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='client_booking')
     space_booking = models.ForeignKey(
-        Space_type, on_delete=models.CASCADE, related_name='space_booking',
+        Service, on_delete=models.CASCADE, related_name='space_booking',
         default='')
     booking_date = models.DateField(default=datetime.now)
     booking_duration = models.CharField(
         max_length=20,
         choices=DURATION,
         default="Anytime")
-    booking_time = models.CharField(
+
+    booking_start = models.CharField(
         max_length=20,
         choices=HOURS,
         default="09:00 am")
-    end_time = models.DateTimeField()
+    
+    booking_end = models.CharField(
+        max_length=20,
+        choices=HOURS,
+        default="09:00 am")
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         # ordering = ['booking_duration']
         order_with_respect_to = 'space_booking'
 
     def __str__(self):
-        return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_time}"
+        return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
