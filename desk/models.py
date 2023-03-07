@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 
 class Registration(models.Model):
     """
-    User model.
+    User model contact for enquires.
     """
 
     email = models.EmailField(unique=True)
@@ -72,7 +72,7 @@ HOURS = [
 
 # Create entry
 # for specific workspace and location
-class Work_space(models.Model):
+class Location(models.Model):
 
     location_name = models.CharField(max_length=100, unique=True)
     address = models.CharField(max_length=200, unique=True)
@@ -95,7 +95,7 @@ class Space_type(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     space = models.ForeignKey(
-        Work_space, on_delete=models.CASCADE,
+        Location, on_delete=models.CASCADE,
         related_name='space_type', default='')
     capacity = models.CharField(
         max_length=50,
