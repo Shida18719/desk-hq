@@ -94,7 +94,7 @@ class Service(models.Model):
     name = models.CharField(max_length=100, unique=True)
     space = models.ForeignKey(
         Location, on_delete=models.CASCADE,
-        related_name='space_type', default='')
+        related_name='space_type')
     capacity = models.CharField(
         max_length=50,
         choices=SERVICES,
@@ -118,7 +118,7 @@ class Booking(models.Model):
         User, on_delete=models.CASCADE, related_name='client_booking')
     space_booking = models.ForeignKey(
         Service, on_delete=models.CASCADE, related_name='space_booking',
-        default='')
+        default='Day Workstation')
     booking_date = models.DateField(default=datetime.now)
     booking_duration = models.CharField(
         max_length=20,
@@ -136,6 +136,7 @@ class Booking(models.Model):
         default="09:00 am")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         # ordering = ['booking_duration']
