@@ -31,11 +31,11 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = (
         'client', 'location', 'space_booking', 'booking_date',
         'booking_duration',
-        'booking_start', 'booking_end', 'status', 'approved')
+        'booking_start', 'booking_end', 'created_on', 'status', 'approved')
     search_fields = ('client', 'location', 'space_booking')
     list_filter = (
         'space_booking', 'location', 'booking_date', 'booking_duration',
-        'booking_start', 'approved')
+        'booking_start', 'created_on', 'status', 'approved')
     actions = ['approve_booking_cancellation']
 
     def approve_booking_cancellation(self, request, queryset):

@@ -28,6 +28,13 @@ OFFICE_LOCATION = [
 ]
 
 
+# Location address
+LOCATION_ADDRESS = [
+    ('3 STONE AVENUE LONDON SU5 2AZ', '3 STONE Avenue London SU5 2AZ'),
+    ('55 PARADE STREET LONDON E20 3YB', '55 Parade Street London E20 3YB'),
+]
+
+
 # Create field choices for Services Offered
 SERVICES = [
     ('Day WorkStation', 'Day WorkStation'),
@@ -78,14 +85,17 @@ HOURS = [
 # Create entry for specific workspace and location
 class Location(models.Model):
 
-    # name = models.CharField(max_length=100, unique=True)
     location_name = models.CharField(
         max_length=50,
         choices=OFFICE_LOCATION,
         default="DESK HQ Brooklyn House")
 
     slug = models.SlugField(max_length=200, unique=True)
-    address = models.CharField(max_length=200, unique=True)
+    address = models.CharField(
+        max_length=200,
+        choices=LOCATION_ADDRESS,
+        default='',
+        unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
@@ -109,13 +119,17 @@ class Booking(models.Model):
     Customer booking system
     """
     client = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='client_booking')
+        User,
+        on_delete=models.CASCADE,
+        related_name='client_booking')
 
     location = models.ForeignKey(
-        Location, on_delete=models.CASCADE)
+        Location,
+        on_delete=models.CASCADE)
 
     space_booking = models.ForeignKey(
-        Service, on_delete=models.CASCADE, related_name='space_booking',
+        Service,
+        on_delete=models.CASCADE, related_name='space_booking',
         default='Day Workstation')
 
     booking_date = models.DateField(default=datetime.now)
