@@ -15,6 +15,12 @@ class Registration(models.Model):
         return self.email
 
 
+VALID = 0
+CANCELLED = 1
+STATUS = [
+    (VALID, "Valid"), (CANCELLED, "Cancelled")
+]
+
 # Office space locations
 OFFICE_LOCATION = [
     ('DESK HQ Brooklyn House', 'DESK HQ Brooklyn House'),
@@ -31,7 +37,6 @@ SERVICES = [
     ('Training Rooms', 'Training Rooms'),
     ('Meeting Room(Up to 12 seats)', 'Meeting Room(Up to 12 seats)'),
 ]
-
 
 # Duration
 DURATION = [
@@ -77,37 +82,26 @@ class Location(models.Model):
     location_name = models.CharField(
         max_length=50,
         choices=OFFICE_LOCATION,
-        default="", unique=True)
+        default="DESK HQ Brooklyn House")
+
     slug = models.SlugField(max_length=200, unique=True)
     address = models.CharField(max_length=200, unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
-
-    class Meta:
-        ordering = ['location_name']
 
     def __str__(self):
         return self.location_name
 
 
 class Service(models.Model):
+    # space_type = models.ManyToManyField(Location, related_name='space_types')
 
-    name = models.CharField(max_length=100, unique=True)
-    space = models.ForeignKey(
-        Location, on_delete=models.CASCADE,
-        related_name='space_type')
-    capacity = models.CharField(
+    space_type = models.CharField(
         max_length=50,
         choices=SERVICES,
-        unique=True)
-
-    class Meta:
-        ordering = ['name']
+        unique=True, default='Day WorkStation')
 
     def __str__(self):
-        return self.name
-
-    def __str__(self):
-        return f"{self.capacity}"
+        return f"{self.space_type}"
 
 
 class Booking(models.Model):
@@ -116,9 +110,14 @@ class Booking(models.Model):
     """
     client = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='client_booking')
+
+    location = models.ForeignKey(
+        Location, on_delete=models.CASCADE)
+
     space_booking = models.ForeignKey(
         Service, on_delete=models.CASCADE, related_name='space_booking',
         default='Day Workstation')
+
     booking_date = models.DateField(default=datetime.now)
     booking_duration = models.CharField(
         max_length=20,
@@ -129,18 +128,22 @@ class Booking(models.Model):
         max_length=20,
         choices=HOURS,
         default="09:00 am")
-    
+
     booking_end = models.CharField(
         max_length=20,
         choices=HOURS,
         default="09:00 am")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(choices=STATUS, default='valid')
     approved = models.BooleanField(default=False)
 
     class Meta:
-        # ordering = ['booking_duration']
-        order_with_respect_to = 'space_booking'
+        unique_together = [
+            'location', 'space_booking', 'booking_date',
+            'booking_duration', 'booking_start', 'booking_end']
+        ordering = ['created_on']
+        # order_with_respect_to = 'space_booking'
 
     def __str__(self):
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"

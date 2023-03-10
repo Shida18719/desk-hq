@@ -12,7 +12,7 @@ class WorkSpaceAdmin(admin.ModelAdmin):
 
     list_display = ('location_name', 'slug', 'address', 'featured_image')
     prepopulated_fields = {'slug': ('location_name',)}
-    list_filter = ('location_name', 'address')
+    list_filter = ('location_name',)
     search_fields = ('location_name', 'address')
 
 
@@ -20,20 +20,21 @@ class WorkSpaceAdmin(admin.ModelAdmin):
 @admin.register(Service)
 class SpaceTypeAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'capacity')
-    search_fields = ('name', 'capacity')
-    list_filter = ('name', 'capacity')
+    list_display = ('space_type',)
+    search_fields = ('space_type',)
+    list_filter = ('space_type',)
 
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
     list_display = (
-        'client', 'space_booking', 'booking_date', 'booking_duration', 
-        'booking_start', 'booking_end', 'approved')
-    search_fields = ('client', 'space_booking')
+        'client', 'location', 'space_booking', 'booking_date',
+        'booking_duration',
+        'booking_start', 'booking_end', 'status', 'approved')
+    search_fields = ('client', 'location', 'space_booking')
     list_filter = (
-        'space_booking', 'booking_date', 'booking_duration',
+        'space_booking', 'location', 'booking_date', 'booking_duration',
         'booking_start', 'approved')
     actions = ['approve_booking_cancellation']
 
