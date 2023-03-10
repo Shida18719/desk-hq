@@ -10,10 +10,10 @@ admin.site.register(Registration)
 @admin.register(Location)
 class WorkSpaceAdmin(admin.ModelAdmin):
 
-    list_display = ('location_name', 'slug', 'address', 'featured_image')
+    list_display = ('location_name', 'slug', 'featured_image')
     prepopulated_fields = {'slug': ('location_name',)}
     list_filter = ('location_name',)
-    search_fields = ('location_name', 'address')
+    search_fields = ('location_name',)
 
 
 # Space type facility
