@@ -23,17 +23,11 @@ STATUS = [
 
 # Office space locations
 OFFICE_LOCATION = [
-    ('DESK HQ Brooklyn House', 'DESK HQ Brooklyn House'),
-    ('DESK HQ Dockyard Place', 'DESK HQ Dockyard Place'),
+    ('DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)',
+        'DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)'),
+    ('DESK HQ Dockyard Place (55 PARADE STREET LONDON E20 3YB)',
+        'DESK HQ Dockyard Place (55 PARADE STREET LONDON E20 3YB)'),
 ]
-
-
-# Location address
-LOCATION_ADDRESS = [
-    ('3 STONE AVENUE LONDON SU5 2AZ', '3 STONE Avenue London SU5 2AZ'),
-    ('55 PARADE STREET LONDON E20 3YB', '55 Parade Street London E20 3YB'),
-]
-
 
 # Create field choices for Services Offered
 SERVICES = [
@@ -86,16 +80,11 @@ HOURS = [
 class Location(models.Model):
 
     location_name = models.CharField(
-        max_length=50,
+        max_length=200,
         choices=OFFICE_LOCATION,
-        default="DESK HQ Brooklyn House")
+        default="DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)")
 
     slug = models.SlugField(max_length=200, unique=True)
-    address = models.CharField(
-        max_length=200,
-        choices=LOCATION_ADDRESS,
-        default='',
-        unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
@@ -125,7 +114,8 @@ class Booking(models.Model):
 
     location = models.ForeignKey(
         Location,
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE,
+        default="DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)")
 
     space_booking = models.ForeignKey(
         Service,
