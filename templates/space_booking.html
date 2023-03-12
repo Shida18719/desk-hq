@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="booking-info">
+    <div class="container card booking-data">
+      <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+          <h2 class="text-center">BOOK WORKSPACE</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form  method="POST" action="#">
+              {% csrf_token %}
+              {{ form.as_p}}
+              <div class="d-grid gap-2 col-6 mx-auto">
+                  <button class="btn btn-primary" type="submit">BOOK WORKSPACE</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
