@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- 
+<div class="container-fluid"></div> -->
+<div class="container-fluid hero">
+    <div class="row">
+        <div class="col-12">
+            <!--hero image-->
+            <img class="hero-image img-fluid" src="{% static 'images/DeskHQ-office-space.jpg' %}" alt="hero image">
+            <!-- hero content-->
+            <div class="container card">
+                <div class="row">
+                <div class="col-12 col-md-8 text-center">
+                    <h1>YOUR WORK SPACE MADE EASY</h1>
+                    <a href="{% url 'book_space' %}" class="btn btn-lg btn-primary">Book a Space</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
