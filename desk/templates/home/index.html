@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid hero">
+    <div class="row">
+        <div class="col-12">
+            <div class="hero-container">
+                <!--hero image 1-->
+                <div class="hero-image1 d-block w-100"></div>
+                <!-- hero content-->
+                <div class="row">
+                    <div class="col-12 col-md-8 text-center mx-auto image-txt">
+                        <h1 class="hero-text mb-5">YOUR WORK SPACE MADE EASY</h1>
+                        <a href="{% url 'space_booking' %}" class="btn btn-lg btn-primary">Book a Space</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Location images-->
+<section class="location-image">
+    <div class="row">
+        <div class="col-12 my-4">
+            <h2 class="location-text text-center">FIND YOUR WORKSPACE</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row gap-4 gap-md-0">
+            <div class="col-12 col-md-6 d-flex justify-content-center a">
+                <div class="card text-center" style="width: 20rem;">
+                    <img src="{% static 'images/desk-hq-loc1.png' %}" class="rounded card-img-top" alt="location image">
+                    <div class="card-body">
+                        <h5 class="card-title">DESK HQ Brooklyn House</h5>
+                        <p>3 STONE AVENUE LONDON SU5 2AZ</p>
+                        <a href="#" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="card text-center" style="width: 20rem;">
+                    <img src="{% static 'images/desk-hq-loc2.png' %}" class="rounded card-img-top" alt="location image">
+                    <div class="card-body">
+                        <h5 class="card-title">DESK HQ Dockyard Place</h5>
+                        <p>55 PARADE STREET LONDON E20 3YB</p>
+                        <a href="#" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
