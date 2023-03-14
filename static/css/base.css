@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
-.hero{
-    min-height: 50vh;
+.hero-container {
+    position: relative;
+}
+
+.hero-image1{
+    min-height: 80vh;
+    background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678702487/office-desks1_qzajmm.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    padding: 2rem;
+    color: #fff;
+
 }
