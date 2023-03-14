@@ -1,95 +1,121 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-    content="Desk HQ is an Office Space Booking with Varying List of Capacities.">
-    <meta name="keyword"
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Desk HQ is an Office Space Booking with Varying List of Capacities.">
+  <meta name="keyword"
     content="Office, Space, WorkSpace, Desk, DeskSpace, Cowork Space, Office Rooms, Conference Room, Booking">
 
-    <!--Bootstrap css CDN Links-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  <!--Bootstrap css CDN Links-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
-    <title>Desk HQ</title>
-  </head>
+  <title>Desk HQ</title>
+</head>
 
-  <body class="d-flex flex-column h-100 main-bg">
+<body class="d-flex flex-column h-100 main-bg">
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between bg-light navbar-expand-lg">
 
-    <!-- Navigation -->
+      <h1 class="logo-wrapper my-auto">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/desk-hq-logo1.webp' %}" alt="Logo" width="30" height="30"
+            class="">
+         <span class="fs-3 text-uppercase">Desk HQ</span>
+        </a>
+      </h1>
 
-    <nav class=" navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand logo" href="{% url 'home' %}">DESK HQ</a>
+      <!-- Navigation -->
+      <nav class=" navbar">
+        <div class="container">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+
+            <div class="offcanvas-header">
+              {% if user.is_authenticated %}
+              <h5 class="offcanvas-title logo" id="offcanvasNavbarLabel">
+                {{user.username}}
+              </h5>
+              {% else %}
+              <h5 class="offcanvas-title logo" id="offcanvasNavbarLabel">
+                DESK HQ
+              </h5>
+              {% endif %}
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
+                  <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
                 </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
                 </li>
                 {% if user.is_authenticated %}
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
                 {% else %}
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
                 {% endif %}
-            </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main class="flex-shrink-0 main-bg">
-      {% block content %}
-      <!-- Content Goes here -->
-      {% endblock %}
+              </ul>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </header>
+  <main class="mt-5">
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock %}
   </main>
 
   <!-- Footer -->
-  <footer class="footer mt-auto py-3 dark-bg">
-      <p class="m-0 text-center text-white">Project by Rashidat</p>
-      <p class="m-0 text-center text-white">Follow: 
-          <i class="fab fa-facebook-square ms-3"></i>
-          <i class="fab fa-twitter-square ms-3"></i>
-          <i class="fab fa-linkdin-square ms-3"></i>
-          <i class="fab fa-github-square ms-3"></i></p>
+  <footer class="footer">
+    <p>Project by Rashidat</p>
+    <p>Follow:
+      <i class="fab fa-facebook-square ms-3"></i>
+      <i class="fab fa-twitter-square ms-3"></i>
+      <i class="fab fa-linkdin-square ms-3"></i>
+      <i class="fab fa-github-square ms-3"></i></p>
   </footer>
-    <script>
-        setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 3000);
-    </script>
+
+  <script>
+    setTimeout(function () {
+      let messages = document.getElementById('msg');
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 3000);
+  </script>
 
 
 
-    <!--Bootstrap JS CDN Links-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
+  <!--Bootstrap JS CDN Links-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
 
-  </body>
+</body>
+
 </html>
