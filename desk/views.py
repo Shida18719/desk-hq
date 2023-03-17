@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
+from django.views.generic import ListView
 from django.urls import reverse_lazy
 
 # Booking
-from .models import Booking
+from desk.models import Booking, Service
 from .forms import BookingForm
 from django.views.generic.edit import FormView
 
@@ -14,9 +15,6 @@ class HomePageView(TemplateView):
     View for home page.
     """
     template_name = 'home/index.html'
-
-# def home_page(request):
-#     return render(request, 'index.html')
 
 
 class BookingFormView(FormView):
@@ -44,8 +42,11 @@ class AboutView(TemplateView):
     template_name = 'home/about_us.html'
     # success_url = reverse_lazy('space')
 
-    # def get_queryset(self):
-    #     """
-    #     Filters bookings for the current user
-    #     """
-    #     return Booking.objects.filter(client=self.request.user)
+
+class ServiceListView(ListView):
+    """
+    View for services page
+    """
+    template_name = 'home/services.html'
+    queryset = Service.objects.order_by('-timestamp')
+    context_object_name = 'services'
