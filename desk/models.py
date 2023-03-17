@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
 from cloudinary.models import CloudinaryField
+# django signals
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Registration(models.Model):
@@ -24,7 +27,7 @@ STATUS = [
 # Office space locations
 OFFICE_LOCATION = [
     ('DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)',
-        'DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)'),
+        'DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)'),
     ('DESK HQ Dockyard Place (55 PARADE STREET LONDON E20 3YB)',
         'DESK HQ Dockyard Place (55 PARADE STREET LONDON E20 3YB)'),
 ]
@@ -78,7 +81,7 @@ HOURS = [
 
 # Create entry for specific workspace and location
 class Location(models.Model):
-
+    location_id = models.IntegerField(primary_key=True, default=1)
     location_name = models.CharField(
         max_length=200,
         choices=OFFICE_LOCATION,
@@ -95,9 +98,14 @@ class Service(models.Model):
     # space_type = models.ManyToManyField(Location, related_name='space_types')
 
     space_type = models.CharField(
-        max_length=50,
-        choices=SERVICES,
+        max_length=50, choices=SERVICES,
         unique=True, default='Day WorkStation')
+    content = models.TextField(blank=True)
+    featured_image = CloudinaryField('image', default='placeholder')
+    timestamp = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-timestamp']
 
     def __str__(self):
         return f"{self.space_type}"
@@ -108,19 +116,16 @@ class Booking(models.Model):
     Customer booking system
     """
     client = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name='client_booking')
+        User, on_delete=models.CASCADE)
 
     location = models.ForeignKey(
         Location,
-        on_delete=models.CASCADE,
-        default="DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)")
+        on_delete=models.CASCADE, null=True, blank=True)
 
     space_booking = models.ForeignKey(
         Service,
         on_delete=models.CASCADE, related_name='space_booking',
-        default='Day Workstation')
+        null=True, blank=True)
 
     booking_date = models.DateField(default=datetime.now)
     booking_duration = models.CharField(
@@ -139,7 +144,7 @@ class Booking(models.Model):
         default="09:00 am")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default='valid')
+    status = models.IntegerField(choices=STATUS, default=1)
     approved = models.BooleanField(default=False)
 
     class Meta:
@@ -147,7 +152,14 @@ class Booking(models.Model):
             'location', 'space_booking', 'booking_date',
             'booking_duration', 'booking_start', 'booking_end']
         ordering = ['created_on']
-        # order_with_respect_to = 'space_booking'
 
     def __str__(self):
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
+
+
+@receiver(post_save, sender=User)
+def create_user_booking(sender, instance, created, **kwargs):
+    """Create a client when a User is Created """
+    if created:
+        Booking.objects.create(client=instance)
+        print('profile_created')

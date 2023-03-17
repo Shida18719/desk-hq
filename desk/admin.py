@@ -20,7 +20,7 @@ class WorkSpaceAdmin(admin.ModelAdmin):
 @admin.register(Service)
 class SpaceTypeAdmin(admin.ModelAdmin):
 
-    list_display = ('space_type',)
+    list_display = ('space_type', 'content', 'featured_image', 'timestamp',)
     search_fields = ('space_type',)
     list_filter = ('space_type',)
 

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="row text-center">
+    <h1 class="col-12 mt-5">EXPLORE OUR SPACES</h1>
+  </div>
+</div>
+
+<div class="container service-container">
+{% for service in services %}
+  {% if forloop.counter != 2 %}
+    <div class="row">
+      <div class="mt-5 col-6 service-img1 d-flex flex-column">
+        <div class="col" style="width: 30rem;">
+          {% if 'placeholder' in service.featured_image.url %}
+          <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg" class="img-fluid" alt="Default Image">
+          {% else %}
+          <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}">
+          {% endif %}
+        </div>
+      </div>
+      <div class="mt-5 col-12 col-md-7 col-lg-6 col-xl-6 service-des d-flex flex-column">
+        <h3 class="text-uppercase mb-4">
+          {{ service.space_type }}
+        </h3>
+        <p class="service-descr">
+          {{ service.content }}
+        </p>
+      </div>
+    </div>
+  {% else %}
+    <div class="row">
+      <div class="d-flex flex-column mt-5 col-12 col-md-6 col-lg-6 col-xl-6">
+        <h3 class="text-uppercase mb-4">
+          {{ service.space_type }}
+        </h3>
+        <p>{{ service.content }}</p>
+      </div>
+      <div class="d-flex flex-column mt-5 col-6">
+        <div class="col" style="width: 30rem;">
+          {% if 'placeholder' in service.featured_image.url %}
+          <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg" class="img-fluid" alt="Default Image">
+          {% else %}
+          <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+</div>
+<!-- 
+
+
+<div class="container service-container">
+  <div class="row">
+    <div class="mt-5 col-6 service-img1 d-flex flex-column">
+      <div class="col" style="width: 30rem;">
+        <img src="{% static 'images/meeting-room.png' %}" class="img-fluid" alt="meeting room">
+      </div>
+    </div>
+    <div class="mt-5 col-12 col-md-7 col-lg-6 col-xl-6 service-des d-flex flex-column">
+      <h3 class="text-uppercase mb-4">
+       Meeting Room
+      </h3>
+      <p class="service-descr">
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="d-flex flex-column mt-5 col-12 col-md-6 col-lg-6 col-xl-6">
+      <h3 class="text-uppercase mb-4">
+       Private WorkSpace
+      </h3>
+      <p></p>
+    </div>
+    <div class="d-flex flex-column mt-5 col-6">
+      <div style="width: 30rem;">
+        <img src="{% static 'images/private-workspace.png' %}" class="img-fluid" alt=" Private WorkSpace">
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{% endblock %}
