@@ -4,26 +4,117 @@
     box-sizing: border-box;
 }
 
+/**************** Hero images  **************/
 .hero-container {
     position: relative;
 }
 
 .hero-image1{
     min-height: 80vh;
-    background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678702487/office-desks1_qzajmm.png);
+    background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+.hero-image2{
+    min-height: 80vh;
+    background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678959061/executive-wrkspace_q9lxvt.jpg);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-image3{
+    min-height: 80vh;
+    background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678967592/day-workstation-hero_hbuwzt.jpg);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .image-txt {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 2rem;
     color: #fff;
+}
+
+/**************** Sign up & Login  **************/
+.reg-container{
+    height: 100hv;
+}
+
+.signup-card{
+    width: 50%;  
 
 }
+
+.link {
+    color: #03045E;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #0077B6;
+    text-decoration: underline;
+}
+
+/*********** Map ************/
+#map {
+    min-height: 360px;}
+
+/* Services */
+/* .service-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+
+.service-img1{
+    flex: 50%; 
+}
+
+.service-des{
+    flex: 50%; 
+}
+
+.service-descr{
+    width: 80%;
+    
+} */
+
+.btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+   }
+  
+  .btn-signup:hover {
+    background-position: right center;
+  }
+  
+  .btn-signup {
+    background-image: linear-gradient(to right, #00B4D8 0%, #03045E 51%, #0077B6 100%);
+  }
+
+  .bg-footer{
+    background-color: #0077B6;
+    color: #fff;
+  }
