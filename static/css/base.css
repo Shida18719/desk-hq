@@ -12,7 +12,7 @@
 .hero-image1{
     min-height: 80vh;
     background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
-    
+    opacity: 80%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -21,7 +21,7 @@
 .hero-image2{
     min-height: 80vh;
     background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678959061/executive-wrkspace_q9lxvt.jpg);
-    
+    opacity: 75%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -47,14 +47,21 @@
 }
 
 /**************** Sign up & Login  **************/
-.reg-container{
+/* .reg-container{
     height: 100hv;
+} */
+
+/* .signup-card{
+    width: 60%; 
+   
+
 }
 
-.signup-card{
-    width: 50%;  
-
-}
+.signin-card{
+    width: 50%; 
+    margin: auto;
+    height: fit-content; 
+} */
 
 .link {
     color: #03045E;
@@ -100,17 +107,23 @@
     /* text-transform: uppercase; */
     transition: 0.5s;
     background-size: 200% auto;
-    color: white;
+    color: #fff;
    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
    }
   
-  .btn-signup:hover {
+.btn-login:hover, 
+.btn-signup:hover,
+.btn-bookspace,
+.btn-location {
     background-position: right center;
   }
   
-  .btn-signup {
+  .btn-login,
+  .btn-signup,
+  .btn-bookspace,
+  .btn-location {
     background-image: linear-gradient(to right, #00B4D8 0%, #03045E 51%, #0077B6 100%);
   }
 

@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-
+<!-- Hero image Carousel -->
 <div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-12 col-md-8 text-center mx-auto image-txt">
                             <h1 class="hero-text mb-5">YOUR WORKSPACE MADE EASY</h1>
-                            <a href="{% url 'space_booking' %}" class="btn btn-lg btn-primary">Book a Space</a>
+                            <a href="{% url 'space_booking' %}" class="btn btn-lg btn-bookspace">Book a Space</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-12 col-md-8 text-center mx-auto image-txt">
                             <h1 class="hero-text mb-5">WORKSPACE WHERE INNOVATION HAPPENS</h1>
-                            <a href="{% url 'space_booking' %}" class="btn btn-lg btn-primary">Book a Space</a>
+                            <a href="{% url 'space_booking' %}" class="btn btn-lg btn-bookspace">Book a Space</a>
                         </div>
                     </div>
                 </div>
@@ -44,26 +44,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
-
-<!-- <div class="container-fluid hero">
-    <div class="row">
-        <div class="col-12">
-            <div class="hero-container">
-               
-<!-- <div class="hero-image1 d-block w-100"></div> -->
-<!-- hero content-->
-<!-- <div class="row">
-                    <div class="col-12 col-md-8 text-center mx-auto image-txt">
-                        <h1 class="hero-text mb-5">YOUR WORK SPACE MADE EASY</h1>
-                        <a href="{% url 'space_booking' %}" class="btn btn-lg btn-primary">Book a Space</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>  -->
-
+<!-- /Hero image Carousel -->
 
 <!--Location images-->
 <section class="container mt-3 location-image">
@@ -82,7 +63,7 @@
                     <div class="card-body">
                         <h5 class="card-title">DESK HQ Brooklyn House</h5>
                         <p>3 STONE AVENUE LONDON SE5 2AZ</p>
-                        <a href="{% url 'services' %}" class="btn btn-primary">Learn more</a>
+                        <a href="{% url 'services' %}" class="btn btn-location">Learn more</a>
                     </div>
                 </div>
             </div>
@@ -93,13 +74,15 @@
                     <div class="card-body">
                         <h5 class="card-title">DESK HQ Dockyard Place</h5>
                         <p>55 PARADE STREET LONDON E20 3YB</p>
-                        <a href="{% url 'services' %}" class="btn btn-primary">Learn more</a>
+                        <a href="{% url 'services' %}" class="btn btn-location">Learn more</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!--/Location images-->
+
 <section class="container mt-5 space-location">
     <!-- style="width: 30rem;" -->
     <div class="row">
