@@ -9,6 +9,11 @@
     position: relative;
 }
 
+.page{
+    margin-top: 10vh;
+    min-height: 90vh;
+}
+
 .hero-image1{
     min-height: 80vh;
     background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
@@ -44,24 +49,29 @@
     border-radius: 5px;
     padding: 2rem;
     color: #fff;
+    text-shadow: 0px 0px 10px #e9f1f375;
 }
 
-/**************** Sign up & Login  **************/
+/**************** Form  **************/
+
+.form-page{
+    min-height: 90vh;
+    display: grid;
+    align-content: center;
+}
+
 /* .reg-container{
     height: 100hv;
 } */
 
-/* .signup-card{
-    width: 60%; 
-   
-
-}
-
+.signup-card,
 .signin-card{
-    width: 50%; 
+    width: 40%;
     margin: auto;
-    height: fit-content; 
-} */
+    padding: 0.8rem;
+    box-shadow: 0px 0px 3px 0.5px rgba(3, 4, 94, 0.3);
+    border-radius: 5px;
+}
 
 .link {
     color: #03045E;
@@ -78,27 +88,6 @@
 #map {
     min-height: 360px;}
 
-/* Services */
-/* .service-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    height: fit-content;
-}
-
-.service-img1{
-    flex: 50%; 
-}
-
-.service-des{
-    flex: 50%; 
-}
-
-.service-descr{
-    width: 80%;
-    
-} */
-
 .btn {
     flex: 1 1 auto;
     margin: 10px;
@@ -108,7 +97,7 @@
     transition: 0.5s;
     background-size: 200% auto;
     color: #fff;
-   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
    }
@@ -130,4 +119,25 @@
   .bg-footer{
     background-color: #0077B6;
     color: #fff;
+  }
+
+  @media (max-width:768px){
+    .signup-card,
+    .signin-card{
+        width: 60%;
+    }
+  }
+
+  @media (max-width:576px){
+    .signup-card,
+    .signin-card{
+        width: 80%;
+    }
+  }
+
+  @media (max-width:300px){
+    .signup-card,
+    .signin-card{
+        width: 100%;
+    }
   }
