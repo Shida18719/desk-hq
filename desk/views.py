@@ -18,14 +18,14 @@ class HomePageView(TemplateView):
     template_name = 'home/index.html'
 
 
-class BookingListView(ListView):
+class BookingsList(ListView):
     """
     View for users Booking
     """
     model = Booking
     form_class = BookingForm
     template_name = 'desk/booking_details.html'
-    context_object_name = 'list'
+    context_object_name = 'bookings'
     paginate_by = 4
 
     def get_queryset(self):
