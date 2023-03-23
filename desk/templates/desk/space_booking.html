@@ -3,25 +3,37 @@
 
 {% load crispy_forms_tags %}
 
-<div class="form-page booking-info">
-    <div class="booking-data">
-      <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-          <h2 class="text-center">BOOK WORKSPACE</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form  method="POST" action="{% url 'space_booking' %}">
-              {% csrf_token %}
-              {{ form | crispy }}
-              <div class="d-grid gap-2 col-6 mx-auto">
-                  <button class="btn btn-bookspace" type="submit">BOOK WORKSPACE</button>
-              </div>
-            </form>
-        </div>
+<div class="form-page form-info">
+  <div class="booking-data">
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <h2 class="text-center">BOOK WORKSPACE</h2>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <form method="POST" action="{% url 'space_booking' %}">
+          {% csrf_token %}
+          {{ form | crispy }}
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-bookspace" type="submit">BOOK WORKSPACE</button>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="my-2 text-info">NOTICE!!</div>
+              <small class="text-muted">
+                Please inform us at the latest 3 hours before the start of your booking of any cancellation, or in the
+                case of late arrival later than 20 minutes.
+              </small>
+              <small class="text-muted">Thank you for your Understanding.</small>
+            </div>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 </div>
 
 {% endblock %}

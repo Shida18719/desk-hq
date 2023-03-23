@@ -10,8 +10,8 @@
 }
 
 .page{
-    margin-top: 10vh;
-    min-height: 90vh;
+    margin-top: 5vh;
+    min-height: 95vh;
 }
 
 .hero-image1{
@@ -25,7 +25,7 @@
 
 .hero-image2{
     min-height: 80vh;
-    background: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678959061/executive-wrkspace_q9lxvt.jpg);
+    background: linear-gradient(#eee, #c2e6fa, url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678959061/executive-wrkspace_q9lxvt.jpg));
     opacity: 75%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,15 +55,12 @@
 /**************** Form  **************/
 
 .form-page{
-    min-height: 90vh;
+    min-height: 95vh;
     display: grid;
     align-content: center;
 }
 
-/* .reg-container{
-    height: 100hv;
-} */
-
+.booking-data,
 .signup-card,
 .signin-card{
     width: 40%;
@@ -104,9 +101,11 @@
   
 .btn-login:hover, 
 .btn-signup:hover,
-.btn-bookspace,
-.btn-location {
+.btn-bookspace:hover,
+.btn-location:hover {
     background-position: right center;
+    text-transform: uppercase;
+    color: #fff;
   }
   
   .btn-login,
@@ -122,22 +121,25 @@
   }
 
   @media (max-width:768px){
-    .signup-card,
-    .signin-card{
+    .signin-card,
+    .form-page,
+    .signup-card{
         width: 60%;
     }
   }
 
   @media (max-width:576px){
-    .signup-card,
-    .signin-card{
+    .signin-card,
+    .form-page,
+    .signup-card{
         width: 80%;
     }
   }
 
   @media (max-width:300px){
-    .signup-card,
-    .signin-card{
+    .signin-card,
+    .form-page,
+    .signup-card{
         width: 100%;
     }
   }

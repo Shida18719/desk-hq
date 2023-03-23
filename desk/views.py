@@ -25,7 +25,8 @@ class BookingListView(ListView):
     model = Booking
     form_class = BookingForm
     template_name = 'desk/booking_details.html'
-    # queryset = Booking.objects.filter(client=self.request.user.id)
+    context_object_name = 'list'
+    paginate_by = 4
 
     def get_queryset(self):
         return Booking.objects.filter(client=self.request.user.id)
@@ -67,7 +68,6 @@ class AboutView(TemplateView):
     View for about_us page
     """
     template_name = 'home/about_us.html'
-    # success_url = reverse_lazy('space')
 
 
 class ServiceListView(ListView):

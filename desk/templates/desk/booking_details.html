@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<div class="booking-details">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h2 class="text-uppercase">BOOKING DETAILS</h2>
+        </div>
+    </div>
+    {% for list in details %}
+    <div class="container booking-details-card card my-2">
+        <div class="row">
+            <div class="col-12 col-md-8 mt-3">
+                <ul>
+                    <li>Location: <strong> {{list.location}}</strong>
+                    </li>
+                    <li>Space Type: <strong> {{list.space_booking}}</strong>
+                    </li>
+                    <li>Booking Date: <strong> {{list.booking_date}}</strong>
+                    </li>
+                    <li>Duration: <strong> {{list.booking_duration}}</strong></li>
+                    <li>Booking Starts: <strong> {{list.booking_start}}</strong></li>
+                    <li>Booking Ends: <strong> {{list.booking_end}}</strong></li>
+                </ul>
+                <span><li>Last updated: <strong> {{list.updated_on}}</strong></li></span>
+            </div> 
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

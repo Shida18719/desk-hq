@@ -26,7 +26,7 @@ STATUS = [
 
 # Office space locations
 OFFICE_LOCATION = [
-    ('DESK HQ Brooklyn House (3 STONE AVENUE LONDON SU5 2AZ)',
+    ('DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)',
         'DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)'),
     ('DESK HQ Dockyard Place (55 PARADE STREET LONDON E20 3YB)',
         'DESK HQ Dockyard Place (55 PARADE STREET LONDON E20 3YB)'),
@@ -95,7 +95,6 @@ class Location(models.Model):
 
 
 class Service(models.Model):
-    # space_type = models.ManyToManyField(Location, related_name='space_types')
 
     space_type = models.CharField(
         max_length=50, choices=SERVICES,
@@ -157,9 +156,10 @@ class Booking(models.Model):
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
 
 
-@receiver(post_save, sender=User)
-def create_user_booking(sender, instance, created, **kwargs):
-    """Create a client when a User is Created """
-    if created:
-        Booking.objects.create(client=instance)
-        print('profile_created')
+# @receiver(post_save, sender=User)
+# def create_user_booking(sender, instance, created, **kwargs):
+#     """Create a client when a User is Created """
+#     if created:
+#         print(f"User: {instance}")
+#         Profile.objects.create(client=instance)
+#         print('profile_created')
