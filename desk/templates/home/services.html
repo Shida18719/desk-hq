@@ -12,7 +12,7 @@
 <!-- Services Type Section-->
 <section class="container service-container ">
   {% for service in services %}
-  {% if forloop.counter != 2 %}
+  {% if not forloop.counter|divisibleby:2 %}
   <div class="row g-3">
     <div class="mt-5 col-lg-6 col-xl-6 service-img1">
       <div class="col">
