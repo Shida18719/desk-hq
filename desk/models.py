@@ -119,12 +119,13 @@ class Booking(models.Model):
 
     location = models.ForeignKey(
         Location,
-        on_delete=models.CASCADE, null=True, blank=True)
+        on_delete=models.CASCADE, null=True, blank=True,
+        default="DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)")
 
     space_booking = models.ForeignKey(
         Service,
         on_delete=models.CASCADE, related_name='space_booking',
-        null=True, blank=True)
+        null=True, blank=True, default="Day WorkStation")
 
     booking_date = models.DateField(default=datetime.now)
     booking_duration = models.CharField(
@@ -156,10 +157,11 @@ class Booking(models.Model):
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
 
 
+
 # @receiver(post_save, sender=User)
-# def create_user_booking(sender, instance, created, **kwargs):
+# def create_user_profile(sender, instance, created, **kwargs):
 #     """Create a client when a User is Created """
 #     if created:
 #         print(f"User: {instance}")
-#         Profile.objects.create(client=instance)
+#         Profile.objects.create(user=instance)
 #         print('profile_created')
