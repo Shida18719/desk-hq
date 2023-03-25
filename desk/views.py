@@ -8,7 +8,7 @@ from django.contrib import messages
 # Booking
 from desk.models import Booking, Service
 from .forms import BookingForm
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, UpdateView
 
 
 class HomePageView(TemplateView):
@@ -23,13 +23,12 @@ class BookingsList(ListView):
     View for users Booking
     """
     model = Booking
-    form_class = BookingForm
     template_name = 'desk/booking_details.html'
     context_object_name = 'bookings'
     paginate_by = 4
 
     def get_queryset(self):
-        return Booking.objects.filter(client=self.request.user.id)
+        return Booking.objects.filter(client=self.request.user)
 
 
 class BookingFormView(FormView):
@@ -49,7 +48,7 @@ class BookingFormView(FormView):
                 messages.add_message(
                     request,
                     messages.SUCCESS,
-                    'Your Booking has been created successfully.')
+                    'Thank you for using DESK HQ. Your Booking was created successfully.')
                 return HttpResponseRedirect(reverse('home'))
             else:
                 messages.add_message(
@@ -60,7 +59,25 @@ class BookingFormView(FormView):
         else:
             return self.form_invalid(form)
 
-        # return render(request, self.template_name, {'form': form})
+
+class BookingUpdateView(UpdateView):
+    model = Booking
+    form_class = BookingForm
+    template_name = 'desk/update_booking.html'
+    queryset = Booking.objects.all()
+    success_url = reverse_lazy('booking_details')
+    # def get_queryset(self, pk):
+    #     return Booking.objects.filter(client=self.request.user, pk=pk)
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Booking updated successfully!')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(
+            self.request,
+            'Booking update failed. Please check the form and try again.')
+        return super().form_invalid(form)
 
 
 class AboutView(TemplateView):
