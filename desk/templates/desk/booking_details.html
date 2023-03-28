@@ -26,10 +26,31 @@
             </div>
             <div class="col-12 col-md-4 text-center d-md-flex flex-column my-auto">
                 <a href="{% url 'update_booking' booking.pk %}" class="btn btn-success btn-lg edit-btn role='button'">Edit Booking</a>
-
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelBooking">Cancel Booking</button>
             </div> 
         </div>
     </div>
+
+     <!--Delete Modal-->
+     <div class="modal" id="cancelBooking" tabindex="-1" aria-labelledby="cancelBookingModalLabel">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">CANCEL BOOKING</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p>Are you sure you want to cancel this Booking?</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-success record-btn" data-bs-dismiss="modal">No</button>
+            <a class="btn btn-danger" href="{% url 'cancelBooking' booking.pk %}" role="button">Yes</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--/Delete Modal-->
+
     {% endfor %}
 
      <!-- Paginate code from Code Institute-->

@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import BookingDeleteView
 
 # Urls for app views
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('services/', views.ServiceListView.as_view(), name="services"),
     path('booking_details/', views.BookingsList.as_view(), name="booking_details"),
     path('booking_details/<pk>/update', views.BookingUpdateView.as_view(), name="update_booking"),
+    path('delete_booking/<int:pk>', BookingDeleteView.as_view(), name="cancelBooking"),
 ]

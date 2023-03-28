@@ -8,7 +8,7 @@ from django.contrib import messages
 # Booking
 from desk.models import Booking, Service
 from .forms import BookingForm
-from django.views.generic.edit import FormView, UpdateView
+from django.views.generic.edit import FormView, UpdateView, DeleteView
 
 
 class HomePageView(TemplateView):
@@ -61,13 +61,21 @@ class BookingFormView(FormView):
 
 
 class BookingUpdateView(UpdateView):
+    """
+    View allows user to edit and update their booking and redirects them to booking details.
+    """
     model = Booking
     form_class = BookingForm
     template_name = 'desk/update_booking.html'
-    queryset = Booking.objects.all()
     success_url = reverse_lazy('booking_details')
+    
     # def get_queryset(self, pk):
     #     return Booking.objects.filter(client=self.request.user, pk=pk)
+
+    def get_object(self, queryset=None):
+        # retrieve the object to be updated, using the primary key from the URL
+        booking = get_object_or_404(Booking, pk=self.kwargs['pk'])
+        return booking
 
     def form_valid(self, form):
         messages.success(self.request, 'Booking updated successfully!')
@@ -78,6 +86,27 @@ class BookingUpdateView(UpdateView):
             self.request,
             'Booking update failed. Please check the form and try again.')
         return super().form_invalid(form)
+
+
+class BookingDeleteView(DeleteView):
+    """
+    View allow user to delete booking and redirect user to booking details.
+    """
+    model = Booking
+    template_name = 'desk/delete_booking'
+    success_url = reverse_lazy('booking_details')
+
+    def get_object(self, queryset=None):
+        # retrieve the object to be deleted, using the primary key from the URL
+        booking = get_object_or_404(Booking, pk=self.kwargs['pk'])
+        return booking
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Booking deleted successfully!')
+        return super().form_valid(form)
 
 
 class AboutView(TemplateView):
