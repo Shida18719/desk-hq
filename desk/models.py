@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime
+from datetime import datetime, timedelta
 from cloudinary.models import CloudinaryField
+from django.core.exceptions import ValidationError
 # django signals
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -79,6 +80,12 @@ HOURS = [
 ]
 
 
+def validate_date(date):
+    if date <= datetime.now().date():
+        raise ValidationError("Date cannot be in the past or the same day.")
+    return date
+
+
 # Create entry for specific workspace and location
 class Location(models.Model):
     location_id = models.IntegerField(primary_key=True, default=1)
@@ -119,15 +126,18 @@ class Booking(models.Model):
 
     location = models.ForeignKey(
         Location,
-        on_delete=models.CASCADE, null=True, blank=True,
+        on_delete=models.CASCADE, null=True,
         default="DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)")
 
     space_booking = models.ForeignKey(
         Service,
         on_delete=models.CASCADE, related_name='space_booking',
-        null=True, blank=True, default="Day WorkStation")
+        null=True, default="Day WorkStation")
 
-    booking_date = models.DateField(default=datetime.now)
+    # booking_date = models.DateField(default=datetime.now)
+
+    booking_date = models.DateField(default=(datetime.now() + timedelta(days=1)),
+        validators=[validate_date])
     booking_duration = models.CharField(
         max_length=20,
         choices=DURATION,
