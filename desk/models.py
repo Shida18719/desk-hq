@@ -19,6 +19,30 @@ class Registration(models.Model):
         return self.email
 
 
+class Enquiry(models.Model):
+    """
+    Model for contact enquiries.
+    """
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
+    subject = models.CharField(max_length=80)
+    message = models.CharField(max_length=1000)
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        """
+        Meta class for ordering the queryset by the 'date'
+        field in descending order.
+        """
+        ordering = ["-date"]
+
+    def __str__(self):
+        """
+        String representation of Contact Form message.
+        """
+        return f"from {self.name} | subject: {self.subject}"
+
+
 VALID = 0
 CANCELLED = 1
 STATUS = [
@@ -81,13 +105,18 @@ HOURS = [
 
 
 def validate_date(date):
+    """
+    Create validation for user chosen date
+    """
     if date <= datetime.now().date():
         raise ValidationError("Date cannot be in the past or the same day.")
     return date
 
 
-# Create entry for specific workspace and location
 class Location(models.Model):
+    """
+    Create entry for specific workspace and location
+    """
     location_id = models.IntegerField(primary_key=True, default=1)
     location_name = models.CharField(
         max_length=200,
@@ -98,11 +127,16 @@ class Location(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
+        """
+        String representation of Booking location.
+        """
         return self.location_name
 
 
 class Service(models.Model):
-
+    """
+    Create entry for specific workspace service type
+    """
     space_type = models.CharField(
         max_length=50, choices=SERVICES,
         unique=True, default='Day WorkStation')
@@ -114,6 +148,9 @@ class Service(models.Model):
         ordering = ['-timestamp']
 
     def __str__(self):
+        """
+        String representation of Booking Service by space type.
+        """
         return f"{self.space_type}"
 
 
@@ -134,9 +171,8 @@ class Booking(models.Model):
         on_delete=models.CASCADE, related_name='space_booking',
         null=True, default="Day WorkStation")
 
-    # booking_date = models.DateField(default=datetime.now)
-
-    booking_date = models.DateField(default=(datetime.now() + timedelta(days=1)),
+    booking_date = models.DateField(
+        default=(datetime.now() + timedelta(days=1)),
         validators=[validate_date])
     booking_duration = models.CharField(
         max_length=20,
@@ -158,14 +194,20 @@ class Booking(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        Meta class for ordering the queryset by the 'created_on'
+        field in ascending order.
+        """
         unique_together = [
             'location', 'space_booking', 'booking_date',
             'booking_duration', 'booking_start', 'booking_end']
         ordering = ['created_on']
 
     def __str__(self):
+        """
+        String representation of Booking Form.
+        """
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
-
 
 
 # @receiver(post_save, sender=User)
