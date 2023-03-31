@@ -4,7 +4,7 @@ from .views import BookingDeleteView
 
 # Urls for app views
 urlpatterns = [
-    path('', views.HomePageView.as_view(), name='home'),
+    path('', views.ContactFormView.as_view(), name="home"),
     # path('locations/<slug:slug>/', views.BookingFormView.as_view(), name='space_booking'),
 
     path('space_booking/', views.BookingFormView.as_view(), name='space_booking'),

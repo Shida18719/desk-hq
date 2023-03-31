@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <!-- Hero image Carousel -->
 <div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -90,7 +91,7 @@
             <h3 class="map-header">
                 Our WorkSpace Locations
             </h3>
-            <p class="">
+            <p class="row">
                 Our locations are easily accessible, good public transportation options, with buses and train stations
                 nearby. Shopping mall, cafe and bar located near.
             </p>
@@ -98,6 +99,32 @@
         <!--Google Map-->
         <div class="col-md-12 col-lg-9 col-xl-6 location-map">
             <div id="map" class="col-md-12"></div>
+        </div>
+    </div>
+    <!-- Contact Form -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">CONTACT US</h2>
+            <P>Like to know more about our booking? Fill out the form below and one of our team will reach out to you soon.</P>
+            
+            <form method="POST" action="{% url 'home' %}">
+                <div class="mb-3">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                          {{ form.name | as_crispy_field }}
+                        </div>
+                        <div class="col-12 col-md-6">
+                          {{ form.email | as_crispy_field }}
+                        </div>
+                      </div>
+                    {{ form.subject | as_crispy_field }}
+                    {{ form.message | as_crispy_field }}
+                </div>
+                <button type="submit" class="btn btn-md btn-primary">
+                    Enquire Now
+                </button>
+            </form>
         </div>
     </div>
 </section>

@@ -4,11 +4,12 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.contrib import messages
-
-# Booking
-from desk.models import Booking, Service
-from .forms import BookingForm
+from desk.models import Booking, Service, Enquiry
+from .forms import BookingForm, ContactForm
 from django.views.generic.edit import FormView, UpdateView, DeleteView
+
+# ContactForm
+# from django.views.generic.edit import CreateView
 
 
 class HomePageView(TemplateView):
@@ -16,6 +17,26 @@ class HomePageView(TemplateView):
     View for home page.
     """
     template_name = 'home/index.html'
+
+
+class ContactFormView(FormView):
+    """
+    View for users ContactForm
+    """
+    model = Enquiry
+    form_class = ContactForm
+    template_name = 'home/index.html'
+
+    def post(self, request, *args, **kwargs):
+        if request.method == "POST":
+            contact_form = self.form_class(request.POST)
+            if contact_form.is_valid():
+                contact_form.save()
+                messages.success(self.request,
+                            'Thank you for contacting DESK HQ. We recieved your message, will get back to you shortly .')
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            return super().form_invalid(form)
 
 
 class BookingsList(ListView):
