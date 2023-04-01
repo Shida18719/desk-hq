@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather+Sans:wght@300&family=Montserrat&family=Open+Sans&display=swap');
+
+/* Base reset */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.2rem;
+    background-color: #F4F4F9;
+}
+
+h2, h3{
+    font-family: 'Lato', sans-serif;
+}
+
+/****** Navigation ***********/
+.nav-link{
+    font-weight: bold;
+}
+
+.booking-btn{
+    border: 1px solid #0077B6;
+    background-color: #0077B6;
+    border-radius: 5px;
 }
 
 /**************** Hero images  **************/
@@ -9,7 +37,7 @@
     position: relative;
 }
 
-.page{
+.page-top{
     margin-top: 5vh;
     min-height: 95vh;
 }
@@ -45,11 +73,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: rgba(0, 0, 0, 0.2); */
     border-radius: 5px;
     padding: 2rem;
     color: #fff;
-    text-shadow: 0px 0px 10px #e9f1f375;
+    /* text-shadow: 0px 0px 7px #e9f1f375; */
+}
+
+.hero-text{
+    font-family: 'Merriweather Sans', Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 250%;
 }
 
 /**************** Form  **************/
@@ -60,6 +93,7 @@
     align-content: center;
 }
 
+.user-log,
 .booking-data,
 .signup-card,
 .signin-card{
@@ -81,7 +115,23 @@
     text-decoration: underline;
 }
 
+/* ********* Booking Detail************** */
+
+.no-booking{
+    background-color: #CAF0F8;
+}
+
 /*********** Map ************/
+.location-content{
+    background-color: #0077B6;
+    color: #fff;
+}
+
+.font-container{
+    /* padding-left: 20px;
+    position: relative; */
+}
+
 #map {
     min-height: 360px;}
 
@@ -115,14 +165,39 @@
     background-image: linear-gradient(to right, #00B4D8 0%, #03045E 51%, #0077B6 100%);
   }
 
+  /*********** Contact Form ***********/
+
+  .contact-form input,
+  .contact-form textarea {
+    box-shadow: none;
+    border-color: #03045E;
+  }
+
+  .btn-enquiry {
+    width: 100%;
+    padding: 1rem 2rem 1rem 1rem;
+    text-align: center;
+    background-color: #0077B6;
+    color: #F4F4F9;
+    margin: 1rem 0 0.8rem 0;
+    border-radius: 3px;
+    z-index: 5;
+  }
+
+  .btn-enquiry:hover {
+    background-color: #00B4D8;
+    color: #fff;
+}
+
+  /***********  Footer ***********/
   .bg-footer{
     background-color: #0077B6;
     color: #fff;
   }
 
+  /*********** Media Query ***********/
   @media (max-width:768px){
     .signin-card,
-    .form-page,
     .signup-card{
         width: 60%;
     }
@@ -130,7 +205,7 @@
 
   @media (max-width:576px){
     .signin-card,
-    .form-page,
+    
     .signup-card{
         width: 80%;
     }
