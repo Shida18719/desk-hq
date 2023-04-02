@@ -124,14 +124,14 @@
     </section>
 
     <!-- Contact Form -->
-    <section>
-        <div class="row mt-5">
+    <section id="contact-us">
+        <div class="row my-5">
             <div class="col-md-12">
-                <h2 class="text-center">CONTACT US</h2>
-                <P class="container-fluid col-lg-8 mt-5 mt-lg-0 text-center">Like to know more about our booking? Fill out the form
+                <h2 class="text-center"><strong>CONTACT US</strong></h2>
+                <P class="container-fluid col-lg-8 mt-4 mt-lg-0 text-center">Like to know more about our booking? Fill out the form
                     below and one of our team will reach out to you soon.</P>
 
-                <div class="container-fluid col-lg-8 mt-5 mt-lg-0">
+                <div class="container-fluid col-lg-8 mt-3 mt-lg-0">
                     <form method="POST" action="{% url 'home' %}" class="contact-form">
                         <div class="mb-3">
                             {% csrf_token %}
