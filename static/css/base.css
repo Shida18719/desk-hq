@@ -133,14 +133,15 @@ h2, h3{
 }
 
 #map {
-    min-height: 360px;}
+    min-height: 360px;
+}
 
+/*********** Buttons ************/
 .btn {
     flex: 1 1 auto;
     margin: 10px;
     padding: 10px;
     text-align: center;
-    /* text-transform: uppercase; */
     transition: 0.5s;
     background-size: 200% auto;
     color: #fff;
@@ -190,10 +191,34 @@ h2, h3{
 }
 
   /***********  Footer ***********/
-  .bg-footer{
+.bg-footer{
     background-color: #0077B6;
     color: #fff;
-  }
+}
+
+.social-links i {
+    font-size: 1.4rem;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.social-links a>i:hover { 
+    transform: translateY(3px);
+    color: #00B4D8;
+    background: #FAFAFA;
+}
+
+.git-link a{
+    text-decoration: none;
+    color: #eee;
+    font-size: 0.8rem;
+}
+
+.site-use {
+    font-size: 0.8rem;
+    color: #eee;
+    margin-top: 0.8rem;
+}
 
   /*********** Media Query ***********/
   @media (max-width:768px){
