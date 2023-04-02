@@ -21,9 +21,24 @@ h2, h3{
     font-family: 'Lato', sans-serif;
 }
 
-/****** Navigation ***********/
-.nav-link{
+/****** Navigation & Canvas ***********/
+.navbar-brand:hover{
+    color:rgb(25, 75, 225);
+}
+
+.navbar-toggler{
+    border: 0;
+}
+
+.offcanvas-body a:hover{
+    color:#fff;
+    background-color: #00B4D8;
+    text-align: center;
+}
+
+.nav-link, .offcanvas-title {
     font-weight: bold;
+    color: #03045E;
 }
 
 .booking-btn{
