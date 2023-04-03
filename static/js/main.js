@@ -1,6 +1,7 @@
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 3,
+        //Create London's UK longitude and latitude for location maps
         center: {
             lat: 51.509865,
             lng: -0.118092
@@ -10,24 +11,35 @@ function initMap() {
     // Create an array of alphabetical characters used to label the markers.
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    //Create London's longtitude and latitude for location maps
+    //Create South East & East London's longitude and latitude for location maps
     const locations = [
           { lat: 51.507465, lng: 0.127809 },
           { lat: 51.483465, lng: 0.058692 },
     ];
 
-    const markers = locations.map(function(location, i) {
-        return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
+    // Add some markers to the map.
+    const markers = locations.map((position, i) => {
+        const label = labels[i % labels.length];
+        const marker = new google.maps.Marker({
+          position,
+          label,
         });
-    });
 
+        // markers can only be keyboard focusable when they have click listeners
+        // open info window when marker is clicked
+        marker.addListener("click", () => {
+            infoWindow.setContent(label);
+            infoWindow.open(map, marker);
+        });
+  
+        return marker;
+    });
+  
     // Add a marker clusterer to manage the markers.
-    
-    const markerCluster = new MarkerClusterer(map, markers, 
-    { imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer/m" });
+    new markerClusterer.MarkerClusterer({ markers, map });
 }
+
+window.initMap = initMap;
 
 // Back to top button
 
