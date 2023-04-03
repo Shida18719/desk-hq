@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Open sans', sans-serif;
     font-size: 1.2rem;
@@ -54,7 +50,7 @@ h2, h3{
 
 .page-top{
     margin-top: 5vh;
-    min-height: 95vh;
+    /* min-height: 95vh; */
 }
 
 .hero-image1{
@@ -102,13 +98,13 @@ h2, h3{
 
 /**************** Form  **************/
 
-.form-page{
+ .form-page{
     min-height: 95vh;
     display: grid;
     align-content: center;
 }
 
-.user-log,
+/* .user-log,
 .booking-data,
 .signup-card,
 .signin-card{
@@ -117,7 +113,7 @@ h2, h3{
     padding: 0.8rem;
     box-shadow: 0px 0px 3px 0.5px rgba(3, 4, 94, 0.3);
     border-radius: 5px;
-}
+} */
 
 .link {
     color: #03045E;
