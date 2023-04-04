@@ -5,22 +5,28 @@
 
 {% load crispy_forms_tags %}
 
-<div class="booking-registration">
-    <div class="container card booking-data">
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h2 class="text-center">Update Booking</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="d-grid gap-2">
-                        <input class="btn btn-bookspace" type="submit" value="Update">
+<div class="container booking-info">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto mt-sm-4 mt-md-5 mt-lg-6 mt-5">
+            <div class="card shadow user-log">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+                            <h2 class="text-center">UPDATE BOOKING</h2>
+                        </div>
                     </div>
-                </form>
+                    <div class="row">
+                        <div class="col-md-8 mt-3 offset-md-2">
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form | crispy }}
+                                <div class="d-grid gap-2">
+                                    <input class="btn btn-bookspace" type="submit" value="Update">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
