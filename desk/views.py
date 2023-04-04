@@ -32,8 +32,9 @@ class ContactFormView(FormView):
             contact_form = self.form_class(request.POST)
             if contact_form.is_valid():
                 contact_form.save()
-                messages.success(self.request,
-                            'Thank you for contacting DESK HQ. We recieved your message, will get back to you shortly .')
+                messages.success(
+                    self.request,
+                    'Thank you for contacting DESK HQ. We recieved your message, will get back to you shortly.')
             return HttpResponseRedirect(reverse('home'))
         else:
             return super().form_invalid(form)
@@ -83,7 +84,8 @@ class BookingFormView(FormView):
 
 class BookingUpdateView(UpdateView):
     """
-    View allows user to edit and update their booking and redirects them to booking details.
+    View allows user to edit and update their booking and
+    redirects them to booking details.
     """
     model = Booking
     form_class = BookingForm
@@ -94,7 +96,9 @@ class BookingUpdateView(UpdateView):
     #     return Booking.objects.filter(client=self.request.user, pk=pk)
 
     def get_object(self, queryset=None):
-        # retrieve the object to be updated, using the primary key from the URL
+        """
+        Retrieve the object to be updated, using the primary key from the URL
+        """
         booking = get_object_or_404(Booking, pk=self.kwargs['pk'])
         return booking
 
@@ -114,13 +118,15 @@ class BookingDeleteView(DeleteView):
     View allow user to delete booking and redirect user to booking details.
     """
     model = Booking
-    template_name = 'desk/delete_booking'
+    template_name = 'desk/delete_booking.html'
     success_url = reverse_lazy('booking_details')
 
     def get_object(self, queryset=None):
-        # retrieve the object to be deleted, using the primary key from the URL
-        booking = get_object_or_404(Booking, pk=self.kwargs['pk'])
-        return booking
+        """
+        Retrieve the object to be deleted, using the primary key from the URL
+        """
+        booking_detail = get_object_or_404(Booking, pk=self.kwargs['pk'])
+        return booking_detail
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)

@@ -3,23 +3,23 @@
 
 {% block content %}
 
-<!-- {% load crispy_forms_tags %} -->
+{% load crispy_forms_tags %}
 
 <div class="form-page">
     <div class="container card booking-data">
         <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
+            <div class="col-md-12 mt-3">
                 <h2 class="text-center">Delete Booking</h2>
             </div>
         </div>
+         <!-- Confirm delete -->
         <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
+            <div class="col-md-12 mt-3">
                 <form method="POST">
                     {% csrf_token %}
-                    <!-- {{ form | crispy }} -->
+                    {{ form | crispy }}
                     <div class="d-grid gap-2">
                         <input class="btn btn-danger" type="submit" value="Confirm">
-                        <a class="btn" href=""></a>
                     </div>
                 </form>
             </div>
@@ -27,4 +27,4 @@
     </div>
 </div>
 
-{% endblock %}
+{% endblock content %}
