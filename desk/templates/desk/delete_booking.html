@@ -5,23 +5,28 @@
 
 {% load crispy_forms_tags %}
 
-<div class="form-page">
-    <div class="container card booking-data">
-        <div class="row">
-            <div class="col-md-12 mt-3">
-                <h2 class="text-center">Delete Booking</h2>
-            </div>
-        </div>
-         <!-- Confirm delete -->
-        <div class="row">
-            <div class="col-md-12 mt-3">
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="d-grid gap-2">
-                        <input class="btn btn-danger" type="submit" value="Confirm">
+<div class="container form-page">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto mt-md-5 mt-lg-3 mt-4">
+          <div class="card shadow user-log">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mt-3">
+                        <h2 class="text-center">Delete Booking</h2>
                     </div>
-                </form>
+                </div>
+                <!-- Confirm delete -->
+                <div class="row">
+                    <div class="col-md-12 mt-3">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="d-grid gap-4 col-6 mx-auto">
+                                <input class="btn btn-danger" type="submit" value="Confirm">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
