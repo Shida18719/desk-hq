@@ -3,37 +3,43 @@
 
 {% load crispy_forms_tags %}
 
-<div class="form-page form-info">
-  <div class="booking-data">
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
-        <h2 class="text-center">BOOK WORKSPACE</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
-        <form method="POST" action="{% url 'space_booking' %}">
-          {% csrf_token %}
-          {{ form | crispy }}
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-bookspace" type="submit">BOOK WORKSPACE</button>
-          </div>
-
+<div class="container booking-page">
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto mt-sm-4 mt-md-5 mt-lg-6 mt-5">
+      <div class="card shadow user-log">
+        <div class="card-body">
           <div class="row">
-            <div class="col-12">
-              <div class="my-2 text-info">NOTICE!!</div>
-              <small class="text-muted">
-                Please inform us at the latest 3 hours before the start of your booking of any cancellation, or in the
-                case of late arrival later than 20 minutes.
-              </small>
-              <small class="text-muted">Thank you for your Understanding.</small>
+            <div class="col-md-12 mt-3">
+              <h2 class="text-center">BOOK WORKSPACE</h2>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2">
+              <form method="POST" action="{% url 'space_booking' %}">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="d-grid gap-2 col-6 col-sm-12 mx-auto">
+                  <button class="btn btn-bookspace" type="submit">BOOK WORKSPACE</button>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="my-2 text-info">NOTICE!!</div>
+                    <small class="text-muted">
+                      <p class="fw-light">Please inform us at the latest 3 hours before the start of your booking of any cancellation, or
+                        arrival later than 20 minutes.
+                        <br>
+                        Thank you for your Understanding.
+                      </p>
+                    </small>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      </form>
     </div>
   </div>
-</div>
 </div>
 
 {% endblock %}
