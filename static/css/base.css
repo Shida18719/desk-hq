@@ -56,7 +56,6 @@ h2, h3{
 .hero-image1{
     min-height: 80vh;
     background: linear-gradient(rgba(3, 13, 22, 0.1), rgba(3, 13, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
-    /* opacity: 80%; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -104,6 +103,12 @@ h2, h3{
     align-content: center;
 }
 
+.booking-info {
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+}
+
 /* .user-log,
 .booking-data,
 .signup-card,
@@ -127,9 +132,21 @@ h2, h3{
 }
 
 /* ********* Booking Detail************** */
+.booking-details-card li {
+    list-style: none;
+}
+
+.booking-details-card i {
+    color: #00B4D8;
+}
 
 .no-booking{
     background-color: #CAF0F8;
+}
+
+.modal {
+    --bs-modal-bg: #CAF0F8;
+    --bs-modal-border-radius: 0;
 }
 
 /*********** Map ************/
@@ -248,7 +265,7 @@ h2, h3{
   }
 
   @media (max-width:300px){
-    .signin-card,
+    .booking-page,
     .form-page,
     .signup-card{
         width: 100%;

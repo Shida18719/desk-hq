@@ -3,7 +3,7 @@
 
 <div class="booking-details form-page">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-8 mb-5 offset-md-2">
             <h2 class="text-center">BOOKING DETAILS</h2>
         </div>
     </div>
@@ -12,17 +12,17 @@
         <div class="row">
             <div class="col-12 col-md-8 mt-3">
                 <ul>
-                    <li>Location: <strong> {{booking.location}}</strong>
+                    <li><i class="fa-solid fa-location-dot me-2"></i>Location: <strong> {{booking.location}}</strong>
                     </li>
-                    <li>Space Type: <strong> {{booking.space_booking}}</strong>
+                    <li><i class="fa-solid fa-city me-2"></i>Space Type: <strong> {{booking.space_booking}}</strong>
                     </li>
-                    <li>Booking Date: <strong> {{booking.booking_date}}</strong>
+                    <li><i class="fa-solid fa-calendar-days me-2"></i>Booking Date: <strong> {{booking.booking_date}}</strong>
                     </li>
-                    <li>Duration: <strong> {{booking.booking_duration}}</strong></li>
-                    <li>Booking Starts: <strong> {{booking.booking_start}}</strong></li>
-                    <li>Booking Ends: <strong> {{booking.booking_end}}</strong></li>
+                    <li><i class="fa-regular fa-clock me-2"></i>Duration: <strong> {{booking.booking_duration}}</strong></li>
+                    <li><i class="fa-solid fa-hourglass-start me-2"></i>Booking Starts: <strong> {{booking.booking_start}}</strong></li>
+                    <li><i class="fa-solid fa-hourglass-end me-2"></i>Booking Ends: <strong> {{booking.booking_end}}</strong></li>
                 </ul>
-                <span><li>Last updated: <strong> {{booking.updated_on}}</strong></li></span>
+                <small>Last updated:<strong> {{booking.updated_on}}</strong></small>
             </div>
             <div class="col-12 col-md-4 text-center d-md-flex flex-column my-auto">
                 <a href="{% url 'update_booking' booking.pk %}" class="btn btn-success btn-lg edit-btn role='button'">Edit Booking</a>
@@ -51,6 +51,28 @@
     </div>
     <!--/Delete Modal-->
 
+    <!-- Empty booking details-->
+    {% empty %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto mt-md-4 mt-lg-2 mt-2">
+                <div class="card shadow user-log no-booking">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="text-center mt-3 no-booking">
+                                <p>You do not have any booking details available.</p>
+                                
+                                <!--Link to Space Booking-->
+                                <div class="d-grid gap-4 col-6 mx-auto mt-5">
+                                    <a href="{% url 'space_booking' %}"  class="btn btn-sm btn-bookspace" role="button">Add Booking</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endfor %}
 
      <!-- Paginate code from Code Institute-->
