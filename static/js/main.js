@@ -1,5 +1,6 @@
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
+    const map = new google.maps.Map(document.getElementById("map"), 
+    {
         zoom: 3,
         //Create London's UK longitude and latitude for location maps
         center: {
@@ -7,6 +8,11 @@ function initMap() {
             lng: -0.118092
         }
     });
+
+    const infoWindow = new google.maps.InfoWindow({
+        content: "",
+        disableAutoPan: true,
+      });
 
     // Create an array of alphabetical characters used to label the markers.
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
