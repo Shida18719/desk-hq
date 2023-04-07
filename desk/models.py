@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, timedelta
+from django.utils import timezone
 from cloudinary.models import CloudinaryField
 from django.core.exceptions import ValidationError
 # django signals
@@ -161,7 +162,8 @@ class Booking(models.Model):
         null=True, default="Day WorkStation")
 
     booking_date = models.DateField(
-        default=(datetime.now() + timedelta(days=1)),
+        # default=(datetime.now() + timedelta(days=1)),
+        default=(timezone.now().date() + timezone.timedelta(days=1)),
         validators=[validate_date])
     booking_duration = models.CharField(
         max_length=20,
@@ -185,16 +187,16 @@ class Booking(models.Model):
     class Meta:
         """
         Meta class for ordering the queryset by the 'created_on'
-        field in ascending order.
+        field in descending order.
         """
         unique_together = [
             'location', 'space_booking', 'booking_date',
             'booking_duration', 'booking_start', 'booking_end']
-        ordering = ['created_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         """
-        String representation of Booking Form.
+        String representation of Booking object.
         """
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
 
