@@ -1,10 +1,5 @@
 from django.contrib import admin
-from .models import Registration, Location, Service, Booking
-
-
-# Registion for further enquiries
-admin.site.register(Registration)
-
+from .models import Location, Service, Booking
 
 # Workspace location.
 @admin.register(Location)
