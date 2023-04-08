@@ -1,18 +1,47 @@
 from django.test import TestCase
-from .models import Booking, Enquiry, Location
+from datetime import date
+from .models import Booking, Enquiry, Location, Service
 from django.contrib.auth.models import User
 from django.db.models import (ForeignKey, CharField, EmailField, IntegerField)
 
 
-class BookingTests(TestCase):
+class BookingTest(TestCase):
     """
     Test user booking
     """
 
     def setUp(self):
-        self.client = User.objects.create(
+        self.user = User.objects.create(
             email='test@example.com',
             password='testpasswd')
+        
+        self.location = Location.objects.create(
+            location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ')
+
+        self.space_booking = Service.objects.create(
+            space_type='Day WorkStation')
+
+        self.booking = Booking.objects.create(
+            client=self.user,
+            location=self.location,
+            space_booking=self.space_booking,
+            booking_date=date(2023, 4, 8),
+            booking_start='09:00 am',
+            booking_end='10:00 am'
+            )
+
+    def test_booking_str(self):
+        """
+        Test string representation of the booking
+        """
+        client_booking = str(self.booking.client)
+        location_booking = str(self.booking.location)
+        space_booking = str(self.booking.space_booking)
+        booking_date = str(self.booking.booking_date)
+        booking_start = str(self.booking.booking_start)
+        booking_end = str(self.booking.booking_end)
+
+        self.assertEqual(str(self.booking), f"{client_booking} booked {space_booking} | {booking_date} | {booking_start} | {booking_end}")
 
 
 class EnquiryTest(TestCase):
@@ -30,18 +59,25 @@ class EnquiryTest(TestCase):
 
 class LocationTest(TestCase):
     def setUp(self):
-        reset_sequences = True
         self.location1 = Location.objects.create(
             location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ')
     
-    def test_location_name(self):
-        """Test string representation of the location_name"""
-        location1 = str(self.location1.location_name)
-        self.assertEqual(str(self.location1), (location1))
-        self.assertTrue(self.location1)
+    def test_location_name_str(self):
+        """
+        Test string representation of the location_name
+        """
+        loc = str(self.location1.location_name)
+        self.assertEqual(str(self.location1), (loc))
 
-    # def test_fun(self):
-    #     booking = self.get_object()
-    #     if self.request.user == client.id:
-    #         return True
-    #     return False
+
+class ServiceTest(TestCase):
+    def setUp(self):
+        self.service = Service.objects.create(
+            space_type='Day WorkStation')
+    
+    def test_space_type_str(self):
+        """
+        Test string representation of the space_type
+        """
+        service_type = str(self.service.space_type)
+        self.assertEqual(str(self.service), f"{service_type}")
