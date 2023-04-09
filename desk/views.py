@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.urls import reverse_lazy
@@ -35,7 +35,13 @@ class ContactFormView(FormView):
                 messages.success(
                     self.request,
                     'Thank you for contacting DESK HQ. We recieved your message, will get back to you shortly.')
-            return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('home'))
+            else:
+                messages.info(
+                    self.request,
+                    'Sorry!, Message not sent. Please try again')
+                # return HttpResponseRedirect(reverse('home'))
+                return HttpResponse("")
         else:
             return super().form_invalid(form)
 
@@ -91,9 +97,7 @@ class BookingUpdateView(UpdateView):
     form_class = BookingForm
     template_name = 'desk/update_booking.html'
     success_url = reverse_lazy('booking_details')
-    
-    # def get_queryset(self, pk):
-    #     return Booking.objects.filter(client=self.request.user, pk=pk)
+
 
     def get_object(self, queryset=None):
         """
