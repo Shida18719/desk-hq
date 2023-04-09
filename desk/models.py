@@ -98,7 +98,8 @@ def validate_date(date):
     """
     Create validation for user chosen date
     """
-    if date <= datetime.now().date():
+    if date <= timezone.now().date():
+    # if date <= datetime.now().date():
         raise ValidationError("Date cannot be in the past or the same day.")
     return date
 
