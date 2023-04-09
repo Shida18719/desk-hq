@@ -39,11 +39,9 @@ class ContactFormView(FormView):
             else:
                 messages.info(
                     self.request,
-                    'Sorry!, Message not sent. Please try again')
+                    'This field is required')
                 # return HttpResponseRedirect(reverse('home'))
                 return HttpResponse("")
-        else:
-            return super().form_invalid(form)
 
 
 class BookingsList(ListView):
