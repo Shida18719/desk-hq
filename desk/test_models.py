@@ -2,7 +2,6 @@ from django.test import TestCase
 from datetime import date
 from .models import Booking, Enquiry, Location, Service
 from django.contrib.auth.models import User
-from django.db.models import (ForeignKey, CharField, EmailField, IntegerField)
 
 
 class BookingTest(TestCase):
