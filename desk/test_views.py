@@ -1,8 +1,9 @@
 from django.test import TestCase, RequestFactory, Client
-# from django.views.generic.edit import FormView, UpdateView, DeleteView
-from .views import ContactFormView
-from .forms import ContactForm
-from desk.models import Booking, Enquiry
+from django.contrib.auth.models import User
+from datetime import datetime, timedelta, date
+from .views import ContactFormView, BookingFormView, BookingsList
+from .forms import ContactForm, BookingForm
+from desk.models import Booking, Enquiry, Location, Service
 from django.urls import reverse
 from django.contrib.messages import get_messages
 from django.http import HttpRequest, HttpResponse
@@ -65,3 +66,82 @@ class BookingsListTest(TestCase):
     """
     View for users Booking
     """
+
+
+class BookingFormViewTest(TestCase):
+    """
+    Tests that a booking can be successfully created when the user is logged in
+    """
+    def setUp(self):
+        self.factory = RequestFactory()
+        self.client = Client()
+
+        self.user = User.objects.create_user(
+            username='testuser',
+            email='test@example.com',
+            password='testpassword'
+        )
+
+        self.location = Location.objects.create(
+            location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)'
+            )
+
+        self.space_booking = Service.objects.create(
+            space_type='Day WorkStation'
+        )
+
+        self.booking = Booking.objects.create(
+            client=self.user,
+            location=self.location,
+            space_booking=self.space_booking,
+            booking_duration='1 Hour',
+            booking_date=date(2023, 5, 12),
+            booking_start=datetime.now() + timedelta(hours=1),
+            booking_end=datetime.now() + timedelta(hours=1),
+        )
+
+        self.booking_data = {
+            # 'client': self.user,
+            'location': self.location,
+            'space_booking': self.space_booking,
+            'booking_date': self.booking.booking_date,
+            'booking_duration': self.booking.booking_duration,
+            'booking_start': self.booking.booking_start,
+            'booking_end': self.booking.booking_end,
+        }
+
+    def test_create_booking(self):
+        # Login the user
+        self.client.login(
+            username=self.user.username, password=self.user.password)
+
+        # Submit the booking form
+        booking_form = BookingForm(self.booking_data)
+        self.assertTrue(booking_form.is_valid())
+        response = self.client.post(
+            reverse('space_booking'), self.booking_data)
+        print("Response--------------------------------------")
+        print(f"response_path: {response.request.get('PATH_INFO')}")
+        print(f"response: {response}")
+        print("-------------------------------------- \n")
+        form = (self.booking_data)
+        print("Form: --------------------------------------")
+        print(f"form: {form}")
+        print("--------------------------------------\n")
+
+        # Check that the booking was created successfully
+        # self.assertTrue(user_login)
+        self.assertRedirects(
+            response, reverse('home'))  # Redirect to home page
+        self.assertEqual(Booking.objects.count(), 1)
+        self.assertTrue(Booking.objects.filter(client=self.user).exists())
+
+    def test_create_booking_unauthenticated(self):
+        # Submit the booking form without logging in
+        self.client.force_login(self.user)
+        response = self.client.post(
+            reverse('space_booking'), self.booking_data)
+
+        # Check that the user is redirected to the login page
+        self.assertRedirects(response, reverse('account_login'))
+        self.assertEqual(Booking.objects.count(), 0)
