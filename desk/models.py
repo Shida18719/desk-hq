@@ -192,7 +192,7 @@ class Booking(models.Model):
         """
         unique_together = [
             'location', 'space_booking', 'booking_date',
-            'booking_duration', 'booking_start', 'booking_end']
+            'booking_start', 'booking_end']
         ordering = ['-created_on']
 
     def __str__(self):
