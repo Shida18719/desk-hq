@@ -65,7 +65,7 @@ class BookingFormView(FormView):
         form = self.form_class(request.POST)
         if form.is_valid():
             if self.request.user.is_authenticated:
-                form.instance.client = request.user
+                form.instance.client = self.request.user
             # <process form cleaned data>
                 form.save()
                 messages.add_message(
@@ -79,8 +79,11 @@ class BookingFormView(FormView):
                     messages.INFO,
                     'Sorry!, A signin is required first.')
                 return HttpResponseRedirect(reverse('account_login'))
+                # return HttpResponseRedirect('/accounts/login/')
+                # return super(BookingFormView, self).form_valid(form)
         else:
-            return self.form_invalid(form)
+            # return self.form_invalid(form)
+            return super(BookingFormView, self).post(request)
 
 
 class BookingUpdateView(UpdateView):
