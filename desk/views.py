@@ -8,9 +8,6 @@ from desk.models import Booking, Service, Enquiry
 from .forms import BookingForm, ContactForm
 from django.views.generic.edit import FormView, UpdateView, DeleteView
 
-# ContactForm
-# from django.views.generic.edit import CreateView
-
 
 class HomePageView(TemplateView):
     """
@@ -95,7 +92,6 @@ class BookingUpdateView(UpdateView):
     form_class = BookingForm
     template_name = 'desk/update_booking.html'
     success_url = reverse_lazy('booking_details')
-
 
     def get_object(self, queryset=None):
         """

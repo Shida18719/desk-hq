@@ -13,7 +13,7 @@ class BookingTest(TestCase):
         self.user = User.objects.create(
             email='test@example.com',
             password='testpasswd')
-        
+
         self.location = Location.objects.create(
             location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ')
 
@@ -60,7 +60,7 @@ class LocationTest(TestCase):
     def setUp(self):
         self.location1 = Location.objects.create(
             location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ')
-    
+
     def test_location_name_str(self):
         """
         Test string representation of the location_name
@@ -73,7 +73,7 @@ class ServiceTest(TestCase):
     def setUp(self):
         self.service = Service.objects.create(
             space_type='Day WorkStation')
-    
+
     def test_space_type_str(self):
         """
         Test string representation of the space_type

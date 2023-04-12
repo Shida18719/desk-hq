@@ -5,8 +5,8 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 from django.core.exceptions import ValidationError
 # django signals
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+# from django.db.models.signals import post_save
+# from django.dispatch import receiver
 
 
 class Enquiry(models.Model):
@@ -200,12 +200,3 @@ class Booking(models.Model):
         String representation of Booking object.
         """
         return f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
-
-
-# @receiver(post_save, sender=User)
-# def create_user_profile(sender, instance, created, **kwargs):
-#     """Create a client when a User is Created """
-#     if created:
-#         print(f"User: {instance}")
-#         Profile.objects.create(user=instance)
-#         print('profile_created')
