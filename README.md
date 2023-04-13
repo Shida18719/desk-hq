@@ -112,15 +112,54 @@ Google Fonts was used to import the chosen fonts for use in the site.
 + Lato is used for headings on the site for readability, simple and clean looking, with a secondary of serif font.
 + Merriweather Sans is used for hero text on the site for readability, legible and is a great choice for accessibility, with a secondary of Roboto.
 
-### Wireframes
+## Wireframes
 
-Wireframes were created for mobile, tablet and desktop using Balsamiq.
+Wireframes original plan were created for mobile, tablet and desktop using Balsamiq.
 
-#### __Home Page__
+### __Home Page__
 
-![Home Page](/wireframes/home.png)
+<details><summary>click to expand</summary>
+<img src=./READMEimages/home.png>
+<img src=./READMEimages/mobile-home-page.png>
+</details>
 
 
+### __About Us Page__
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/about-us.png>
+</details>
+
+
+### __Service Page__
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/service-page.png>
+<img src=./READMEimages/mobile-device-service-page.png>
+</details>
+
+
+
+### __Sign Up Page__
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/signup-page.png>
+</details>
+
+
+
+### __Login Page__
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/login-page.png>
+</details>
+
+
+### __Booking Form Page__
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/booking-form.png>
+</details>
 
 ```
 pkill uptime.sh
