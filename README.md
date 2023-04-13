@@ -1,54 +1,49 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# DESK HQ
 
-Welcome Rashidat Adekoya,
+# Welcome to DESK HQ (Project 4)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![DESK HQ](documentation/deskhq.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[Desk HQ](https://desk-hq.herokuapp.com/) is a co-working space website, which offers the perfect destination for entrepreneurs, freelancers, and small businesses looking for a professional and collaborative work environment.
 
-## Gitpod Reminders
+Link to deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![GitHub last commit](https://img.shields.io/github/last-commit/)
+![GitHub contributors](https://img.shields.io/github/contributors/shida/)
+![GitHub language count](https://img.shields.io/github/languages/count/)
+![GitHub top language](https://img.shields.io/github/languages/top/)
 
-`python3 -m http.server`
+## CONTENTS
 
-A blue button should appear to click: _Make Public_,
+* [Overview](#overview)
+  * [Project Goals](#project-goals)
+* [User Experience](#user-experience)
+  * [User Stories](#user-stories)
 
-Another blue button should appear to click: _Open Browser_.
+* [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typography](#typography)
+  * [Imagery](#imagery)
+  * [Wireframes](#wireframes)
+  * [Database Schema & User Journey](#database-schema--user-journey)
+    * [User Journey](#user-journey)
+    * [First Draft Database Schema](#first-draft-database-schema)
+    * [Final Database Schema](#final-database-schema)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
 ------
 
-## Release History
+## Overview
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+###  Project Goals
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+This project is a concept which is aim at creating a co-working space community, where people can innovate and thrive. It is designed to foster creativity, productivity, and networking opportunities for like-minded individuals.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+With provision of state-of-the-art facilities, people will have access to high-speed internet, ergonomic workstations, private meeting rooms, and modern amenities that cater for their needs. DESK HQ offer flexible options to fit any schedule and budget, from daily passes to monthly booking, so people can work on their terms.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+DESK HQ IS targeted at freelancer, startup, or established business, who like to collaborate, network and a platform to grow business and achieve their goals.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
 **May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
