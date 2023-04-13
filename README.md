@@ -103,14 +103,24 @@ All pages are clearly displayed with easy to read fonts. The pages are easily na
 + DESK HQ uses serene color palette, which is a color that can calming and reliable. The color palette was created using the [Coolors](https://coolors.co/palette/03045e-0077b6-00b4d8-90e0ef-caf0f8) website.
 
  ![Color Scheme for DESK HQ](./READMEimages/desk-hq-color-scheme.png)
-------
+
+### Typography
+
+Google Fonts was used to import the chosen fonts for use in the site.
+
++ Open sans is used for the body text on this site for user experience readability, with a secondary sans-serif font.
++ Lato is used for headings on the site for readability, simple and clean looking, with a secondary of serif font.
++ Merriweather Sans is used for hero text on the site for readability, legible and is a great choice for accessibility, with a secondary of Roboto.
+
+### Wireframes
+
+Wireframes were created for mobile, tablet and desktop using Balsamiq.
+
+#### __Home Page__
+
+![Home Page](/wireframes/home.png)
 
 
-
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
 ```
 pkill uptime.sh
