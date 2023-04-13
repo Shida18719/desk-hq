@@ -92,13 +92,17 @@ As an administrator for the site I want to be able to:
 
 - - -
 
+## Design Structure
+***
+This site was design with simplicity of colors and easy to navigate that allow for a good user experience.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+All pages are clearly displayed with easy to read fonts. The pages are easily navigated with buttons.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Colour Scheme
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
++ DESK HQ uses serene color palette, which is a color that can calming and reliable. The color palette was created using the [Coolors](https://coolors.co/palette/03045e-0077b6-00b4d8-90e0ef-caf0f8) website.
 
+ ![Color Scheme for DESK HQ](./READMEimages/.png)
 ------
 
 ## FAQ about the uptime script
