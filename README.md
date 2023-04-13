@@ -6,7 +6,6 @@
 
 [Desk HQ](https://desk-hq.herokuapp.com/) is a co-working space website, which offers the perfect destination for entrepreneurs, freelancers, and small businesses looking for a professional and collaborative work environment.
 
-Link to deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/)
 ![GitHub contributors](https://img.shields.io/github/contributors/shida/)
@@ -20,7 +19,7 @@ Link to deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
 * [User Experience](#user-experience)
   * [User Stories](#user-stories)
 
-* [Design](#design)
+* [Design Structure](#design-structure)
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
   * [Imagery](#imagery)
@@ -29,7 +28,6 @@ Link to deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
     * [User Journey](#user-journey)
     * [First Draft Database Schema](#first-draft-database-schema)
     * [Final Database Schema](#final-database-schema)
-
 
 ------
 
@@ -41,21 +39,59 @@ This project is a concept which is aim at creating a co-working space community,
 
 With provision of state-of-the-art facilities, people will have access to high-speed internet, ergonomic workstations, private meeting rooms, and modern amenities that cater for their needs. DESK HQ offer flexible options to fit any schedule and budget, from daily passes to monthly booking, so people can work on their terms.
 
-DESK HQ IS targeted at freelancer, startup, or established business, who like to collaborate, network and a platform to grow business and achieve their goals.
+
+Link to deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
+
+## User Experience
+
+### User Stories
+
+#### __Target Audience__
+
+DESK HQ is targeted at freelancer, startup, or established business, who like to collaborate, network on a platform to grow business and achieve their goals.
+
+#### __Client Goals__ 
+
++ Create a program where the user can easily find information about the amenities and pricing of the space, so that I can make an informed decision about whether it is the right fit for me and my business.
+
++ Create a program that clearly list the available amenities such as high-speed internet, printing facilities, and meeting rooms, as well as the different booking options, such as daily passes, Training Rooms, private offices etc. 
+
++ Create a program that provide detailed information about the location of the space, including nearby transportation options and parking availability.
+
+#### __First Time Visitor Goals__
+
+As a first time user of the site I want to be able to:
+
++ Understand what the site is for and how to navigate the site.
++ Register for an account.
++ Quickly understand the benefits of co-working and how the space can help me grow my business, so that I am motivated to sign up.
++ Access the website from any device.
++ Contact somebody via the contact form or contact details for enquiry.
++ Receive feedback from my intaraction with the website
+
+#### __Returning Visitor Goals__
+
+As a returning user of the site I want to be able to:
+
++ Log in to my account.
++ Create, edit, delete and view my workspace booking.
++ Easily book a workspace.
 
 
+#### __Frequent Visitor Goals__
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+As a frequent user of the site I want to be able to:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
++ Easily access my account information and make changes to my bookings more efficiently.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### __Admin User__
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+As an administrator for the site I want to be able to:
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
++ Manage or approve booking contents.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- - -
+
 
 **April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
