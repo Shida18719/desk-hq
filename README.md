@@ -22,13 +22,18 @@
 * [Design Structure](#design-structure)
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
-  * [Imagery](#imagery)
+  * [Images](#images)
+  * [Visual Effects](#visual-effects)
   * [Wireframes](#wireframes)
   * [Database Schema & User Journey](#database-schema--user-journey)
     * [User Journey](#user-journey)
     * [First Draft Database Schema](#first-draft-database-schema)
     * [Final Database Schema](#final-database-schema)
 
+* [Features](#features)
+  * [Elements Fount on Each Page](#elements-found-on-each-page)
+  * [Future Implementations](#future-implementations)
+  * [Accessibility](#accessibility)
 ------
 
 ## Overview
@@ -112,9 +117,25 @@ Google Fonts was used to import the chosen fonts for use in the site.
 + Lato is used for headings on the site for readability, simple and clean looking, with a secondary of serif font.
 + Merriweather Sans is used for hero text on the site for readability, legible and is a great choice for accessibility, with a secondary of Roboto.
 
-## Wireframes
+### Images
 
-Wireframes original plan were created for mobile, tablet and desktop using Balsamiq.
+The images used for this project were sourced from [freepik](https://www.freepik.com/free-photos-vectors/office-space)
+
+### Visual Effects
+
+#### Hover effect
+The navbar links, brand name and buttons include a hover-over effect to make the experience more interactive and navigation more intuitive. When the user hovers over the link or button its colour, font-size or background colour changes.
+
+#### Shadows
+The shadows used on various cards and the navbar give them a raised effect, which makes them stand out from the white background. It is used to create an interesting effects and draw users attention.
+
+### Onscroll Button
+The onscroll button provides a better user experience as it allows users to easily navigate to the top of a page without having to manually scroll back up. Also, allows user to quickly move between different sections of the page.
+
+
+### Wireframes
+
+Wireframes original plan were created for mobile, tablet and desktop using Balsamiq. There are slight different from what was originally planned.
 
 ### __Home Page__
 
@@ -160,6 +181,14 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 <details><summary>click to expand</summary>
 <img src=./READMEimages/booking-form.png>
 </details>
+
+
+[Back to the Top](#welcome-to-desk-hq-project-4)
+
+---
+
+
+
 
 ```
 pkill uptime.sh
