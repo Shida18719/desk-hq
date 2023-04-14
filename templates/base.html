@@ -30,7 +30,7 @@
 
       <h1 class="logo-wrapper my-auto">
         <a class="navbar-brand" href="{% url 'home' %}">
-          <img src="{% static 'images/desk-hq-logo1.webp' %}" alt="Logo" width="30" height="30">
+          <img src="{% static 'images/desk-hq-logo2.png' %}" alt="Logo" width="32" height="32">
           <span class="fs-3 text-uppercase">Desk HQ</span>
         </a>
       </h1>
@@ -71,14 +71,6 @@
                   <a class="nav-link" href="{% url 'services' %}">Services</a>
                 </li>
                 {% if user.is_authenticated %}
-                <!-- <li class="nav-item">
-                  <button type="button" class="btn btn-primary position-relative">
-                  <a class="nav-link" href="{% url 'booking_details' %}">Booking Details</a>
-                  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    <span class="visually-hidden">New alerts</span> 
-                  </span>
-                  </button>
-                </li> -->
 
                 <li class="nav-item">
                   <a class="nav-link booking-btn" href="{% url 'booking_details' %}">Booking Details</a>
@@ -197,15 +189,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkbdGJ_uE8Scsn5U2u0ZjMqninbbeLnTg&callback=initMap"></script>
 
   <script src="{% static 'js/main.js' %}"></script>
-
-  <!-- Dismisses message alert after 3.5 seconds -->
-  <script>
-    setTimeout(function () {
-      let messages = document.getElementById('msg');
-      let alert = new bootstrap.Alert(messages);
-      alert.close();
-    }, 3500);
-  </script>
 
 </body>
 

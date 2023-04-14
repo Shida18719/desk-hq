@@ -48,6 +48,15 @@ function initMap() {
 window.initMap = initMap;
 
 
+// Dismisses message alert after 3.5 seconds -->
+
+  setTimeout(function () {
+    const messages = document.getElementById('msg');
+    const alert = new bootstrap.Alert(messages);
+    // alert.close();
+  }, 3500);
+
+
 // Back to top button
 
 // Create toggle
