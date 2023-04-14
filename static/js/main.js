@@ -47,6 +47,7 @@ function initMap() {
 
 window.initMap = initMap;
 
+
 // Back to top button
 
 // Create toggle
@@ -68,3 +69,8 @@ function toggleTopButton() {
       document.getElementById('back-to-up').classList.add('d-none');
     }
 }
+
+
+// Updates footer's copyright year with the current year
+const year = document.querySelector('#current-year');
+year.innerHTML = new Date().getFullYear();
