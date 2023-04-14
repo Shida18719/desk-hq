@@ -25,13 +25,11 @@
   * [Images](#images)
   * [Visual Effects](#visual-effects)
   * [Wireframes](#wireframes)
-  * [Database Schema & User Journey](#database-schema--user-journey)
-    * [User Journey](#user-journey)
-    * [First Draft Database Schema](#first-draft-database-schema)
-    * [Final Database Schema](#final-database-schema)
+  * [Development Plan](#development-plan)
+  * [Database Schema](#database-schema)
 
 * [Features](#features)
-  * [Elements Fount on Each Page](#elements-found-on-each-page)
+  * [Existing Features Across Page](existing-features-across-page)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
 ------
@@ -183,9 +181,59 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 </details>
 
 
+
+### Database Schema
+
+![Database Schema](./READMEimages/data-model.png)
+The database schema was created using Lucidchart. The table creation uses Elephant SQL. 
+
+
 [Back to the Top](#welcome-to-desk-hq-project-4)
 
 ---
+
+## Features
+
+## Existing Features Across Page
+***
+
+* Favicon - Created at [Favicon.io](https://favicon.io/). I have chosen a letter 'D'. The firest letter of DESK HQ, making it easier for users to identify and remember the website. The image has also been used as the logo for the site, which create an overall continuity through the site for users and promotes brand awareness.
+
+  ![DESK HQ favicon](./READMEimages/favicon-logo.png)
+
+* Navbar - The Navbar is displayed on all pages of the website and allows users to navigate the site with ease. The navbar is comprised of a logo, the sites name and links to navigate the site. The links on the navbar will vary depending on whether a user is logged into their account.
+
+  __User logged in Navbar__
+  
+  ![User logged in Navbar](./READMEimages/user-loggedin-navbar.png)
+
+  __User not logged in Navbar__
+
+  ![User not logged in Navbar](./READMEimages/user-not-loggedin-navbar.png)
+
+* Footer - A footer is displayed on all pages of the website and contains the copyright year which is updated to the current year with help of JavaScript.
+
+  ![Footer](./READMEimages/footer.png)
+
+- - -
+
+
++ ## Home Page
+***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -200,5 +248,3 @@ rm .vscode/uptime.sh
 Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
 ---
-
-Happy coding!
