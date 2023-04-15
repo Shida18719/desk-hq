@@ -34,7 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['desk-hq.herokuapp.com', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu93.gitpod.io/',
+    'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu94.gitpod.io/',
     ]
 
 
@@ -128,17 +128,17 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 
 
 # Password validation
