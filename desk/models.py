@@ -4,9 +4,6 @@ from datetime import datetime, timedelta
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
 from django.core.exceptions import ValidationError
-# django signals
-# from django.db.models.signals import post_save
-# from django.dispatch import receiver
 
 
 class Enquiry(models.Model):
@@ -99,7 +96,6 @@ def validate_date(date):
     Create validation for user chosen date
     """
     if date <= timezone.now().date():
-    # if date <= datetime.now().date():
         raise ValidationError("Date cannot be in the past or the same day.")
     return date
 
@@ -163,7 +159,6 @@ class Booking(models.Model):
         null=True, default="Day WorkStation")
 
     booking_date = models.DateField(
-        # default=(datetime.now() + timedelta(days=1)),
         default=(timezone.now().date() + timezone.timedelta(days=1)),
         validators=[validate_date])
     booking_duration = models.CharField(
