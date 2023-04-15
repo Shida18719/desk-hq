@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from desk.models import Booking, Service, Enquiry
 from .forms import BookingForm, ContactForm
 from django.views.generic.edit import FormView, UpdateView, DeleteView
@@ -41,7 +42,7 @@ class ContactFormView(FormView):
                 return HttpResponse("")
 
 
-class BookingsList(ListView):
+class BookingsList(LoginRequiredMixin, ListView):
     """
     View for users Booking
     """
@@ -54,7 +55,7 @@ class BookingsList(ListView):
         return Booking.objects.filter(client=self.request.user)
 
 
-class BookingFormView(FormView):
+class BookingFormView(LoginRequiredMixin, FormView):
     """
     View for displaying booking availability and allow user to create booking.
     """
@@ -79,11 +80,10 @@ class BookingFormView(FormView):
                     messages.INFO,
                     'Sorry!, A signin is required first.')
                 return HttpResponseRedirect(reverse('account_login'))
-                # return HttpResponseRedirect('/accounts/login/')
                 # return super(BookingFormView, self).form_valid(form)
         else:
-            # return self.form_invalid(form)
-            return super(BookingFormView, self).post(request)
+            return self.form_invalid(form)
+            # return super(BookingFormView, self).post(request)
 
 
 class BookingUpdateView(UpdateView):
