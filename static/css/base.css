@@ -1,3 +1,4 @@
+/*---------- GOOGLE FONT IMPORT ----------*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather+Sans:wght@300&family=Montserrat&family=Open+Sans&display=swap');
 
 /* Base reset */
@@ -21,6 +22,10 @@ h2, h3{
 
 .navbar-brand:hover{
     color:rgb(25, 75, 225);
+}
+
+footer .navbar-brand:hover{
+    color:rgb(29, 34, 48);
 }
 
 .navbar-toggler{
@@ -65,7 +70,6 @@ h2, h3{
 .hero-image2{
     min-height: 80vh;
     background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678959061/executive-wrkspace_q9lxvt.jpg);
-    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -74,7 +78,6 @@ h2, h3{
 .hero-image3{
     min-height: 80vh;
     background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678967592/day-workstation-hero_hbuwzt.jpg);
-    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -203,9 +206,9 @@ h2, h3{
 }
 
   /***********  Footer ***********/
-footer {
+/* footer {
     color: #fff; 
-}
+} */
 .bg-footer{
     background-color: #0077B6;
     color: #fff;
@@ -219,13 +222,13 @@ footer {
 
 .social-links a>i:hover { 
     transform: translateY(3px);
-    color: #00B4D8;
-    background: #FAFAFA;
+    color: #03045E;
+    background: #fff;
 }
 
 .git-link a{
     text-decoration: none;
-    color: #eee;
+    color: #fff;
     font-size: 0.8rem;
 }
 

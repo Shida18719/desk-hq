@@ -14,7 +14,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-8 text-center mx-auto image-txt">
-                            <h1 class="hero-text mb-5">YOUR WORKSPACE MADE EASY</h1>
+                            <h2 class="hero-text mb-5">YOUR WORKSPACE MADE EASY</h2>
                             <a href="{% url 'space_booking' %}" class="btn btn-lg btn-bookspace">Book a Space</a>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-8 text-center mx-auto image-txt">
-                            <h1 class="hero-text mb-5">WORKSPACE WHERE INNOVATION HAPPENS</h1>
+                            <h2 class="hero-text mb-5">WORKSPACE WHERE INNOVATION HAPPENS</h2>
                             <a href="{% url 'space_booking' %}" class="btn btn-lg btn-bookspace">Book a Space</a>
                         </div>
                     </div>
@@ -51,36 +51,34 @@
 <section class="container mt-3 location-image">
     <div class="row">
         <div class="col-12 my-4">
-            <h2 class="location-text text-center">FIND YOUR WORKSPACE</h2>
+            <h3 class="location-text text-center">FIND YOUR WORKSPACE</h3>
         </div>
     </div>
 
-    <div class="">
         <div class="row gy-5 gap-md-0">
             <div class="col-12 col-md-6 d-flex justify-content-center">
                 <div class="card text-center">
-                    <img loading="lazy" src="{% static 'images/desk-hq-loc1.png' %}"
-                        class="img-fluid rounded-start card-img-top" alt="location image">
+                    <img loading="lazy" src="{% static 'images/desk-hq-loc1.png' %}" width="500" height="500"
+                        class="img-fluid rounded card-img-top" alt="location image">
                     <div class="card-body">
-                        <h5 class="card-title">DESK HQ Brooklyn House</h5>
+                        <h4 class="card-title">DESK HQ Brooklyn House</h4>
                         <p>3 STONE AVENUE LONDON SE5 2AZ</p>
-                        <a href="{% url 'services' %}" class="btn btn-location">Learn more</a>
+                        <a href="{% url 'services' %}" class="btn btn-location" aria-label="Go To Services Page">Our Services</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-center">
                 <div class="card text-center">
-                    <img loading="lazy" src="{% static 'images/desk-hq-loc2.png' %}" class="rounded card-img-top"
-                        class="img-fluid rounded-start card-img-top" alt="location image">
+                    <img loading="lazy" src="{% static 'images/desk-hq-loc2.png' %}" width="500" height="500"
+                        class="img-fluid rounded card-img-top" alt="location image">
                     <div class="card-body">
-                        <h5 class="card-title">DESK HQ Dockyard Place</h5>
+                        <h4 class="card-title">DESK HQ Dockyard Place</h4>
                         <p>55 PARADE STREET LONDON E20 3YB</p>
-                        <a href="{% url 'services' %}" class="btn btn-location">Learn more</a>
+                        <a href="{% url 'services' %}" class="btn btn-location" aria-label="Go To Services Page">Our Services</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!--/Location images-->
 
@@ -93,16 +91,16 @@
                     <div class="col-2">
                         <i class="fa-sharp fa-solid fa-map-location-dot" aria-hidden="true"></i>
                     </div>
-                    <h3 class="col-10">Our Workspace Locations</h3>
+                    <h4 class="col-10">Our Workspace Locations</h4>
                 </div>
             </div>
-            <p class="">
+            <p>
                 Our locations are easily accessible, good public transportation options, with buses and train
                 stations
                 nearby. Shopping mall, cafe and bar located near.
             </p>
             <div class="mt-5">
-                <h3>Give us a shout</h3>
+                <h4>Give us a shout</h4>
                 <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">
                     <div class="row">
                         <div class="col-2">
@@ -127,7 +125,7 @@
     <section id="contact-us">
         <div class="row my-5">
             <div class="col-md-12">
-                <h2 class="text-center"><strong>CONTACT US</strong></h2>
+                <h3 class="text-center"><strong>CONTACT US</strong></h3>
                 <P class="container-fluid col-lg-8 mt-4 mt-lg-0 text-center">Like to know more about our booking? Fill out the form
                     below and one of our team will reach out to you soon.</P>
 
@@ -137,18 +135,14 @@
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-12 col-md-6 mt-3 mt-md-3">
-                                    <!-- {{ form.name | as_crispy_field }} -->
                                     <input type="text" name="name" class="form-control" id="name"
                                         placeholder="Your Name" required>
                                 </div>
                                 <div class="col-12 col-md-6 mt-3 mt-md-3">
-                                    <!-- {{ form.email | as_crispy_field }} -->
                                     <input type="email" class="form-control" name="email" id="email"
                                         placeholder="Your Email" required>
                                 </div>
                             </div>
-                            <!-- {{ form.subject | as_crispy_field }}
-                            {{ form.message | as_crispy_field }} -->
                             <div class="mt-3">
                                 <input type="text" class="form-control" name="subject" id="subject"
                                     placeholder="Subject" required>

@@ -6,12 +6,12 @@
 
 <div class="container">
   <div class="row text-center">
-    <h1 class="col-12 mt-5">EXPLORE OUR SPACES</h1>
+    <h2 class="col-12 mt-5">EXPLORE OUR SPACES</h2>
   </div>
 </div>
 
 <!-- Services Type Section-->
-<section class="container service-container ">
+<section class="container">
   {% for service in services %}
   {% if not forloop.counter|divisibleby:2 %}
   <div class="row g-3">
@@ -19,10 +19,10 @@
       <div class="col">
         {% if 'placeholder' in service.featured_image.url %}
         <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg"
-          class="img-fluid" alt="Default Image">
+        width="600" height="400" class="img-fluid" alt="Default Image">
         {% else %}
         <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}"
-        class="img-fluid">
+        width="600" height="400" class="img-fluid">
         {% endif %}
       </div>
     </div>
@@ -48,10 +48,10 @@
         <div class="col mb-4">
           {% if 'placeholder' in service.featured_image.url %}
           <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg"
-          class="img-fluid" alt="Default Image">
+          width="600" height="400" class="img-fluid" alt="Default Image">
           {% else %}
           <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}"
-          class="img-fluid">
+          width="600" height="400" class="img-fluid">
           {% endif %}
         </div>
       </div>
@@ -61,7 +61,7 @@
 </section>
 
     <!-- Featured facilities section -->
-    <section class="container facility-container">
+    <section class="container">
       <div class="row text-center">
         <h3 class="col-12 mt-5">FACILITIES & BENEFITS</h3>
       </div>
