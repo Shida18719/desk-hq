@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather+Sans:wght@300&family=Montserrat&family=Open+Sans&display=swap');
 
 /* Base reset */
+
 *{
     padding: 0;
     margin: 0;
@@ -61,7 +62,7 @@ footer .navbar-brand:hover{
 
 .hero-image1{
     min-height: 80vh;
-    background: linear-gradient(rgba(3, 13, 22, 0.1), rgba(3, 13, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -82,6 +83,17 @@ footer .navbar-brand:hover{
     background-size: cover;
     background-position: center;
 }
+
+.image-txt1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 2rem;
+    color: #000000e6;
+}
+
 .image-txt {
     position: absolute;
     top: 50%;
@@ -124,6 +136,11 @@ footer .navbar-brand:hover{
 }
 
 /* ********* Booking Detail************** */
+.booking-details {
+    margin-top: 10vh;
+    min-height: 120vh;
+}
+
 .booking-details-card li {
     list-style: none;
 }
@@ -132,9 +149,9 @@ footer .navbar-brand:hover{
     color: #00B4D8;
 }
 
-.no-booking{
+/* .no-booking{
     background-color: #CAF0F8;
-}
+} */
 
 .modal {
     --bs-modal-bg: #CAF0F8;
@@ -201,14 +218,11 @@ footer .navbar-brand:hover{
   }
 
   .btn-enquiry:hover {
-    background-color: #00B4D8;
+    background-color: #03045E;
     color: #fff;
 }
 
   /***********  Footer ***********/
-/* footer {
-    color: #fff; 
-} */
 .bg-footer{
     background-color: #0077B6;
     color: #fff;

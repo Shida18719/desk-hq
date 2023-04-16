@@ -15,14 +15,14 @@
   {% for service in services %}
   {% if not forloop.counter|divisibleby:2 %}
   <div class="row g-3">
-    <div class="mt-5 col-lg-6 col-xl-6 service-img1">
+    <div class="mt-5 col-lg-6 col-xl-6">
       <div class="col">
         {% if 'placeholder' in service.featured_image.url %}
         <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg"
         width="600" height="400" class="img-fluid" alt="Default Image">
         {% else %}
         <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}"
-        width="600" height="400" class="img-fluid">
+        width="600" height="400">
         {% endif %}
       </div>
     </div>
@@ -51,7 +51,7 @@
           width="600" height="400" class="img-fluid" alt="Default Image">
           {% else %}
           <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}"
-          width="600" height="400" class="img-fluid">
+          width="600" height="400">
           {% endif %}
         </div>
       </div>

@@ -33,7 +33,7 @@
   <header id="header" class="fixed-top shadow mb-5 bg-body rounded">
     <div class="container-fluid d-flex justify-content-between bg-light navbar-expand-lg">
 
-      <h1 class="logo-wrapper my-auto">
+      <h1 class="my-auto">
         <a class="navbar-brand" href="{% url 'home' %}">
           <!-- <img src="{% static 'images/desk-hq-logo2.jpg' %}" alt="Logo" width="32" height="32"> -->
           <img src="https://res.cloudinary.com/dep46gq6m/image/upload/v1681577956/desk-hq-logo2_r9wf3v.jpg"
@@ -178,7 +178,7 @@
 
   <!-- Back to top button -->
   <button class="btn btn-sm btn-primary rounded-square position-fixed bottom-0 end-0 translate-middle d-none"
-    onclick="scrollToTop()" id="back-to-up">
+    onclick="scrollToTop()" id="back-to-up" aria-label="Back To Top">
     <i class="fa fa-arrow-up" aria-hidden="true"></i>
   </button>
   <!-- /End Back to top button -->

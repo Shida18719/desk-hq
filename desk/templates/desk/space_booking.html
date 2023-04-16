@@ -6,7 +6,7 @@
 <div class="container booking-info">
   <div class="row">
     <div class="col-12 col-md-8 col-lg-6 mx-auto mt-sm-4 mt-md-5 mt-lg-6 mt-5">
-      <div class="card shadow user-log">
+      <div class="card shadow">
         <div class="card-body">
           <div class="row">
             <div class="col-md-12 mt-3">
@@ -19,7 +19,7 @@
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="d-grid gap-2 col-6 col-sm-12 mx-auto">
-                  <button class="btn btn-bookspace" type="submit">BOOK WORKSPACE</button>
+                  <button class="btn btn-bookspace" type="submit" aria-label="BOOK WORKSPACE">BOOK WORKSPACE</button>
                 </div>
                 <div class="row">
                   <div class="col-12">

@@ -9,10 +9,10 @@ function initMap() {
         }
     });
 
-    const infoWindow = new google.maps.InfoWindow({
-        content: "",
-        disableAutoPan: true,
-      });
+    // const infoWindow = new google.maps.InfoWindow({
+    //     content: "",
+    //     disableAutoPan: true,
+    //   });
 
     // Create an array of alphabetical characters used to label the markers.
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -33,10 +33,10 @@ function initMap() {
 
         // markers can only be keyboard focusable when they have click listeners
         // open info window when marker is clicked
-        marker.addListener("click", () => {
-            infoWindow.setContent(label);
-            infoWindow.open(map, marker);
-        });
+        // marker.addListener("click", () => {
+        //     infoWindow.setContent(label);
+        //     infoWindow.open(map, marker);
+        // });
   
         return marker;
     });
@@ -45,7 +45,7 @@ function initMap() {
     new markerClusterer.MarkerClusterer({ markers, map });
 }
 
-window.initMap = initMap;
+// window.initMap = initMap;
 
 
 // Dismisses message alert after 3.5 seconds -->
@@ -53,7 +53,7 @@ window.initMap = initMap;
   setTimeout(function () {
     const messages = document.getElementById('msg');
     const alert = new bootstrap.Alert(messages);
-    // alert.close();
+    alert.close();
   }, 3500);
 
 
