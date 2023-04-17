@@ -1,5 +1,5 @@
 /*---------- GOOGLE FONT IMPORT ----------*/
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather+Sans:wght@300&family=Montserrat&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&display=swap');
 
 /* Base reset */
 
@@ -62,7 +62,7 @@ footer .navbar-brand:hover{
 
 .hero-image1{
     min-height: 80vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg);
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681747180/office-desk1_xvn2t7.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -70,7 +70,7 @@ footer .navbar-brand:hover{
 
 .hero-image2{
     min-height: 80vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678959061/executive-wrkspace_q9lxvt.jpg);
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681747420/executive-workspace_isitrb.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -78,7 +78,7 @@ footer .navbar-brand:hover{
 
 .hero-image3{
     min-height: 80vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1678967592/day-workstation-hero_hbuwzt.jpg);
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681748664/day-workstation-hero_iovm0t.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -91,7 +91,8 @@ footer .navbar-brand:hover{
     transform: translate(-50%, -50%);
     border-radius: 5px;
     padding: 2rem;
-    color: #000000e6;
+    /* color: #000000e6; */
+    color:#fff
 }
 
 .image-txt {
@@ -105,7 +106,7 @@ footer .navbar-brand:hover{
 }
 
 .hero-text{
-    font-family: 'Merriweather Sans', Roboto, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 250%;
 }
