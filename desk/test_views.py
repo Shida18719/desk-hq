@@ -136,6 +136,19 @@ class BookingCreateViewTest(TestCase):
 
         self.assertTrue(Booking.objects.filter(client=self.user).exists())
 
+    # def test_create_booking_invalid_form(self):
+    #     # Login the user
+    #     self.client.login(
+    #         username=self.user.username, password=self.user.password)
+
+    #     # Submit the booking form
+    #     response = self.client.post(
+    #         reverse('space_booking'), {'location': ''})
+        
+        # Check that the booking was created successfully
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Booking.objects.count(), 0)
+
     def test_create_booking_unauthenticated(self):
         # Submit the booking form without logging in
         user_login = self.client.login(
@@ -147,14 +160,4 @@ class BookingCreateViewTest(TestCase):
         # Check that the user is redirected to the login page
         self.assertRedirects(response, '/accounts/login/?next=/space_booking/')
         self.assertEqual(response.status_code, 302)
-
-        # check if the success message was displayed
-        # messages = get_messages(response.wsgi_request)
-        # self.assertIn(
-        #     'A signin is required to create a booking.',
-        #     [str(message) for message in messages])
-        # self.assertContains(response, 'A signin is required to create a booking.')
-
-        # Check that the booking was not saved to the database
-        # self.assertEqual(Booking.objects.count(), 0)
         self.assertFalse(user_login)
