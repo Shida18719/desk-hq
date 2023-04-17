@@ -55,38 +55,65 @@ class BookingsList(LoginRequiredMixin, ListView):
         return Booking.objects.filter(client=self.request.user)
 
 
-class BookingFormView(LoginRequiredMixin, FormView):
+class BookingCreateView(LoginRequiredMixin, FormView):
     """
-    View for displaying booking availability and allow user to create booking.
+    View for displaying booking form and allow user to create booking.
     """
+    model = Booking
     form_class = BookingForm
     template_name = 'desk/space_booking.html'
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
+    # def post(self, request, *args, **kwargs):
+    #     # form_class = self.get_form_class()
+    #     # form = self.get_form(form_class)
+    #     if request.method == "POST":
+    #         booking_form = self.form_class(request.POST)
+    #     if form.is_valid():
+    #         if self.request.user.is_authenticated:
+    #             form.instance.client = self.request.user
+    #         # <process form cleaned data>
+    #             form.save()
+    #             messages.add_message(
+    #                 request,
+    #                 messages.SUCCESS,
+    #                 'Thank you for using DESK HQ. Your Booking was created successfully.')
+    #             return HttpResponseRedirect(reverse('home'))
+    #         else:
+    #             # User is not authenticated, return an error message
+    #             messages.add_message(
+    #                 request,
+    #                 messages.INFO,
+    #                 'A signin is required to create a booking.')
+    #             return HttpResponseRedirect(reverse('account_login'))
+    #             # return super(BookingCreateView, self).form_valid(form)
+    #     else:
+    #         return self.form_invalid(form)
+
+    def form_valid(self, form):
+            booking_form = self.get_form_class()
+            form = self.get_form(booking_form)
+        # if form.is_valid():
             if self.request.user.is_authenticated:
                 form.instance.client = self.request.user
-            # <process form cleaned data>
+                # <process form cleaned data>
                 form.save()
-                messages.add_message(
-                    request,
-                    messages.SUCCESS,
-                    'Thank you for using DESK HQ. Your Booking was created successfully.')
+                messages.success(
+                    self.request, 'Thank you for using DESK HQ. Your Booking was created successfully.')
+                    # return super().form_valid(form)
                 return HttpResponseRedirect(reverse('home'))
             else:
-                messages.add_message(
-                    request,
-                    messages.INFO,
-                    'Sorry!, A signin is required first.')
+                messages.error(
+                    self.request, 'Sorry!, A signin is required first.')
                 return HttpResponseRedirect(reverse('account_login'))
-                # return super(BookingFormView, self).form_valid(form)
-        else:
-            return self.form_invalid(form)
-            # return super(BookingFormView, self).post(request)
+            
+    def form_invalid(self, form):
+        messages.error(
+            self.request, 'Sorry, there was an error with your booking.')
+        # return super().form_invalid(form)
+        return HttpResponseRedirect(reverse('account_login'))
 
 
-class BookingUpdateView(UpdateView):
+class BookingUpdateView(LoginRequiredMixin, UpdateView):
     """
     View allows user to edit and update their booking and
     redirects them to booking details.

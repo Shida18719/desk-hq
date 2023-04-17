@@ -155,7 +155,7 @@ class Booking(models.Model):
 
     space_booking = models.ForeignKey(
         Service,
-        on_delete=models.CASCADE, related_name='space_booking',
+        on_delete=models.CASCADE, related_name='space_bookings',
         null=True, default="Day WorkStation")
 
     booking_date = models.DateField(
