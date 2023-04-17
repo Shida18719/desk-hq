@@ -63,49 +63,14 @@ class BookingCreateView(LoginRequiredMixin, FormView):
     form_class = BookingForm
     template_name = 'desk/space_booking.html'
 
-    # def post(self, request, *args, **kwargs):
-    #     # form_class = self.get_form_class()
-    #     # form = self.get_form(form_class)
-    #     if request.method == "POST":
-    #         booking_form = self.form_class(request.POST)
-    #     if form.is_valid():
-    #         if self.request.user.is_authenticated:
-    #             form.instance.client = self.request.user
-    #         # <process form cleaned data>
-    #             form.save()
-    #             messages.add_message(
-    #                 request,
-    #                 messages.SUCCESS,
-    #                 'Thank you for using DESK HQ. Your Booking was created successfully.')
-    #             return HttpResponseRedirect(reverse('home'))
-    #         else:
-    #             # User is not authenticated, return an error message
-    #             messages.add_message(
-    #                 request,
-    #                 messages.INFO,
-    #                 'A signin is required to create a booking.')
-    #             return HttpResponseRedirect(reverse('account_login'))
-    #             # return super(BookingCreateView, self).form_valid(form)
-    #     else:
-    #         return self.form_invalid(form)
-
     def form_valid(self, form):
-            booking_form = self.get_form_class()
-            form = self.get_form(booking_form)
-        # if form.is_valid():
-            if self.request.user.is_authenticated:
-                form.instance.client = self.request.user
-                # <process form cleaned data>
-                form.save()
-                messages.success(
-                    self.request, 'Thank you for using DESK HQ. Your Booking was created successfully.')
-                    # return super().form_valid(form)
-                return HttpResponseRedirect(reverse('home'))
-            else:
-                messages.error(
-                    self.request, 'Sorry!, A signin is required first.')
-                return HttpResponseRedirect(reverse('account_login'))
-            
+        form.instance.client = self.request.user
+        # <process form cleaned data>
+        form.save()
+        messages.success(
+            self.request, 'Thank you for using DESK HQ. Your Booking was created successfully.')
+        return HttpResponseRedirect(reverse('home'))
+           
     def form_invalid(self, form):
         messages.error(
             self.request, 'Sorry, there was an error with your booking.')
