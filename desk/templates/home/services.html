@@ -21,7 +21,7 @@
         <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1678958093/office-desk_bwtoie.jpg"
         width="600" height="400" class="img-fluid" alt="Default Image">
         {% else %}
-        <img loading="lazy" src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}"
+        <img src="{{ service.featured_image.url }}" class="img-fluid" alt="{{ service.space_type }}"
         width="600" height="400">
         {% endif %}
       </div>
