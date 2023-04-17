@@ -9,11 +9,6 @@ function initMap() {
         }
     });
 
-    // const infoWindow = new google.maps.InfoWindow({
-    //     content: "",
-    //     disableAutoPan: true,
-    //   });
-
     // Create an array of alphabetical characters used to label the markers.
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -30,13 +25,6 @@ function initMap() {
           position,
           label,
         });
-
-        // markers can only be keyboard focusable when they have click listeners
-        // open info window when marker is clicked
-        // marker.addListener("click", () => {
-        //     infoWindow.setContent(label);
-        //     infoWindow.open(map, marker);
-        // });
   
         return marker;
     });
@@ -44,8 +32,6 @@ function initMap() {
     // Add a marker clusterer to manage the markers.
     new markerClusterer.MarkerClusterer({ markers, map });
 }
-
-// window.initMap = initMap;
 
 
 // Dismisses message alert after 3.5 seconds -->
@@ -58,16 +44,17 @@ function initMap() {
 
 
 // Back to top button
-
 // Create toggle
-window.onscroll = () => {
-    toggleTopButton();
-}
+  window.onscroll = () => {
+      toggleTopButton();
+  }
+
 
 // When user clicks on the button, scroll to the top of the page with scroll behavior of smooth.
-function scrollToTop(){
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
+  function scrollToTop(){
+      window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
   
 // When user scrolls down 20px from the top of the page, display button
 function toggleTopButton() {
@@ -81,5 +68,5 @@ function toggleTopButton() {
 
 
 // Updates footer's copyright year with the current year
-const year = document.querySelector('#current-year');
-year.innerHTML = new Date().getFullYear();
+  const year = document.querySelector('#current-year');
+  year.innerHTML = new Date().getFullYear();
