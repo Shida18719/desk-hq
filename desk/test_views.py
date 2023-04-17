@@ -96,8 +96,6 @@ class BookingCreateViewTest(TestCase):
             space_booking=self.space_booking,
             booking_duration='1 Hour',
             booking_date=date(2023, 5, 12),
-            # booking_start=datetime.now() + timedelta(hours=1),
-            # booking_end=datetime.now() + timedelta(hours=2),
 
             booking_start=(datetime.now() + timedelta(hours=1)).strftime('%Y-%m-%d %H:%M:%S.%f'),
             booking_end=(datetime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S.%f'),
