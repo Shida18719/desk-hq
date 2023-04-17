@@ -149,10 +149,6 @@ footer .navbar-brand:hover{
     color: #00B4D8;
 }
 
-/* .no-booking{
-    background-color: #CAF0F8;
-} */
-
 .modal {
     --bs-modal-bg: #CAF0F8;
     --bs-modal-border-radius: 0;
@@ -253,25 +249,21 @@ footer .navbar-brand:hover{
 }
 
   /*********** Media Query ***********/
-  @media (max-width:768px){
-    .signin-card,
+  /* @media (max-width:768px){
     .signup-card{
         width: 60%;
     }
   }
 
   @media (max-width:576px){
-    .signin-card,
-    
     .signup-card{
         width: 80%;
     }
-  }
+  } */
 
   @media (max-width:300px){
     .booking-page,
-    .form-page,
-    .signup-card{
+    .form-page {
         width: 100%;
     }
   }

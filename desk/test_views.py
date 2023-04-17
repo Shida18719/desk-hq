@@ -121,15 +121,6 @@ class BookingCreateViewTest(TestCase):
         response = self.client.post(
             reverse('space_booking'), self.booking_data)
 
-        print("Response--------------------------------------")
-        print(f"response_path: {response.request.get('PATH_INFO')}")
-        print(f"response: {response}")
-        print("-------------------------------------- \n")
-        form = (self.booking_data)
-        print("Form: --------------------------------------")
-        print(f"form: {form}")
-        print("--------------------------------------\n")
-
         # Check that the booking was created successfully
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Booking.objects.count(), 1)
@@ -140,7 +131,6 @@ class BookingCreateViewTest(TestCase):
         self.assertEqual(booking.booking_date, self.booking_data['booking_date'])
         self.assertEqual(booking.booking_duration, self.booking_data['booking_duration'])
         self.assertEqual(booking.booking_start, self.booking_data['booking_start'])
-
         self.assertEqual(booking.booking_end, self.booking_data['booking_end'])
         self.assertEqual(booking.client, self.booking_data['client'])
 
@@ -148,14 +138,13 @@ class BookingCreateViewTest(TestCase):
 
     def test_create_booking_unauthenticated(self):
         # Submit the booking form without logging in
-        # self.client.login(user=self.user)
         user_login = self.client.login(
             username=self.user.username, password=self.user.password)
         booking_form = BookingForm(self.booking_data)
         response = self.client.post(
             reverse('space_booking'), self.booking_data)
 
-    #     # Check that the user is redirected to the login page
+        # Check that the user is redirected to the login page
         self.assertRedirects(response, '/accounts/login/?next=/space_booking/')
         self.assertEqual(response.status_code, 302)
 
@@ -166,6 +155,6 @@ class BookingCreateViewTest(TestCase):
         #     [str(message) for message in messages])
         # self.assertContains(response, 'A signin is required to create a booking.')
 
-    #     # Check that the booking was not saved to the database
+        # Check that the booking was not saved to the database
         # self.assertEqual(Booking.objects.count(), 0)
         self.assertFalse(user_login)
