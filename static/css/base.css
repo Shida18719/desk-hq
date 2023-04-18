@@ -265,11 +265,11 @@ footer .navbar-brand:hover{
 /* Tablets */
 @media only screen and (min-width : 481px) {
     h1 {
-        font-size: 3.5rem; 
+        font-size: 3.8rem; 
     }
 
     body {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
 }
