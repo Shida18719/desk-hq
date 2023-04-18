@@ -57,31 +57,37 @@ footer .navbar-brand:hover{
 
 .page-top{
     margin-top: 5vh;
-    /* min-height: 95vh; */
 }
 
-.hero-image1{
-    min-height: 80vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681747180/office-desk1_xvn2t7.jpg);
+.hero-image1 {
+    aspect-ratio: 3 / 4; 
+
+    min-height: 50vh;
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681826348/sm-hero1_umfe9c.jpg);
+    background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.hero-image2{
-    min-height: 80vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681747420/executive-workspace_isitrb.jpg);
+.hero-image2 {
+    aspect-ratio: 3 / 4; 
+    min-height: 50vh;
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681827238/sm-hero2_ksg9yr.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-blend-mode: overlay;
 }
 
 .hero-image3{
-    min-height: 80vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681748664/day-workstation-hero_iovm0t.jpg);
+    aspect-ratio: 2 / 3; 
+    min-height: 50vh;
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681821780/day-workstation-hero_2_ermq9s.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-blend-mode: overlay;
 }
 
 .image-txt1 {
@@ -92,10 +98,12 @@ footer .navbar-brand:hover{
     border-radius: 5px;
     padding: 2rem;
     /* color: #000000e6; */
-    color:#fff
+    color:#fff;
+    background-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(8px);
 }
 
-.image-txt {
+.image-txt2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -103,6 +111,8 @@ footer .navbar-brand:hover{
     border-radius: 5px;
     padding: 2rem;
     color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(5px);
 }
 
 .hero-text{
@@ -267,4 +277,46 @@ footer .navbar-brand:hover{
     .form-page {
         width: 100%;
     }
+  }
+
+
+  @media (min-width: 768px) {
+    .hero-image1 {
+      aspect-ratio: 2 / 3;
+
+      background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681829512/md-hero1_on8i85.jpg);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .hero-image1 {
+        aspect-ratio: 16 / 9;
+        min-height: 80vh;
+        background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681819424/office-desk-main_jco5cx.jpg);
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* font-size: 4vw; */
+      } 
+      
+      .hero-image2 {
+        aspect-ratio: 16 / 9;
+        min-height: 80vh;
+        background-image: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681820253/private-workspace_tizfjv.jpg);
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    
+      .hero-image3 {
+        aspect-ratio: 16 / 9;
+        min-height: 80vh;
+        background-image: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681820292/day-workstation-hero3_rsphtp.jpg);
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
   }
