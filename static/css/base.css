@@ -62,7 +62,7 @@ footer .navbar-brand:hover{
 .hero-image1 {
     aspect-ratio: 3 / 4; 
 
-    min-height: 50vh;
+    min-height: 30vh;
     background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681826348/sm-hero1_umfe9c.jpg);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -97,7 +97,6 @@ footer .navbar-brand:hover{
     transform: translate(-50%, -50%);
     border-radius: 5px;
     padding: 2rem;
-    /* color: #000000e6; */
     color:#fff;
     background-color: rgba(255, 255, 255, .1);
     backdrop-filter: blur(8px);
@@ -259,18 +258,7 @@ footer .navbar-brand:hover{
     margin-top: 0.8rem;
 }
 
-  /*********** Media Query ***********/
-  /* @media (max-width:768px){
-    .signup-card{
-        width: 60%;
-    }
-  }
-
-  @media (max-width:576px){
-    .signup-card{
-        width: 80%;
-    }
-  } */
+/**************** Media Query  **************/
 
   @media (max-width:300px){
     .booking-page,
@@ -279,11 +267,11 @@ footer .navbar-brand:hover{
     }
   }
 
-
+/**************** Hero images  **************/
   @media (min-width: 768px) {
     .hero-image1 {
       aspect-ratio: 2 / 3;
-
+      min-height: 40vh;
       background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681829512/md-hero1_on8i85.jpg);
     }
   }
