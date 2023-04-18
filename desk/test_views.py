@@ -135,15 +135,6 @@ class BookingCreateViewTest(TestCase):
         self.assertEqual(booking.client, self.booking_data['client'])
 
         self.assertTrue(Booking.objects.filter(client=self.user).exists())
-
-    # def test_create_booking_invalid_form(self):
-    #     # Login the user
-    #     self.client.login(
-    #         username=self.user.username, password=self.user.password)
-
-    #     # Submit the booking form
-    #     response = self.client.post(
-    #         reverse('space_booking'), {'location': ''})
         
         # Check that the booking was created successfully
         self.assertEqual(response.status_code, 302)

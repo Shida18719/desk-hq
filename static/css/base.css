@@ -62,7 +62,7 @@ footer .navbar-brand:hover{
 .hero-image1 {
     aspect-ratio: 3 / 4; 
 
-    min-height: 30vh;
+    min-height: 40vh;
     background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681826348/sm-hero1_umfe9c.jpg);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -72,7 +72,7 @@ footer .navbar-brand:hover{
 
 .hero-image2 {
     aspect-ratio: 3 / 4; 
-    min-height: 50vh;
+    min-height: 40vh;
     background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681827238/sm-hero2_ksg9yr.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,7 +82,7 @@ footer .navbar-brand:hover{
 
 .hero-image3{
     aspect-ratio: 2 / 3; 
-    min-height: 50vh;
+    min-height: 40vh;
     background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681821780/day-workstation-hero_2_ermq9s.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -272,7 +272,10 @@ footer .navbar-brand:hover{
     .hero-image1 {
       aspect-ratio: 2 / 3;
       min-height: 40vh;
-      background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681829512/md-hero1_on8i85.jpg);
+      background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681834099/md-hero1_gjt7xp.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
   }
   
