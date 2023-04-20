@@ -1,5 +1,6 @@
 /*---------- GOOGLE FONT IMPORT ----------*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,600;0,700;&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;&display=swap'); */
 
 /* Base reset */
 
@@ -11,7 +12,7 @@
 
 body {
     font-family: 'Open sans', sans-serif;
-    font-size: 1.3rem;
+    /* font-size: 1.2rem; */
     background-color: #F4F4F9;
 }
 
@@ -43,11 +44,11 @@ footer .navbar-brand:hover{
 }
 
 .nav-link, .offcanvas-title {
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #03045E;
 }
 
-.booking-btn{
+.booking-highlight{
     border: 1px solid #0077B6;
     background-color: #0077B6;
     border-radius: 5px;
@@ -163,7 +164,7 @@ footer .navbar-brand:hover{
 }
 
 .modal {
-    --bs-modal-bg: #CAF0F8;
+    --bs-modal-bg: #f4f4f9;
     --bs-modal-border-radius: 0;
 }
 
@@ -262,7 +263,7 @@ footer .navbar-brand:hover{
 }
 
 /**************** Media Query  **************/
-/* Tablets */
+/* Tablets & ipads*/
 @media only screen and (min-width : 481px) {
     h1 {
         font-size: 3.8rem; 
@@ -271,16 +272,13 @@ footer .navbar-brand:hover{
     body {
         font-size: 1.5rem;
     }
-
 }
 
 /* Laptops */
 @media only screen and (min-width : 769px) {
-
     h1 {
         font-size: 5rem;  
     }
-
 }
 
 /* Booking */
