@@ -15,9 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import handler400, handler404, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('desk.urls')),
 ]
+
+
+# Error handler urls
+
+handler400 = 'deskspace.views.handler400'
+handler404 = 'deskspace.views.handler404'
+handler500 = 'deskspace.views.handler500'
