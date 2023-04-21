@@ -1,6 +1,6 @@
 /*---------- GOOGLE FONT IMPORT ----------*/
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,600;0,700;&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap');
 
 /* Base reset */
 
@@ -12,7 +12,7 @@
 
 body {
     font-family: 'Open sans', sans-serif;
-    /* font-size: 1.2rem; */
+    font-size: 1.2rem;
     background-color: #F4F4F9;
 }
 
@@ -44,7 +44,6 @@ footer .navbar-brand:hover{
 }
 
 .nav-link, .offcanvas-title {
-    /* font-weight: bold; */
     color: #03045E;
 }
 
@@ -67,7 +66,7 @@ footer .navbar-brand:hover{
     aspect-ratio: 3 / 4; 
 
     min-height: 40vh;
-    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.2)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681826348/sm-hero1_umfe9c.jpg);
+    background: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.1)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681826348/sm-hero1_umfe9c.jpg);
     /* background-blend-mode: overlay; */
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,7 +101,7 @@ footer .navbar-brand:hover{
     border-radius: 5px;
     padding: 2rem;
     color:#fff;
-    background-color: rgba(255, 255, 255, .1);
+    background-color: rgba(31, 28, 28, 0.2);
     backdrop-filter: blur(8px);
 }
 
@@ -175,7 +174,8 @@ footer .navbar-brand:hover{
 }
 
 #map {
-    min-height: 360px;
+   min-height: 22.5rem;
+
 }
 
 /*********** Buttons ************/
@@ -292,20 +292,40 @@ footer .navbar-brand:hover{
 /**************** Hero images  **************/
   @media (min-width: 768px) {
     .hero-image1 {
-      aspect-ratio: 2 / 3;
+      aspect-ratio: 3 / 4;
       min-height: 40vh;
-      background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681834099/md-hero1_gjt7xp.jpg);
+      background-image: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.1)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1682031209/md-hero1_ohojvt.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center-top;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-image1 {
+      aspect-ratio: 4 / 3;
+      min-height: 60vh;
+      background-image: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.1)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1682032278/office-desk1_scxqbz.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
     }
+
+    .hero-image2 {
+        aspect-ratio: 4 / 3;
+        min-height: 60vh;
+        background-image: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.4)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1682033120/lg-hero2_wsxfcc.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center-top;
+      }
   }
   
   @media (min-width: 1200px) {
     .hero-image1 {
         aspect-ratio: 16 / 9;
         min-height: 80vh;
-        background-image: url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681819424/office-desk-main_jco5cx.jpg);
+        background-image: linear-gradient(rgba(9, 3, 22, 0.1), rgba(9, 3, 22, 0.1)), url(https://res.cloudinary.com/dep46gq6m/image/upload/v1681819424/office-desk-main_jco5cx.jpg);
         /* background-blend-mode: overlay; */
         background-repeat: no-repeat;
         background-size: cover;
