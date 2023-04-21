@@ -127,7 +127,7 @@ The navbar links, brand name and buttons include a hover-over effect to make the
 #### Shadows
 The shadows used on various cards and the navbar give them a raised effect, which makes them stand out from the white background. It is used to create an interesting effects and draw users attention.
 
-### Onscroll Button
+#### Onscroll Button
 The onscroll button provides a better user experience as it allows users to easily navigate to the top of a page without having to manually scroll back up. Also, allows user to quickly move between different sections of the page.
 
 
@@ -135,7 +135,7 @@ The onscroll button provides a better user experience as it allows users to easi
 
 Wireframes original plan were created for mobile, tablet and desktop using Balsamiq. There are slight different from what was originally planned.
 
-### __Home Page__
+#### __Home Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/home.png>
@@ -143,14 +143,14 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 </details>
 
 
-### __About Us Page__
+#### __About Us Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/about-us.png>
 </details>
 
 
-### __Service Page__
+#### __Service Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/service-page.png>
@@ -159,7 +159,7 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 
 
 
-### __Sign Up Page__
+#### __Sign Up Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/signup-page.png>
@@ -167,22 +167,34 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 
 
 
-### __Login Page__
+#### __Login Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/login-page.png>
 </details>
 
 
-### __Booking Form Page__
+#### __Booking Form Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/booking-form.png>
 </details>
 
+## Development Plan
+
+### Agile Methodology
+
+The website was developed following an agile method, with the use of GitHub's projects to prioritize and track user stories. This approach allowed the  implementation of ideas based on the level of importance. The following categories were applied, as well as corresponding labels were created on different issues:
+- must have
+- should have
+- would have
+- could have
+
+![](./READMEimages/issues.png)
 
 
-### Database Schema
+
+## Database Schema
 
 ![Database Schema](./READMEimages/data-model.png)
 The database schema was created using Lucidchart. The table creation uses Elephant SQL. 
@@ -194,7 +206,7 @@ The database schema was created using Lucidchart. The table creation uses Elepha
 
 ## Features
 
-## Existing Features Across Page
+### Existing Features Across Page
 ***
 
 * Favicon - Created at [Favicon.io](https://favicon.io/). I have chosen a letter 'D'. The firest letter of DESK HQ, making it easier for users to identify and remember the website. The image has also been used as the logo for the site, which create an overall continuity through the site for users and promotes brand awareness.
