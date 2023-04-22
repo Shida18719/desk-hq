@@ -184,7 +184,7 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 
 ### Agile Methodology
 
-The website was developed following an agile method, with the use of GitHub's projects to prioritize and track user stories. This approach allowed the  implementation of ideas based on the level of importance. The following categories were applied, as well as corresponding labels were created on different issues:
+The website was developed following an agile method, with the use of GitHub's projects to prioritise and track user stories. This approach allowed the  implementation of ideas based on the level of importance. The following categories were applied, and a corresponding labels were created on different issues:
 - must have
 - should have
 - would have
@@ -192,6 +192,7 @@ The website was developed following an agile method, with the use of GitHub's pr
 
 ![](./READMEimages/issues.png)
 
+One of the listed features has not been implemented due to time constrain. The completed user stories are in the "Done" section and the ones that were not prioritised for the first set of iteration are in the "Todo" section, to be completed in the next iteration. 
 
 
 ## Database Schema
@@ -205,6 +206,19 @@ The database schema was created using Lucidchart. The table creation uses Elepha
 ---
 
 ## Features
+
+The website is comprised of 10 pages which are extended from a base template.
+
+* Home page
+* About Us page
+* Services page
+* Login page
+* Sign Up page
+* Space Booking page
+* Booking Details page
+* Update booking page
+* Delete Booking page
+* Error page
 
 ### Existing Features Across Page
 ***
@@ -231,6 +245,9 @@ The database schema was created using Lucidchart. The table creation uses Elepha
 
 
 + ## Home Page
+
+![](./READMEimages/home-page.png)
+
 ***
 
 
