@@ -280,9 +280,36 @@ The website is comprised of 10 pages which are extended from a base template.
 
 ![](./READMEimages/about-us1.png)
 
+
+## Services Page 
+
+* The Services page includes images of type of service and description of each. 
+  * This section provides the user with detailed information about different types of spaces for booking. 
+  * The user can read and learn about the benefits and the type of spaces available. 
+  * The user can learn about the booking options available including facilities and benefits. 
+
+![](./READMEimages/services.png)
 ***
 
+## Sign Up Page 
 
+* Allows user to an create account.
+
+![](./READMEimages/sign-up-page.png)
+
+## Login Page 
+
+* Allows user to login into their account.
+
+![](./READMEimages/sign-in.png)
+
+## Authentication 
+
+* This project uses Django authentication system [django-allauth](https://docs.djangoproject.com/en/3.2/topics/auth/default/#) which provides both authentication and authorization. Both typically represent the people interacting with the site and are used to enable  restricting access to the contents. 
+
+* Authentication is one of the core path of this project [User Story #3]. As the booking details is only available only for authenticated users.
+
+## User Authentication 
 
 [Back to the Top](#welcome-to-desk-hq-project-4)
 
