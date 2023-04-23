@@ -229,6 +229,15 @@ The website is comprised of 10 pages which are extended from a base template.
 
 * Navbar - The Navbar is displayed on all pages of the website and allows users to navigate the site with ease. The navbar is comprised of a logo, the sites name and links to navigate the site. The links on the navbar will vary depending on whether a user is logged into their account.
 
+  * The navbar is a key feature of the website, located at the top of the page in a fixed position.
+  * If the user is logged in, the username is displays on the toggle navbar. Additionally, the booking details bar is highlighted, which allows users to view their booking(s)
+  * The navbar also includes several links that aid navigation on the website:
+  * The "About Us" link provides information about the website and its purpose. 
+  * The "Service" link provides the user with detailed information about different types of spaces for booking.
+  * The "Login" and "Sign up" links are used for user authentication and are only visible to unauthenticated users. Once the user logs in, the links will not be visible, the "Log out" will be displayed instead.
+  * The user must be logged in to access all the pages on the website.
+
+
   __User logged in Navbar__
   
   ![User logged in Navbar](./READMEimages/user-loggedin-navbar.png)
@@ -246,7 +255,30 @@ The website is comprised of 10 pages which are extended from a base template.
 
 + ## Home Page
 
+* The home page is the main entry point for users to explore and access the website's content. It provides users with an overview 
+  of the website's purpose, content, and easy navigation. The home page consists of the following features: 
+
+  * Hero images in a carousel with brief message text overlay, that introduces the user to the goal of the website. 
+
+  * Call-to-Action (CTA) which includes buttons that link other part of the website. 
+
+  * Images of DESK HQ office Locations Address which includes buttons that link to the Services page. 
+
+  * Map Toolkit and a description to the locations and a contact details for user to easily communicate. 
+
+  * Contact Us Form. where user can contact us by sending messages for enquiry with any questions or concerns. The form includes 
+    fields for the user's name, email address, subject for specifying the nature of the inquiry and message field.
+
 ![](./READMEimages/home-page.png)
+
+## About Us Page 
+
+* The about section introduces the user to the objectives and purpose of the website. 
+  * The section made a brief description about DESK HQ. 
+  * This section has a contact us clickable botton that takes user to the Contact Form on the Home page. 
+  * The section introduces the user to the services offered by DESK HQ. 
+
+![](./READMEimages/about-us1.png)
 
 ***
 
