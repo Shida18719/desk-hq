@@ -2,7 +2,7 @@
 
 # Welcome to DESK HQ (Project 4)
 
-![DESK HQ](documentation/deskhq.png)
+![DESK HQ](./READMEimages/desk-hq.png)
 
 [Desk HQ](https://desk-hq.herokuapp.com/) is a co-working space website, which offers the perfect destination for entrepreneurs, freelancers, and small businesses looking for a professional and collaborative work environment.
 
@@ -29,7 +29,8 @@
   * [Database Schema](#database-schema)
 
 * [Features](#features)
-  * [Existing Features Across Page](existing-features-across-page)
+  * [Existing Features Across Page](#existing-features-across-page)
+  * [Page Elements](#page-elements)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
 ------
@@ -307,9 +308,137 @@ The website is comprised of 10 pages which are extended from a base template.
 
 * This project uses Django authentication system [django-allauth](https://docs.djangoproject.com/en/3.2/topics/auth/default/#) which provides both authentication and authorization. Both typically represent the people interacting with the site and are used to enable  restricting access to the contents. 
 
-* Authentication is one of the core path of this project [User Story #3]. As the booking details is only available only for authenticated users.
+* Authentication is one of the core paths of this project [User Story #3]. As the booking details is only available only for authenticated users.
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/user-auth-success.png>
+<img src=./READMEimages/log-out.png>
+<img src=./READMEimages/log-out-success.png>
+</details>
 
 ## User Authentication 
+
+* This project uses Django's built-in User model, which users use to sign up and log in to the website. The registration process requires user to enter their password twice to ensure that they have typed it correctly.  
+
+* The login process requires user to use their email address / username as the primary identifier for user accounts.
+
+## Space Booking Page 
+
+* The Space Booking Page allow users to reserve and book various types of spaces for different purposes with the click of button at the bottom of the form. The spaces range from Meeting room, Conference room, Exclusive workstation, Day workstation and co-working workstation. 
+
+* The booking form features the location, date, duration, the start of the booking time slot and when the booking ends. 
+
+* In addition, the Booking Page include a Notice information regarding cancellation policies and late arrival at the bottom of the booking form. 
+
+* After the user has made their booking, user is redirected to the home page where a message is displayed at the top of the page informing the user of a successful booking.
+
+![](./READMEimages/space-booking-page.png)
+
+
+## Booking Details Page 
+
+* This page provides users with a detailed summary of their booking after they have completed the reservation process on the Space Booking Page.
+
+* It displays important information about the booking reservation, including the booking location, the name of the space, date, duration, the start of the booking time slot and when the booking ends. 
+
+* The page also consists of the Edit Booking and the Cancel Booking button for updating and deleting booking respectively on individual booking details.
+
+![](./READMEimages/booking-details.png)
+
+## Update Booking Page 
+
+* The Update Booking Page allows users to make changes to an existing booking they have previously made with the click of ‘update’ button at the bottom of the form. It requires the user to be logged in into their account to access their booking details. 
+
+* The feature allows users to edit booking that was previously made. This feature is accessible from the Booking details view by clicking on an edit booking button. When the button is clicked, user is redirected to ‘booking_details/update’ page. 
+
+* The page displays the current booking details, the user is then able to modify certain aspects of their booking reservation. 
+
+* This Page provides users with a convenient and flexible way to modify their booking details if their plans change. 
+
+* After the user has made the desired changes to their booking, user is redirected to the booking details page, where a message is displayed at the top of the page informing the user of the booking updated successfully.
+
+![](./READMEimages/update-booking.png)
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/update-booking.png>
+<img src=./READMEimages/booking-update-success.png>
+</details>
+
+
+## Delete Booking Page 
+
+* The delete booking feature allows users to cancel booking that they have previously made.
+* This feature is accessible from the Booking detail view by clicking on a delete button.
+* When the button is clicked, a modal pop up with the question of ‘Are you sure you want to cancel this booking’ and a 'Yes’ or ‘No’ choices.
+* The user is redirected to the page to confirm the deletion. 
+* Once the user confirms the deletion, the booking will be removed from the booking details. This feature is designed to guide users through the cancellation process. 
+
+![](./READMEimages/delete-booking.png)
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/confirm-delete-booking.png>
+<img src=./READMEimages/delete-booking-success.png>
+<img src=./READMEimages/no-booking.png>
+</details>
+
+
+## Error Page 
+
+* Error page is displayed to users when there is an issue or error that prevents the requested content from being displayed.
+* The error pages is aim at informing the user that something has gone wrong, it offers user the option to refresh page or go to home page. The following error pages have been applied to handle connection issues.
+
+* Error page 400  (Bad request), is displayed when a user submit request that's not valid.
+* The error page 404 is displayed when the requested URL or page cannot be found on the server. 
+* Error page 500 (internal server error). 
+
+* It provides a positive user experience on the website, by helping users to understand what went wrong and providing guidance on how to proceed.
+
+## Django Messages 
+
+* This project uses Django messages which allows for the provision of feedback to users on the actions they have taken on our website, such as logging in, logging out, signing up, making, deleting or updating a booking.  
+
+* This improves the user experience by keeping them informed that their action was successful or by providing them with an error message if something went wrong. 
+* Messages persist across different pages, including if a user is redirected to a different page after an action is performed, the message is still displayed.
+* Greatly important for keeping user informed about the outcome of an action they have taken.
+
+![](./READMEimages/user-auth-success.png)
+
+
+## Admin 
+
+* The website includes Admin panel which allows for the management and editing of the application's data through a web interface. * This interface is only accessible to users with administrator or superuser privileges. 
+* The admin panel provides CRUD functionalities, which allows for the management and modification of user authentication, contents, users, groups, and permissions.  
+
+## Responsive
+
+
+
+## Accessibility 
+ 
+* The website is designed and developed with accessibility in mind:  
+
+* The use of alternative text attributes for images. 
+
+* Using semantic HTML elements and aria-labels. 
+
+* Ensuring adequate colour contrast. Keyboard navigation is possible.  
+
+* Providing information for screen readers, where icon is used. However, there's room for improvement in this aspect, to ensure that it is fully accessible to users with disabilities. 
+
+
+## Page Elements
+
+### Pagination 
+
+* The pagination on the website is set to display 4 Booking Details list per page. The user bookings with a maximum of 4 will be displayed on a page. If there are more than 4, the user will be able to navigate through the pages using the pagination controls.
+* This allows the user to easily view a specific booking detail and avoid scrolling through many bookings.
+* This feature helps to improve the performance of the website by not loading all the bookings at once.
+
+![](./READMEimages/pagination.png)
+
+### Modal
+
+* When user clicks on cancel booking, the modal is visible, prompting user to choose between a 'yes or no' answer whether they want to cancel their booking.
 
 [Back to the Top](#welcome-to-desk-hq-project-4)
 
