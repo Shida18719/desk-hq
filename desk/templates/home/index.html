@@ -55,44 +55,46 @@
         </div>
     </div>
 
-        <div class="row gy-5 gap-md-0">
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="card text-center">
-                    <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1681639090/desk-hq-loc1_g5pgjb.webp" width="500" height="500"
-                        class="img-fluid rounded card-img-top" alt="location image">
-                    <div class="card-body">
-                        <h4 class="card-title">DESK HQ Brooklyn House</h4>
-                        <p>3 STONE AVENUE LONDON SE5 2AZ</p>
-                        <a href="{% url 'services' %}" class="btn btn-location" aria-label="Go To Services Page">Our Services</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="card text-center">
-                    <img loading="lazy" src="https://res.cloudinary.com/dep46gq6m/image/upload/v1681639017/desk-hq-loc2_p2ksvj.webp" width="500" height="500"
-                        class="img-fluid rounded card-img-top" alt="location image">
-                    <div class="card-body">
-                        <h4 class="card-title">DESK HQ Dockyard Place</h4>
-                        <p>55 PARADE STREET LONDON E20 3YB</p>
-                        <a href="{% url 'services' %}" class="btn btn-location" aria-label="Go To Services Page">Our Services</a>
-                    </div>
+    <div class="row gy-5 gap-md-0">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card text-center">
+                <img loading="lazy"
+                    src="https://res.cloudinary.com/dep46gq6m/image/upload/v1681639090/desk-hq-loc1_g5pgjb.webp"
+                    width="500" height="500" class="img-fluid rounded card-img-top" alt="location image">
+                <div class="card-body">
+                    <h4 class="card-title">DESK HQ Brooklyn House</h4>
+                    <p>3 STONE AVENUE LONDON SE5 2AZ</p>
+                    <a href="{% url 'services' %}" class="btn btn-location" aria-label="Go To Services Page">Our
+                        Services</a>
                 </div>
             </div>
         </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card text-center">
+                <img loading="lazy"
+                    src="https://res.cloudinary.com/dep46gq6m/image/upload/v1681639017/desk-hq-loc2_p2ksvj.webp"
+                    width="500" height="500" class="img-fluid rounded card-img-top" alt="location image">
+                <div class="card-body">
+                    <h4 class="card-title">DESK HQ Dockyard Place</h4>
+                    <p>55 PARADE STREET LONDON E20 3YB</p>
+                    <a href="{% url 'services' %}" class="btn btn-location" aria-label="Go To Services Page">Our
+                        Services</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!--/Location images-->
 
 <!-- Map Location -->
-<section class="container mt-5">
+<div class="container mt-5">
     <section class="row location-content">
         <div class="col-md-12 col-lg-6 mt-3">
-            <div class="">
-                <div class="row">
-                    <div class="col-2">
-                        <i class="fa-sharp fa-solid fa-map-location-dot" aria-hidden="true"></i>
-                    </div>
-                    <h4 class="col-10">Our Workspace Locations</h4>
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa-sharp fa-solid fa-map-location-dot" aria-hidden="true"></i>
                 </div>
+                <h4 class="col-10">Our Workspace Locations</h4>
             </div>
             <p>
                 Our locations are easily accessible, good public transportation options, with buses and train
@@ -126,7 +128,8 @@
         <div class="row my-5">
             <div class="col-md-12">
                 <h3 class="text-center"><strong>CONTACT US</strong></h3>
-                <P class="container-fluid col-lg-8 mt-4 mt-lg-0 text-center">Like to know more about our booking? Fill out the form
+                <P class="container-fluid col-lg-8 mt-4 mt-lg-0 text-center">Like to know more about our booking? Fill
+                    out the form
                     below and one of our team will reach out to you soon.</P>
                 <div class="container-fluid col-lg-8 mt-3 mt-lg-0">
                     <form method="POST" action="{% url 'home' %}" class="contact-form">
@@ -161,5 +164,5 @@
             </div>
         </div>
     </section>
-</section>
+</div>
 {% endblock %}

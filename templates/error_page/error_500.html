@@ -2,11 +2,13 @@
 {% block title %} Internal Server Error {% endblock %}
 {% block content %}
 
-<div class="container justify-content-center">
-    <div class="col-md-12 d-flex flex-column justify-content-center mt-lg-5 mt-md-5 mt-5 mb-4">
-        <h2>500 <br> </b>Server Error</h2>
-        <p>Oops, something went wrong on our end. Please try refresh the page or go to 
-        <a class="btn btn-primary" href="{% url 'home' %}">Home Page</a></p>
-    </div>
+<div class="container text-center">
+    <div class="row my-5 py-5">
+        <div class="col-md-12 d-flex flex-column justify-content-center mt-lg-5 mt-md-5 mt-5 mb-4">
+            <h2>500 <br> </b>Server Error</h2>
+            <p>Oops, something went wrong on our end. Please try refresh the page or go to 
+            <a class="btn btn-primary" href="{% url 'home' %}">Home Page</a></p>
+        </div>
+    </div> 
 </div>
 {% endblock %}
