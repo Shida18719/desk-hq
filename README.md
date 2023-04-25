@@ -33,6 +33,9 @@
   * [Page Elements](#page-elements)
   * [Future Implementations](#future-implementations)
   * [Accessibility](#accessibility)
+
+* [Testing](#testing)
+ 
 ------
 
 ## Overview
@@ -66,12 +69,13 @@ DESK HQ is targeted at freelancer, startup, or established business, who like to
 
 As a first time user of the site I want to be able to:
 
++ I want to be able to access the website from any device.
 + Understand what the site is for and how to navigate the site.
 + Register for an account.
 + Quickly understand the benefits of co-working and how the space can help me grow my business, so that I am motivated to sign up.
-+ Access the website from any device.
 + Contact somebody via the contact form or contact details for enquiry.
 + Receive feedback from my intaraction with the website
++ I want to learn more about the project on github.
 
 #### __Returning Visitor Goals__
 
@@ -412,18 +416,7 @@ The website is comprised of 10 pages which are extended from a base template.
 ## Responsive
 
 
-
-## Accessibility 
  
-* The website is designed and developed with accessibility in mind:  
-
-* The use of alternative text attributes for images. 
-
-* Using semantic HTML elements and aria-labels. 
-
-* Ensuring adequate colour contrast. Keyboard navigation is possible.  
-
-* Providing information for screen readers, where icon is used. However, there's room for improvement in this aspect, to ensure that it is fully accessible to users with disabilities. 
 
 
 ## Page Elements
@@ -441,6 +434,36 @@ The website is comprised of 10 pages which are extended from a base template.
 * When user clicks on cancel booking, the modal is visible, prompting user to choose between a 'yes or no' answer whether they want to cancel their booking.
 
 [Back to the Top](#welcome-to-desk-hq-project-4)
+
+
+## Future Implementations  
+
+* Add password reset functionality for user to be able to reset their passwords. 
+
+* Add social accounts. 
+
+* Respond to users through emails.
+
+
+## Accessibility 
+ 
+* The website is designed and developed with accessibility in mind:  
+
+* The use of alternative text attributes for images. 
+
+* Using semantic HTML elements and aria-labels. 
+
+* Ensuring adequate colour contrast. Keyboard navigation is possible.  
+
+* Providing information for screen readers, where icon is used. However, there's room for improvement in this aspect, to ensure that it is fully accessible to users with disabilities.
+
+
+# Testing
+
+Please see [testing.md](testing.md) to view all test cases
+- - -
+
+## User Story Testing
 
 
 
