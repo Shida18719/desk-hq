@@ -158,15 +158,15 @@ This project uses the [Django’s unit tests](https://docs.djangoproject.com/en/
 
 * It does not require any additional dependencies to run. 
 
- * python3 manage.py test 
+ * `python3 manage.py test `
 
- * To see a coverage report use the command coverage run --source='.' manage.py test 
+ * To see a coverage report use the command: ` coverage run --source='.' manage.py test `
 
- * coverage report: Specify the path to the file after the command to see a report on the particular file or group of files. 
+ * `coverage report` : Specify the path to the file after the command to see a report on the particular file or group of files. 
 
- * coverage html 
+ * `coverage html` 
 
-* Python3 –m http.server : to view coverage 
+* `Python3 –m http.server` : to view coverage 
 
 Find the screenshots below: image 
 
