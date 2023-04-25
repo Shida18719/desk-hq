@@ -156,6 +156,19 @@ This project uses the [Django’s unit tests](https://docs.djangoproject.com/en/
 
 * The tests solely rely on database access such as creating or querying the models. Hence, the test were created using 'test classes' as subclasses of django.test.TestCase rather than unittest.TestCase. Leading to unit tests that pass when run in isolation but fail when run in a suite.
 
+* It does not require any additional dependencies to run. 
+
+ * python3 manage.py test 
+
+ * To see a coverage report use the command coverage run --source='.' manage.py test 
+
+ * coverage report: Specify the path to the file after the command to see a report on the particular file or group of files. 
+
+ * coverage html 
+
+* Python3 –m http.server : to view coverage 
+
+Find the screenshots below: image 
 
 
 
