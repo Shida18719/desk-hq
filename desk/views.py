@@ -74,8 +74,8 @@ class BookingCreateView(LoginRequiredMixin, FormView):
     def form_invalid(self, form):
         messages.error(
             self.request, 'Sorry, there was an error with your booking.')
-        # return super().form_invalid(form)
-        return HttpResponseRedirect(reverse('account_login'))
+        return super().form_invalid(form)
+        # return HttpResponseRedirect(reverse('account_login'))
 
 
 class BookingUpdateView(LoginRequiredMixin, UpdateView):
