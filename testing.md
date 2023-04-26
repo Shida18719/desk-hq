@@ -18,6 +18,7 @@ Visit the deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
   * [Code Validation](#code-validation)
     * [W3C Validator](#w3c-validator)
     * [Javascript Validator](#javascript-validator)
+    * [Python Validator](#python-validator)
     * [Lighthouse](#lighthouse)
   * [Bugs](#bugs)
     * [Solved Bugs](#solved-bugs)
@@ -253,6 +254,17 @@ All JS files were run through JS Hint. One warning detected with google map.
 However `new` is used to access the markerClusterer with the CDN.
 
 `const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });`
+
+
+### **Python Validator**
+
+[CI Python Linter](https://pep8ci.herokuapp.com/) was use to validate the python files.
+
+* [admin.py](./READMEimages/python-validation-admin.png) - No errors or warnings.
+
+* [forms.py](./READMEimages/python-validation-forms.png) - No errors or warnings.
+
+
 
 
 ### **Lighthouse**
