@@ -246,7 +246,13 @@ The website CSS Stylesheet was ran through CSS Validator. No errors were detecte
 
  **[JS Hint](https://jshint.com/) - JS Validation**
 
-All JS files were run through JS Hint. No errors were detected.
+All JS files were run through JS Hint. One warning detected with google map. 
+
+![](./READMEimages/js-validation.png)
+
+However `new` is used to access the markerClusterer with the CDN.
+
+`const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });`
 
 
 - - -
