@@ -181,6 +181,8 @@ Find the coverage report screenshots image below.
 
 ## Code Validation
 
+### **W3C Validator**
+
 
 **[W3C Markup Validation](https://validator.w3.org/) - HTML Validation**
 
@@ -224,6 +226,27 @@ All pages of the website were run through HTML Validator, via direct input and i
 **No Booking Page**
 
 ![](./READMEimages/no-booking-page.png)
+
+
+
+**[W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - CSS Validation**
+
+The website CSS Stylesheet was ran through CSS Validator. No errors were detected
+
+![](./READMEimages/css-validation.png)
+
+
+
+[Back to the Top](#contents)
+
+- - -
+
+
+### **Javascript Validator**
+
+ **[JS Hint](https://jshint.com/) - JS Validation**
+
+All JS files were run through JS Hint. No errors were detected.
 
 
 - - -
