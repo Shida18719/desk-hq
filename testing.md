@@ -255,6 +255,12 @@ However `new` is used to access the markerClusterer with the CDN.
 `const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });`
 
 
+### **Lighthouse**
+
+* Home Page
+
+
+
 - - -
 
 [<< Back to main ReadMe](README.md)
