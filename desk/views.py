@@ -12,14 +12,14 @@ from django.views.generic.edit import FormView, UpdateView, DeleteView
 
 class HomePageView(TemplateView):
     """
-    View for home page.
+    Views for home page.
     """
     template_name = 'home/index.html'
 
 
 class ContactFormView(FormView):
     """
-    View for users ContactForm
+    Views for users ContactForm for equiry
     """
     model = Enquiry
     form_class = ContactForm
@@ -32,7 +32,8 @@ class ContactFormView(FormView):
                 contact_form.save()
                 messages.success(
                     self.request,
-                    'Thank you for contacting DESK HQ. We recieved your message, will get back to you shortly.')
+                    'Thank you for contacting DESK HQ.'
+                    'We recieved your message, will get back to you shortly.')
                 return HttpResponseRedirect(reverse('home'))
             else:
                 messages.info(
@@ -44,7 +45,7 @@ class ContactFormView(FormView):
 
 class BookingsList(LoginRequiredMixin, ListView):
     """
-    View for users Booking
+    Views for users Booking
     """
     model = Booking
     template_name = 'desk/booking_details.html'
@@ -57,7 +58,8 @@ class BookingsList(LoginRequiredMixin, ListView):
 
 class BookingCreateView(LoginRequiredMixin, FormView):
     """
-    View for displaying booking form and allow user to create booking.
+    View for displaying booking form and allow user to create booking,
+    when user logged in.
     """
     model = Booking
     form_class = BookingForm
@@ -68,9 +70,11 @@ class BookingCreateView(LoginRequiredMixin, FormView):
         # <process form cleaned data>
         form.save()
         messages.success(
-            self.request, 'Thank you for using DESK HQ. Your Booking was created successfully.')
+            self.request,
+            'Thank you for using DESK HQ.'
+            'Your Booking was created successfully.')
         return HttpResponseRedirect(reverse('home'))
-           
+
     def form_invalid(self, form):
         messages.error(
             self.request, 'Sorry, there was an error with your booking.')
@@ -108,7 +112,7 @@ class BookingUpdateView(LoginRequiredMixin, UpdateView):
 
 class BookingDeleteView(DeleteView):
     """
-    View allow user to delete booking and redirect user to booking details.
+    Views allow user to delete booking and redirect user to booking details.
     """
     model = Booking
     template_name = 'desk/delete_booking.html'

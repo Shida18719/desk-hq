@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Location, Service, Booking
 
+
 # Workspace location.
 @admin.register(Location)
 class WorkSpaceAdmin(admin.ModelAdmin):
