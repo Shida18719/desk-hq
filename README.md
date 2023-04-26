@@ -411,7 +411,9 @@ The website is comprised of 10 pages which are extended from a base template.
 ## Admin 
 
 * The website includes Admin panel which allows for the management and editing of the application's data through a web interface. * This interface is only accessible to users with administrator or superuser privileges. 
-* The admin panel provides CRUD functionalities, which allows for the management and modification of user authentication, contents, users, groups, and permissions.  
+* The admin panel provides CRUD functionalities, which allows for the management and modification of user authentication, contents, users, groups, and permissions.
+
+![](./READMEimages/admin-panel.png)
 
 ## Responsive
 
@@ -463,7 +465,7 @@ The website is comprised of 10 pages which are extended from a base template.
 Please see [testing.md](testing.md) to view all test cases
 - - -
 
-## User Story Testing
+## 
 
 
 
@@ -479,12 +481,9 @@ Please see [testing.md](testing.md) to view all test cases
 
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+
 ```
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
 ---
