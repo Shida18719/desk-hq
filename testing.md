@@ -210,7 +210,7 @@ All pages of the website were run through HTML Validator, via direct input and i
 
 **Booking Details Page**
 
-![](./READMEimages/-page.png)
+![](./READMEimages/booking-details-page.png)
 
 
 **Update Booking Page**
