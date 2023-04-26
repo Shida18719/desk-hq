@@ -221,6 +221,9 @@ All pages of the website were run through HTML Validator, via direct input and i
 ![](./READMEimages/delete-booking-page.png)
 
 
+**No Booking Page**
+
+![](./READMEimages/no-booking-page.png)
 
 
 - - -
