@@ -264,13 +264,24 @@ However `new` is used to access the markerClusterer with the CDN.
 
 * [forms.py](./READMEimages/python-validation-forms.png) - No errors or warnings.
 
+* [models.py](./READMEimages/python-validation-.png) - No errors or warnings.
+
+* [desk > urls.py](./READMEimages/python-validation-desk-urls.png) - No errors or warnings.
+
+* [desk > views.py](./READMEimages/python-validation-desk-views.png) - No errors or warnings.
+
+* [deskspace > urls.py](./READMEimages/python-validation-deskspace-urls.png) - No errors or warnings.
+
+* [deskspace > views.py](./READMEimages/python-validation-deskspace-views.png) - No errors or warnings.
+
 
 
 
 ### **Lighthouse**
 
-* Home Page
+**Desktop**
 
+* [Home Page](./READMEimages/lighthouse-home-page.png)
 
 
 - - -
