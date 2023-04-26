@@ -15,8 +15,13 @@ Visit the deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
     <!-- * [JS unit tests](#js-unit-tests) -->
   * [Automated Testing](#automated-testing)
     * [Python Unit Tests](#python-unit-tests)
-    * [Code Validation](#code-validation)
+  * [Code Validation](#code-validation)
+    * [W3C Validator](#w3c-validator)
+    * [Javascript Validator](#javascript-validator)
     * [Lighthouse](#lighthouse)
+  * [Bugs](#bugs)
+    * [Solved Bugs](#solved-bugs)
+    * [Known Bugs](#known-bugs)
 - - -
 
 ## Manual Testing
@@ -168,9 +173,50 @@ This project uses the [Django’s unit tests](https://docs.djangoproject.com/en/
 
 * `Python3 –m http.server` : to view coverage 
 
-Find the screenshots below: image 
+Find the coverage report screenshots image below.
+
+![](./READMEimages/coverage-report.png)
 
 
+## Code Validation
+
+**[W3C Markup Validation](https://validator.w3.org/) - HTML Validation**
+
+All pages of the website were run through HTML Validator, via direct input and inspecting the page source.
+
+**Home Page**
+
+![](./READMEimages/.png)
+
+
+**About Us Page**
+
+![](./READMEimages/about-us-page.png)
+
+
+**Services Page**
+
+![](./READMEimages/services-page.png)
+
+
+**Space Booking Page**
+
+![](./READMEimages/s-page.png)
+
+
+**Booking Details Page**
+
+![](./READMEimages/-page.png)
+
+
+**Update Booking Page**
+
+![](./READMEimages/update-booking-page.png)
+
+
+**Delete Booking Page**
+
+![](./READMEimages/-page.png)
 
 
 [<< Back to main ReadMe](README.md)
