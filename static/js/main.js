@@ -25,6 +25,12 @@ function initMap() {
           position,
           label,
         });
+
+         // open info window when marker is clicked
+        marker.addListener("click", () => {
+          infoWindow.setContent(label);
+          infoWindow.open(map, marker);
+        });
   
         return marker;
     });
@@ -33,6 +39,8 @@ function initMap() {
     new markerClusterer.MarkerClusterer({ markers, map });
 }
 
+window.initMap = initMap;
+// initMap();
 
 // Dismisses message alert after 3.5 seconds -->
 
@@ -42,7 +50,7 @@ function initMap() {
   //   alert.close();
   // }, 3500);
 
-    // messages
+  // messages
     $('.alert').delay(3500).fadeOut(1000);
 
 
@@ -50,7 +58,7 @@ function initMap() {
 // Create toggle
   window.onscroll = () => {
       toggleTopButton();
-  }
+  };
 
 
 // When user clicks on the button, scroll to the top of the page with scroll behavior of smooth.
