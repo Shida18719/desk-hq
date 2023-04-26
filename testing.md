@@ -178,7 +178,9 @@ Find the coverage report screenshots image below.
 ![](./READMEimages/coverage-report.png)
 
 
+
 ## Code Validation
+
 
 **[W3C Markup Validation](https://validator.w3.org/) - HTML Validation**
 
@@ -186,7 +188,7 @@ All pages of the website were run through HTML Validator, via direct input and i
 
 **Home Page**
 
-![](./READMEimages/.png)
+![](./READMEimages/index-page.png)
 
 
 **About Us Page**
@@ -201,7 +203,7 @@ All pages of the website were run through HTML Validator, via direct input and i
 
 **Space Booking Page**
 
-![](./READMEimages/s-page.png)
+![](./READMEimages/booking-page.png)
 
 
 **Booking Details Page**
@@ -216,7 +218,11 @@ All pages of the website were run through HTML Validator, via direct input and i
 
 **Delete Booking Page**
 
-![](./READMEimages/-page.png)
+![](./READMEimages/delete-booking-page.png)
 
+
+
+
+- - -
 
 [<< Back to main ReadMe](README.md)
