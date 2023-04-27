@@ -229,6 +229,18 @@ All pages of the website were run through HTML Validator, via direct input and i
 ![](./READMEimages/no-booking-page.png)
 
 
+**Sign Up Page**
+![](./READMEimages/sign-up-page-validation.png)
+
+
+**Sign In Page**
+![](./READMEimages/sign-in-page-validation.png)
+
+
+**Error Page**
+![](./READMEimages/error-page.png)
+
+
 
 **[W3C CSS Validation](https://jigsaw.w3.org/css-validator/) - CSS Validation**
 
