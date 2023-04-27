@@ -15,7 +15,8 @@ class BookingTest(TestCase):
             password='testpasswd')
 
         self.location = Location.objects.create(
-            location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ')
+            location_name='DESK HQ Brooklyn House'
+            '(3 STONE AVENUE LONDON SE5 2AZ)')
 
         self.space_booking = Service.objects.create(
             space_type='Day WorkStation')
@@ -40,7 +41,11 @@ class BookingTest(TestCase):
         booking_start = str(self.booking.booking_start)
         booking_end = str(self.booking.booking_end)
 
-        self.assertEqual(str(self.booking), f"{client_booking} booked {space_booking} | {booking_date} | {booking_start} | {booking_end}")
+        self.assertEqual(
+            str(self.booking),
+            f"{client_booking} booked".format(
+                {space_booking} | {booking_date}
+                | {booking_start} | {booking_end}))
 
 
 class EnquiryTest(TestCase):
@@ -53,13 +58,15 @@ class EnquiryTest(TestCase):
         enquiry_name = str(self.enquiry.name)
         enquiry_subject = str(self.enquiry.subject)
         self.assertEqual(
-            str(self.enquiry), f"from {enquiry_name} | subject: {enquiry_subject}")
+            str(self.enquiry),
+            f"from {enquiry_name} | subject: {enquiry_subject}")
 
 
 class LocationTest(TestCase):
     def setUp(self):
         self.location1 = Location.objects.create(
-            location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ')
+            location_name='DESK HQ Brooklyn House'
+            '(3 STONE AVENUE LONDON SE5 2AZ)')
 
     def test_location_name_str(self):
         """
