@@ -39,43 +39,37 @@ function initMap() {
     new markerClusterer.MarkerClusterer({ markers, map });
 }
 
-window.initMap = initMap;
-// initMap();
 
-// Dismisses message alert after 3.5 seconds -->
+document.addEventListener("DOMContentLoaded", function() {
 
-  // setTimeout(function () {
-  //   const messages = document.getElementById('msg');
-  //   const alert = new bootstrap.Alert(messages);
-  //   alert.close();
-  // }, 3500);
+  // Dismisses messages alert after 3.5 seconds
 
-  // messages
     $('.alert').delay(3500).fadeOut(1000);
 
 
-// Back to top button
-// Create toggle
-  window.onscroll = () => {
-      toggleTopButton();
-  };
+  // Back to top button
+  // Create toggle
+    window.onscroll = () => {
+        toggleTopButton();
+    };
 
 
-// When user clicks on the button, scroll to the top of the page with scroll behavior of smooth.
-  function scrollToTop(){
-      window.scrollTo({top: 0, behavior: 'smooth'});
+  // When user clicks on the button, scroll to the top of the page with scroll behavior of smooth.
+    function scrollToTop(){
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  
+  // When user scrolls down 20px from the top of the page, display button
+  function toggleTopButton() {
+      if (document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20) {
+        document.getElementById('back-to-up').classList.remove('d-none');
+      } else {
+        document.getElementById('back-to-up').classList.add('d-none');
+      }
   }
 
-  
-// When user scrolls down 20px from the top of the page, display button
-function toggleTopButton() {
-    if (document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20) {
-      document.getElementById('back-to-up').classList.remove('d-none');
-    } else {
-      document.getElementById('back-to-up').classList.add('d-none');
-    }
-}
+});
 
 
 // Updates footer's copyright year with the current year
