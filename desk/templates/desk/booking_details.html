@@ -29,7 +29,7 @@
                         <li><i class="fa-solid fa-hourglass-end me-2"></i>Booking Ends: <strong>
                                 {{booking.booking_end}}</strong></li>
                     </ul>
-                    <small>Last updated:<strong> {{booking.updated_on}}</strong></small>
+                    <small>Last updated: {{booking.updated_on}}</small>
                 </div>
                 <div class="col-12 col-md-4 text-center d-md-flex flex-column my-auto">
                     <a href="{% url 'update_booking' booking.pk %}" class="btn btn-primary btn-sm role='button'">Edit
