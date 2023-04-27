@@ -290,15 +290,80 @@ However `new` is used to access the markerClusterer with the CDN.
 
 * [deskspace > views.py](./READMEimages/python-validation-deskspace-views.png) - No errors or warnings.
 
-
+- - -
 
 
 ### **Lighthouse**
 
-**Desktop**
+I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
+
+However, my google cloud platform free trial is over within the time of finishing this project. This caused a permanent error flagged in the console therefore affected the 'Best Practice' score in the Chrome Developer Tools. Please see the expandable click;
+
+<details><summary>click to expand</summary>
+<img src=./READMEimages/best-practice-lighthouse-issue.png>
+<img src=./READMEimages/lighthouse-best-practice-bug.png>
+<img src=./READMEimages/google-map-issue.png>
+</details>
+
+
+
+**Home Page**
 
 * [Home Page](./READMEimages/lighthouse-home-page.png)
 
+**About Us Page**
+
+* [About Us](./READMEimages/about-us-page-desktop-lighthouse.png)
+
+
+**About Us Page Mobile**
+
+* [About Us](./READMEimages/about-us-page-mobile-lighthouse.png)
+
+
+**Services Page**
+
+* [Services Page](./READMEimages/service-page-desktop-lighthouse.png)
+
+
+**Services Page Mobile**
+
+* [Services Page Mobile](./READMEimages/service-page-mobile-lighthouse.png)
+
+
+**Sign Up Page**
+
+* [Sign Up Page](./READMEimages/sign-up-page-desktop-lighthouse.png)
+
+
+**Sign Up Page Mobile**
+
+* [Sign Up Page Mobile](./READMEimages/sign-up-page-mobile-lighthouse.png)
+
+
+**Sign In Page**
+
+* [Sign In Page](./READMEimages/sign-in-page-desktop-lighthouse.png)
+
+
+**Sign In Page Mobile**
+
+* [Sign In Page Mobile](./READMEimages/sign-in-page-mobile-lighthouse.png)
+
+
+**Space Booking Page**
+
+* [Space Booking Page](./READMEimages/space-booking-page-desktop-lighthouse.png)
+
+
+**Booking Details Page**
+
+* [Booking Details Page](./READMEimages/booking-details-page-desktop-lighthouse.png)
+
+
+**Update Booking Page**
+
+* [Update Booking Page](./READMEimages/update-booking-page-desktop-lighthouse.png)
 
 - - -
 
