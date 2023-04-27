@@ -36,7 +36,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 ALLOWED_HOSTS = ['desk-hq.herokuapp.com', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu95.gitpod.io/',
+    'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu96.gitpod.io/',
     ]
 
 
