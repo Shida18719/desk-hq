@@ -41,6 +41,10 @@ class BookingTest(TestCase):
         booking_start = str(self.booking.booking_start)
         booking_end = str(self.booking.booking_end)
 
+        # self.assertEqual(
+        #     str(self.booking),
+        #     f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}")
+
         self.assertEqual(
             str(self.booking),
             f"{client_booking} booked".format(
