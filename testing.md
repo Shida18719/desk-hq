@@ -285,9 +285,9 @@ However `new` is used to access the markerClusterer with the CDN.
 
 * [desk > views.py](./READMEimages/python-validation-desk-views.png) - No errors or warnings.
 
-* [desk > test models.py](./READMEimages/python-validation-test-models.png) - No errors or warnings.
+* [desk > test_models.py](./READMEimages/python-validation-test-models.png) - No errors or warnings.
 
-* [desk > test views.py](./READMEimages/python-validation-test-.png) - No errors or warnings.
+* [desk > test_views.py](./READMEimages/python-validation-test-views.png) - No errors or warnings.
 
 * [deskspace > urls.py](./READMEimages/python-validation-deskspace-urls.png) - No errors or warnings.
 
