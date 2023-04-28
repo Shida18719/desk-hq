@@ -11,7 +11,7 @@ from django.http import HttpRequest, HttpResponse
 
 class ContactFormViewTest(TestCase):
     """
-    Test ContactFormView  
+    Test ContactFormView
     """
     def setUp(self):
         self.factory = RequestFactory()
@@ -32,12 +32,14 @@ class ContactFormViewTest(TestCase):
         # check if the form submission was successful
         self.assertEqual(response.status_code, 302)
 
-        self.assertTrue(Enquiry.objects.filter(name='Test', subject='Text subject').exists())
+        self.assertTrue(Enquiry.objects.filter(name='Test',
+                        subject='Text subject').exists())
 
         # check if the success message was displayed
         messages = get_messages(response.wsgi_request)
         self.assertIn(
-            'Thank you for contacting DESK HQ. We recieved your message, will get back to you shortly.',
+            'Thank you for contacting DESK HQ.'
+            'We recieved your message, will get back to you shortly.',
             [str(message) for message in messages])
 
     def test_invalid_form_submission(self):
@@ -56,7 +58,8 @@ class ContactFormViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
         # check if the form data was not saved to the database
-        self.assertFalse(Enquiry.objects.filter(email='test@example.com', subject='Text message').exists())
+        self.assertFalse(Enquiry.objects.filter(email='test@example.com',
+                         subject='Text message').exists())
 
         # check if the form errors were displayed
         self.assertContains(response, '')
@@ -83,7 +86,8 @@ class BookingCreateViewTest(TestCase):
         )
 
         self.location = Location.objects.create(
-            location_name='DESK HQ Brooklyn House (3 STONE AVENUE LONDON SE5 2AZ)'
+            location_name='DESK HQ Brooklyn House'
+            '(3 STONE AVENUE LONDON SE5 2AZ)'
             )
 
         self.space_booking = Service.objects.create(
@@ -97,8 +101,10 @@ class BookingCreateViewTest(TestCase):
             booking_duration='1 Hour',
             booking_date=date(2023, 5, 12),
 
-            booking_start=(datetime.now() + timedelta(hours=1)).strftime('%Y-%m-%d %H:%M:%S.%f'),
-            booking_end=(datetime.now() + timedelta(hours=2)).strftime('%Y-%m-%d %H:%M:%S.%f'),
+            booking_start=(datetime.now() + timedelta(hours=1)).strftime(
+                '%Y-%m-%d %H:%M:%S.%f'),
+            booking_end=(datetime.now() + timedelta(hours=2)).strftime(
+                '%Y-%m-%d %H:%M:%S.%f'),
         )
 
         self.booking_data = {
@@ -127,18 +133,22 @@ class BookingCreateViewTest(TestCase):
 
         booking = Booking.objects.first()
         self.assertEqual(booking.location, self.booking_data['location'])
-        self.assertEqual(booking.space_booking, self.booking_data['space_booking'])
-        self.assertEqual(booking.booking_date, self.booking_data['booking_date'])
-        self.assertEqual(booking.booking_duration, self.booking_data['booking_duration'])
-        self.assertEqual(booking.booking_start, self.booking_data['booking_start'])
+        self.assertEqual(
+            booking.space_booking, self.booking_data['space_booking'])
+        self.assertEqual(
+            booking.booking_date, self.booking_data['booking_date'])
+        self.assertEqual(
+            booking.booking_duration, self.booking_data['booking_duration'])
+        self.assertEqual(
+            booking.booking_start, self.booking_data['booking_start'])
         self.assertEqual(booking.booking_end, self.booking_data['booking_end'])
         self.assertEqual(booking.client, self.booking_data['client'])
 
         self.assertTrue(Booking.objects.filter(client=self.user).exists())
-        
+
         # Check that the booking was created successfully
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(Booking.objects.count(), 0)
+        self.assertEqual(Booking.objects.count(), 1)
 
     def test_create_booking_unauthenticated(self):
         # Submit the booking form without logging in
