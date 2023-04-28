@@ -427,7 +427,7 @@ The website is comprised of 10 pages which are extended from a base template.
 * The website includes Admin panel which allows for the management and editing of the application's data through a web interface. * This interface is only accessible to users with administrator or superuser privileges. 
 * The admin panel provides CRUD functionalities, which allows for the management and modification of user authentication, contents, users, groups, and permissions.
 
-![](./READMEimages/admin-panel.png)
+* [Admin Panel](./READMEimages/admin-panel.png)
 
 ## Responsive
 
