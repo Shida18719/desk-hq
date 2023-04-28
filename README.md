@@ -431,9 +431,8 @@ The website is comprised of 10 pages which are extended from a base template.
 
 ## Responsive
 
-
+* The website is designed to be responsive using the bootstrap frameworks designed to be a mobile first approach.I have also went through each page using google chrome developer tools to ensure that the site is responsive on all different screen sizes.
  
-
 
 ## Page Elements
 
