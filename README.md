@@ -35,8 +35,24 @@
   * [Accessibility](#accessibility)
 
 * [Testing](#testing)
- 
-------
+
+* [Technologies Used](#technologies-used)
+  * [Languages Used](#languages-used)
+  * [Frameworks Used](#frameworks-used)
+  * [Databases Used](#databases-used)
+  * [Programs, Libraries & Packages Used](#Programs-libraries--packages-used)  
+* [Error Handling](#error-handling)
+* [Deployment](#deployment)
+  * [Fork GitHub Repository](#fork-github-repository)
+  * [Clone GitHub Repository](#clone-github-repository)
+  
+* [Credits](#credits)
+  * [Code Used](#code-used)
+  * [Media](#media)
+  * [Content](#content)
+  * [Acknowledgments](#acknowledgments)
+
+- - -
 
 ## Overview
 
@@ -163,13 +179,11 @@ Wireframes original plan were created for mobile, tablet and desktop using Balsa
 </details>
 
 
-
 #### __Sign Up Page__
 
 <details><summary>click to expand</summary>
 <img src=./READMEimages/signup-page.png>
 </details>
-
 
 
 #### __Login Page__
@@ -463,27 +477,243 @@ The website is comprised of 10 pages which are extended from a base template.
 # Testing
 
 Please see [testing.md](testing.md) to view all test cases
+
 - - -
 
-## 
+
+## Technologies Used
+
+### Languages Used
+
+HTML, CSS, Python+Django, JavaScript
+
+* HTML
+  * Hyper Text Markup Language(HTML) is used for text writer.
+
+* CSS
+  * Cascading Style Sheets(CSS) is used for styling the website.
+
+* Javascript
+  * Javascript web program was used in writing the codes that creates interactivity with the website.
+
+### frameworks Used
+
+* [Bootstrap](https://getbootstrap.com/) - version 5.2.3 - CSS Framework for responsive, mobile-first front-end web development.
+
+### Databases Used
+
+* [PostgreSQL](https://www.postgresql.org/) relational database.
+
+* [ElephantSQL](https://www.elephantsql.com/) to manage PostgreSQL databases.
+  
+### Programs, Libraries & Packages Used
+
+* [Django](https://www.djangoproject.com/) for backend and frontend functionality.
+
+* [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/) for authentication and registration.
+
+* [Psycopg](https://www.psycopg.org/) PostgreSQL adapter for Python.
+
+* [Crispy Bootstrap](https://pypi.org/project/crispy-bootstrap5/) for styling Crispy forms.
+
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) for creating pretty forms.
+
+* [jQuery](https://jquery.com/) (JS library) for additional functionality.
+
+* [Pip](https://pypi.org/project/pip/) - Tool for installing python packages.
+
+* [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - A templating engine.
+
+* [Cloudinary](https://cloudinary.com/) for storing and serving static files.
+
+* [Favicon.io](https://www.favicon.io/) for creating the website favicon.
+
+* [JS Hint](https://jshint.com/) for validating JS code.
+
+* [CI Python Linter](https://pep8ci.herokuapp.com) to validate Python code.
+
+* [W3C HTML Markup Validator](https://validator.w3.org/) to validate HTML code.
+
+* [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code.
+
+* [Google Fonts](https://fonts.google.com/) Where used to import the fonts used on the website..
+
+* [Gitpod](https://gitpod.io/) IDE to develop the app.
+
+* [GitHub](https://GitHub.com/) to host the source code.
+
+* [Heroku](https://www.heroku.com/) to deploy and host the live app.
+
+* Git to provide version control (to commit and push code to the repository).
+
+* [Markdown Tables Generator](https://www.tablesgenerator.com/) to generate tables for the readme file.
+
+* [LucidChart](https://lucid.app/documents#/dashboard) - for creating flowcharts.
+
+* [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) - to generate workspace for the project.
+
+* [Google Maps API](https://developers.google.com/maps) - for creating maps.
+
+* [Unittest](https://docs.python.org/3/library/unittest.html) - for Python unit-testing.
+
+* [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/) - To display the website image on a range of devices.
+
+* [Coolors](https://coolors.co/) - Was used for creating a pallet of the colors used.
+
+* [Font Awesome](https://fontawesome.com/) - Was used to add icons.
+
+* Google Dev Tools - Where used to test and troubleshoot the webpage as well as fix problems with responsive design and styling.
+
+* [Image Online Convert](https://image.online-convert.com/) - Was used to covert image into Webp format.
 
 
 
+[Back to the Top](#welcome-to-desk-hq-project-4)
+
+- - -
+
+
+### Error Handling
+
+* This site uses the 400, 404 and the 500 Error pages to inform and redirect user to home page.
+
+## Deployment
+
+### Github
+This project was started by navigating to the [CI template](https://github.com/Code-Institute-Org/gitpod-full-template) and clicking 'Use this template'. After a new repository has been named, I navigated to Gitpod, where the entire project was developed. A Project was created and issues were added to follow the Agile methodology.
+
+## Heroku 
+Heroku was used to host the app. Heroku is a container-based cloud Platform for building, deploying and managing apps. To enable a successful delopyment, a skeleton of this project was deployed to Heroku in its early stages. Which was achieved through creating a requirements.txt file and a Procfile,  following the steps: 
+
+1. The requirements.txt file contains all the applications and dependencies that are required to run the app. To create the requirements.txt file run the following command in the terminal:
+  `pip3 freeze --local > requirements.txt`
+
+2. The Procfile tells Heroku which files run the app and how to run it. To create the Procfile run the following command in the terminal:
+
+    ```bash
+    echo web: python app.py > Procfile
+    ```
+3. If the Procfile has been created correctly it will have the Heroku logo next to it. It is also important to check the Procfile contents, as sometimes on creation a blank line will be added at the end of the file. This can sometimes cause problems when deploying to Heroku, if the file contains a blank line at the end, delete this and save the file. Make sure to save both these files and then add, commit and push them to GitHub.
+
+4. Login or create an account on [Heroku](https://www.heroku.com/). Click `new` in the top right corner and choose `create new app`. Choose a unique app name and your region and click `create app`.
+
+5. You will then be asked to give your app a name (which must be unique) and select a region. Once these are completed click create app.
+
+6. You will now need to connect the Heroku app to the GitHub repository for the site. Select GitHub in the deployment section, find the correct repository for the project and then click connect.
+
+7. Navigate to the `Settings` tab, and click `Reveal Config Vars`.
+   The config vars should contain the following keys and their corresponding values:
+        * DATABASE_URL
+        * CLOUDINARY_URL
+        * SECRET_KEY
+        * PORT
+        * Make sure DISABLE_COLLECTSTATIC is removed before production.
+
+**Setup External Services:**
+
+  * 1.  Log in or create an account on [Cloudinary](https://cloudinary.com/).
+    2.  Navigate to the `Dashboard` on Cloudinary, copy and store the value of the 'API Environment Variable" ( begins with cloudinary:// ) and paste it into your config vars `CLOUDINARY_URL` = `cloudinary://<your_value>`
+___
+  * 1. Log in or create an account on [ElephantSQL](https://www.elephantsql.com/).
+    2. Create a new instance. Select the free plan Tiny Turtle and leave the tags blank.
+    3. Select the region and choose the nearest data centre to your location or the one that works. The closest to me was down when I was creating mine.
+    4. Click 'review' and check the details and click the button to create the instance.
+    5. Click on the instance you created copy the ElephantSQL database URL from the instance details and paste it into your config vars `DATABASE_URL` = `postgres://<your_value>`
+___
+  * 1. Set Up Google Maps API. Go to [Google Maps Platform](https://mapsplatform.google.com/) and click the `Get Started` button.
+
+    2. Click on the Google Cloud Platform home in the upper left corner. Click on Billing to make sure your billing details are up-to-date. ["All Maps Embed API requests are available at no charge with unlimited usage."](https://developers.google.com/maps/documentation/embed/usage-and-billing). 
+    3. Hover to `APIs & Services` and go to `Credentials`. Select `Create a new project` and enter a project name.
+    4. Click `Create credentials` and select `API key`, copy it and paste it into your config vars `GOOGLE_MAPS_API_KEY` = `<your value>`
+    5. Go to the `Credentials` page. Select the API key that you created. The API key property page appears. Under Key restrictions, set the `application restrictions`: to accept requests from the list of websites. Add your app's address when you have it.5 
+____
+ 
+8. Add Django secret key to config vars `SECRET_KEY` and `DISABLE_COLLECT_STATIC` = 1
+* Navigate back to Deploy section
+    * Select Github to connect to Github
+        * Search for github repository using the name of the repository
+        * click connect
+    * scroll down to Deploy branch
+        * Select **deploy branch** to deploy manually.
+        * Wait for the app to build.
+        * After completion, There is a *View* button below it. Click to view live website.
+
+
+### Fork GitHub Repository
+
+Forking in GitHub allows you to create a copy of a repository on your own account, where you can view or make changes without affecting the original repository. To fork a repository, you can follow these steps:
+
+1. Log in (or sign up) to Github.
+2. Navigate to the [repository](https://github.com/Shida18719/desk-hq) on GitHub.
+3. Click the "Fork" button, located on the top right of the page.
+4. Choose the account where you want to fork the repository.
+5. Once the process is completed, you will have a copy of the repository on your own account.
+
+It's important to keep in mind that if you are not a member of an organization on GitHub, you will not be able to fork your own repository. You might want to create another account to do so.
+
+### Clone GitHub Repository
+
+Another option is to create a local clone of the repository: 
+
+1. Navigate to the [repository](https://github.com/Shida18719/desk-hq) on GitHub.
+3. Locate the `Code` button at the top, above the repository file list.
+4. Select a clone method, and click the `copy` button to copy the URL to your clipboard.
+5. Open the IDE of your choice, and open Git Bash.
+6. Change the current working direction to the location where you want to create a clone.
+7. Type `git clone` and paste the URL from the clipboard.
+8. `$ clone https://github.com/Shida18719/desk-hq`
+9. Press `Enter` and the local clone will be created.
+
+
+[Back to the Top](#welcome-to-desk-hq-project-4)
+
+- - -
+
+
+## Credits
+
+### Code Used
+
+* [Code Institute Tutorials](https://learn.codeinstitute.net/ci_program/diplomainfullstacksoftwarecommoncurriculum) - very helpful for the writing and the deployment of the project.
+* Django Documentation - [Django models](https://docs.djangoproject.com/en/4.1/) - on how to set up and build with django.
+* Google Clouds - [Google Map API](https://developers.google.com/maps/documentation/javascript/tutorials) on how to set up Google maps.
+* [Stack Overflow](https://stackoverflow.com/questions/2058925/how-can-i-break-up-this-long-line-in-python) - on how to format a long line in python and other general knowledge.
+
+* [Django AllAuth Documentation](https://django-allauth.readthedocs.io/en/latest/) for a deeper understanding of django authentication and registration.
+
+* [Bootstrap Documentation](https://getbootstrap.com/) for a better understanding of bootstrap.
+
+* [Python Unittest](https://docs.python.org/3/library/unittest.html#test-cases) for a better understanding of Instances of the TestCase .
+
+
+### Media
+
+* [Freepik](https://www.freepik.com/) - to source images used in the website.
+
+* Favicon image & logo image - [Freepik](https://www.freepik.com/)
+
+### Content
+
+Content for this project was written by Rashidat Adekoya.
+
+
+  
+## Acknowledgments
+
+I would like to show my sincere appreciation to the following people who helped me along the way in completing this project:
+
+  + My family, for their uderstanding, for being such an important part of my life, and for making every day a little bit brighter.
+  + Course provider - Code Institute.
+  + Code Institute Tutor support.
+  + The slack community, for always being there.
+  + My mentor jubril_mentor, for for providing me with relevant tips.
+  + [Folarin](https://github.com/folarin-ogungbemi) - for is help, advice and suggestions during this projects. 
+  + [Kera Cudmore/Kera Cudmore_lead](https://github.com/kera-cudmore) - README webinar. it helped me so incredibly much.
 
 
 
-
-
-
-
-
-
-
-
-```
-
-```
-
-
+[Back to the Top](#welcome-to-desk-hq-project-4)
 
 ---
