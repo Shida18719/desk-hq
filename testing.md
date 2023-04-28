@@ -176,7 +176,7 @@ This project uses the [Django’s unit tests](https://docs.djangoproject.com/en/
 
 Find the coverage report screenshots image below.
 
-![](./READMEimages/coverage-report.png)
+[Coverage Report](./READMEimages/coverage-report.png)
 
 
 
@@ -230,14 +230,17 @@ All pages of the website were run through HTML Validator, via direct input and i
 
 
 **Sign Up Page**
+
 ![](./READMEimages/sign-up-page-validation.png)
 
 
 **Sign In Page**
+
 ![](./READMEimages/sign-in-page-validation.png)
 
 
 **Error Page**
+
 ![](./READMEimages/error-page.png)
 
 
@@ -366,5 +369,33 @@ However, my google cloud platform free trial is over within the time of finishin
 * [Update Booking Page](./READMEimages/update-booking-page-desktop-lighthouse.png)
 
 - - -
+
+## Bugs
+
+**Solved Bugs** 
+
+
+| No | Bug | How I solved the issue |
+| :--- | :--- | :--- |
+| 1 | After creating the Location Models and linking it with the Booking Models as it's ForiegnKey, I made a migration, an error "You are trying to add a non-nullable field <field> to <model> without a default; we can't do that (the database needs something to populate existing rows). Please select a fix:" <br>1. Provide a one-off default now (will be set on all existing rows with a null value for this column) <br>2. Quit, and let me add a default in models.py | An option '2', was selected from the given options, where I added a default placeholder to the location model. Then a different error popped up. `Value Error: Field 'id expected but got ''`. The was fixed by creating an 'id' with a `primary_key` value of `True` for location models. |
+| 2 | When the Services page template was created, I did not make it dynamic and also I didn't add the content to the admin panel right after creating the template, causing a `Programming Error at desk_service`. Where only the Sqlite (local host) has the template view, while the  postgreSQL database(ElephantSQL) was unable to find the content. | I use the `dumpdata command` to input the content into the postgreSQL database(ElephantSQL), then reran migration: `python3 manage.py dumpdata app.modelsName > modelsName.json` The dumpdata command can be used to generate input for loaddata (https://docs.djangoproject.com/en/4.2/ref/django-admin/#dumpdata). |
+| 3 | A TemplateSyntax Error at /Service/.  ![for loop counter](./READMEimages/service-bug.png). Using the for loop Django syntax wrongly to loop through the services page images and content dynamically. | Django doesn't accept a `modulo` operator. The `divisibleby` fixed the error - {% if not forloop.counter|divisibleby:2 %}. |
+| 4 | Bootstrap Flash messages error from Javascript. `Cannot read properties of null (reading 'defaultPrevented')` . | When I inspected the error message from inside the Chrome DevTools console, a suggestion pointing to use Jquery was found. I included a Jquery script link and the alert class: `$('.alert').delay(3500).fadeOut(1000);` to fix the bug. |
+
+
+
+**Known Bugs** 
+
+| Bug | Known Bug |
+| :--- | :--- |
+| Google Map Billing Error displayed in the console. | The free trial ended so, has affected the 'Best Practice' score for all pages in the lighthouse. |
+
+
+
+
+[Back to the Top](#contents)
+
+---
+
 
 [<< Back to main ReadMe](README.md)
