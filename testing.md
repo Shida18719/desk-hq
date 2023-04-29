@@ -300,19 +300,13 @@ However `new` is used to access the markerClusterer with the CDN.
 
 I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
 
-However, my google cloud platform free trial is over within the time of finishing this project. This caused a permanent error flagged in the console therefore affected the 'Best Practice' score in the Chrome Developer Tools. Please see the expandable click;
-
-<details><summary>click to expand</summary>
-<img src=./READMEimages/best-practice-lighthouse-issue.png>
-<img src=./READMEimages/lighthouse-best-practice-bug.png>
-<img src=./READMEimages/google-map-issue.png>
-</details>
-
-
-
 **Home Page**
 
 * [Home Page](./READMEimages/lighthouse-home-page.png)
+
+**Home Page Mobile**
+
+* [Home Page Mobile](./READMEimages/lighthouse-mobile-home-page.png)
 
 **About Us Page**
 
@@ -321,7 +315,7 @@ However, my google cloud platform free trial is over within the time of finishin
 
 **About Us Page Mobile**
 
-* [About Us](./READMEimages/about-us-page-mobile-lighthouse.png)
+* [About Us Mobile](./READMEimages/about-us-page-mobile-lighthouse.png)
 
 
 **Services Page**
