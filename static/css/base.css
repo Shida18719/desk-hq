@@ -128,7 +128,6 @@ footer .navbar-brand:hover{
 }
 
 /**************** Form  **************/
-
  .form-page{
     min-height: 95vh;
     display: grid;
@@ -178,11 +177,10 @@ footer .navbar-brand:hover{
 }
 
 #map {
-   min-height: 22.5rem;
+   min-height: 22rem;
+   min-width: 18.5rem;
    border: 0;
    padding: 0;
-   user-select: none;
-
 }
 
 /*********** Buttons ************/
@@ -237,11 +235,6 @@ footer .navbar-brand:hover{
     color: #fff;
 }
 
- /***********  Error Page ***********/
-/* .error-page-bg {
-    background-image: linear-gradient(to right, #90E0EF 40%, #CAF0F8 80%);
-} */
-
   /***********  Footer ***********/
 .bg-footer{
     background-color: #0077B6;
@@ -279,9 +272,9 @@ footer .navbar-brand:hover{
         font-size: 3.5rem; 
     }
 
-    body {
+    /* body {
         font-size: 1.3rem;
-    }
+    } */
 }
 
 /* Laptops */
