@@ -194,8 +194,8 @@ class Booking(models.Model):
         """
         String representation of Booking object.
         """
-        return
-        f"{client_booking} booked".format(
-                {space_booking} | {booking_date}
-                | {booking_start} | {booking_end})
+        return "{} booked {} | {} | {} | {}".format(
+            self.client, self.space_booking, self.booking_date,
+            self.booking_start, self.booking_end)
+
         # f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"

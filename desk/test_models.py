@@ -47,9 +47,9 @@ class BookingTest(TestCase):
 
         self.assertEqual(
             str(self.booking),
-            f"{client_booking} booked".format(
-                {space_booking} | {booking_date}
-                | {booking_start} | {booking_end}))
+            "{} booked {} | {} | {} | {}".format(
+                client_booking, space_booking,
+                booking_date, booking_start, booking_end))
 
 
 class EnquiryTest(TestCase):
