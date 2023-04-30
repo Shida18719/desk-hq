@@ -39,7 +39,6 @@ class ContactFormView(FormView):
                 messages.info(
                     self.request,
                     'This field is required')
-                # return HttpResponseRedirect(reverse('home'))
                 return HttpResponse("")
 
 
@@ -72,14 +71,13 @@ class BookingCreateView(LoginRequiredMixin, FormView):
         messages.success(
             self.request,
             'Thank you for using DESK HQ.'
-            'Your Booking was created successfully.')
+            'Booking was created successfully. View in Booking Details')
         return HttpResponseRedirect(reverse('home'))
 
     def form_invalid(self, form):
         messages.error(
             self.request, 'Sorry, there was an error with your booking.')
         return super().form_invalid(form)
-        # return HttpResponseRedirect(reverse('account_login'))
 
 
 class BookingUpdateView(LoginRequiredMixin, UpdateView):

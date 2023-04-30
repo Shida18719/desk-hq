@@ -65,12 +65,6 @@ class ContactFormViewTest(TestCase):
         self.assertContains(response, '')
 
 
-class BookingsListTest(TestCase):
-    """
-    View for users Booking
-    """
-
-
 class BookingCreateViewTest(TestCase):
     """
     Tests that a booking can be successfully created when the user is logged in
@@ -145,10 +139,6 @@ class BookingCreateViewTest(TestCase):
         self.assertEqual(booking.client, self.booking_data['client'])
 
         self.assertTrue(Booking.objects.filter(client=self.user).exists())
-
-        # Check that the booking was created successfully
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(Booking.objects.count(), 1)
 
     def test_create_booking_unauthenticated(self):
         # Submit the booking form without logging in

@@ -41,10 +41,6 @@ class BookingTest(TestCase):
         booking_start = str(self.booking.booking_start)
         booking_end = str(self.booking.booking_end)
 
-        # self.assertEqual(
-        #     str(self.booking),
-        #     f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}")
-
         self.assertEqual(
             str(self.booking),
             "{} booked {} | {} | {} | {}".format(
@@ -53,12 +49,16 @@ class BookingTest(TestCase):
 
 
 class EnquiryTest(TestCase):
+
     def setUp(self):
         self.enquiry = Enquiry.objects.create(
             name='john',
             subject='text')
 
     def test_enquiry_str(self):
+        """
+        Test user inquiry contact form object present a string
+        """
         enquiry_name = str(self.enquiry.name)
         enquiry_subject = str(self.enquiry.subject)
         self.assertEqual(

@@ -143,7 +143,7 @@ class Service(models.Model):
 
 class Booking(models.Model):
     """
-    Customer booking system
+    Create entry for Customer booking system
     """
     client = models.ForeignKey(
         User, on_delete=models.CASCADE)
@@ -197,5 +197,3 @@ class Booking(models.Model):
         return "{} booked {} | {} | {} | {}".format(
             self.client, self.space_booking, self.booking_date,
             self.booking_start, self.booking_end)
-
-        # f"{self.client} booked {self.space_booking} | {self.booking_date} | {self.booking_start} | {self.booking_end}"
