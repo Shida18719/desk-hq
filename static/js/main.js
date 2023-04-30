@@ -42,9 +42,9 @@ function initMap() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  // Dismisses messages alert after 3.5 seconds
+  // Dismisses messages alert after 5 seconds
 
-    $('.alert').delay(3500).fadeOut(1000);
+    $('.alert').delay(5000).fadeOut(1000);
 });
 
 
