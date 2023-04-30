@@ -12,7 +12,6 @@ Visit the deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
   * [Manual Testing](#manual-testing)
     * [User Story Testing](#user-story-testing)
     * [Full Testing](#full-testing)
-    <!-- * [JS unit tests](#js-unit-tests) -->
   * [Automated Testing](#automated-testing)
     * [Python Unit Tests](#python-unit-tests)
   * [Code Validation](#code-validation)
@@ -34,13 +33,13 @@ Visit the deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
 |----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | As a **first time user**                                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | I want to be able to access the website from any device. | The website is fully responsible and accessible on all screen sizes, starting at 360px.|
-| I want to easily Understand what the site is for.                           | The Home and the about page describes the goals of the site, and a Contact Form is included in case the user has any other questions.                       |
+| I want to easily understand what the site is for.                           | The Home and the about page describes the goals of the site, and a Contact Form is included in case the user has any other questions.                       |
 | I want to be able to easily navigate and find content.  | The navbar with a fixed top position is always present on the screen and allows for navigating the website from any point on the website.                      |
-| I want to create account to make booking.                                                                     | The user can register a new account.                                                                                                                                                                 | I want to Contact somebody via the contact form or contact details for enquiry.                    | The website provides a contact form.                                        |
+| I want to create account to make booking.                                                                     | The user can register a new account.                                                                                                                                                                 | I want to contact somebody via the contact form or contact details for enquiry.                    | The website provides a contact form.                                        |
 | Quickly understand the benefits of co-working and how the space can help me grow my business, so that I am motivated to sign up.               | The description of the site on the home and about us page encourages new users to register for an account.                                                                                                                                                            |                     ||                                                                                                ||                                            |       | I want to learn more about the project on github. | A github link and a link to social media are available in the footer and accessible from every page. |
 | I want to receive feedback from my intaraction with the website. | 1. Django messages inform the user about the status of their actions. <br>2. Error messages notify the user if something goes wrong. |
 |  As a **Returning user**                                                                               |                                                                                |                                                              ||                            ||
-| I want to Log in to my account..          | A login link is provided on the navbar.          ||
+| I want to Log in to my account.          | A login link is provided on the navbar.          ||
 | I want to be able to easily make my workspace booking. | The book a space button is displayed prominently on the hero image of the home page. |
 | I want to be able to Edit my workspace booking |  When a user views their booking on the space booking page, they are given the option to edit their booking.
 | I want to be able to Delete my workspace booking. | When a user views their booking on the space booking page, they are given the option to delete their booking. When the user selects delete, a modal will pop up to confirm deletion, then redirected to confirmation page. |
@@ -62,7 +61,7 @@ Visit the deployed site: [DESK HQ](https://desk-hq.herokuapp.com/)
   * Edge
   * Opera
 
-Full manual testing were performed on defferent devices and screen sizes, using [Media Gensis](https://responsivedesignchecker.com/) & [Browser Stack](https://www.browserstack.com/).
+Full manual testing were performed on different devices and screen sizes, using [Media Gensis](https://responsivedesignchecker.com/) & [Browser Stack](https://www.browserstack.com/).
 
 BrowserStack is a cloud-based web and mobile testing platform that provides testing on a variety of browsers, operating systems, and mobile devices. It allows running automated and manual tests on real devices and browsers, which helps to ensure that web applications are compatible with different browsers, operating systems, and devices.
 
@@ -122,7 +121,7 @@ Futher testing were done by friends and family on a variety of devices and scree
 | Location dropdown | This should be a choice field with the location address. <br>2. User should be able to select a location of their choice. <br>3. Selection saved saved | Clicked location address | Location saved to the database | Pass | 
 | Space Booking dropdown | This should be a choice field with the space booking type. <br>2. User should be able to select a space booking of their choice. <br>3. Selection saved | Clicked space booking | space booking saved to the database | Pass | 
 | Booking Date | This should be a date selection field with the calendar. <br>2. User should be able to select a date of their choice. <br>3. Selection saved | Clicked booking date | booking date saved to the database | Pass | 
-| Booking Date Validation | This should be a date selection field with the calendar. <br>2. User cannot select a past date or same day. <br>3. User get an error message Date cannot be in the past or the same day. Booking is not saved and redirects the user to the  space booking page and a flash error message to let the user know booking has not been successful. | Clicked booking date button | Booking is not saved to database and redirects the user to the space booking page and a flash error message to let the user know booking has not been successful | Pass | 
+| Booking Date Validation | This should be a date selection field with the calendar. <br>2. User cannot select a past date or same day. <br>3. User get an error message date cannot be in the past or the same day. Booking is not saved and redirects the user to the  space booking page and a flash error message to let the user know booking has not been successful. | Clicked booking date button | Booking is not saved to database and redirects the user to the space booking page and a flash error message to let the user know booking has not been successful | Pass | 
 | Booking Duration dropdown | This should be a choice field with the booking duration. <br>2. User should be able to select a duration of their choice. <br>3. Selection saved | Clicked booking duration | booking duration saved to the database | Pass | 
 | Booking Start dropdown | This should be a choice field with the booking start time. <br>2. User should be able to select a booking start of their choice. <br>3. Selection saved | Clicked booking start | booking start saved to the database | Pass | 
 | Booking end dropdown | This should be a choice field with the booking end time. <br>2. User should be able to select a booking end of their choice. <br>3. Selection saved | Clicked booking end | booking end saved to the database | Pass | 
@@ -131,7 +130,7 @@ Futher testing were done by friends and family on a variety of devices and scree
 | Highlight Booking Details in the navbar (Only shown if user is logged in) | When the user clicks this link they should be taken to the booking details page to view their booking if any previously made. | Click button | Redirected to the booking details page | Pass | 
 | Edit booking button | The user should be taken to the edit booking page with the selected space booking pre-populated in the input | Clicked button | Taken to the edit space booking page. Input pre-populated with the current booking field | Pass | 
 | Delete button | When the user clicks the delete button a modal should pop up asking the user to confirm they wish to cancel the booking, user is redirected to a confirm delete page | Clicked button | Modal popped up and displayed the confirm deletion message | Pass | 
-| Delete Button on Deletion modal| When the user clicks the delete button the user is redirected to a confirm delete page. A flash message will confirm deletion and the user is redirected to space booking page | Clicked button | Booking Details is deleted from the page and a flash message displayed success. Redirected to the booking details page | Pass | 
+| Delete button on 'Deletion modal' | When the user clicks the delete button the user is redirected to a confirm delete page. A flash message will confirm deletion and the user is redirected to space booking page | Clicked button | Booking Details is deleted from the page and a flash message displayed success. Redirected to the booking details page | Pass | 
 | Cancel button on deletion modal | When the user clicks the cancel button the modal should close | Clicked button | Modal closed | Pass | 
 | `Error Page` | 
 |   |   |   |   |   | 
@@ -174,7 +173,7 @@ This project uses the [Django’s unit tests](https://docs.djangoproject.com/en/
 
 * `Python3 –m http.server` : to view coverage 
 
-Find the coverage report screenshots image below.
+The Testcases are not fully finished due to time constarint, but I intend to continue working on testing to allow me understand more about the Django’s unit tests. Please find the coverage report screenshots image below.
 
 [Coverage Report](./READMEimages/coverage-report.png)
 
@@ -378,7 +377,7 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
 | 1 | After creating the Location Models and linking it with the Booking Models as it's ForiegnKey, I made a migration, an error "You are trying to add a non-nullable field <field> to <model> without a default; we can't do that (the database needs something to populate existing rows). Please select a fix:" <br>1. Provide a one-off default now (will be set on all existing rows with a null value for this column) <br>2. Quit, and let me add a default in models.py | An option '2', was selected from the given options, where I added a default placeholder to the location model. Then a different error popped up. `Value Error: Field 'id expected but got ''`. The was fixed by creating an 'id' with a `primary_key` value of `True` for location models. |
-| 2 | When the Services page template was created, I did not make it dynamic and also I didn't add the content to the admin panel right after creating the template, causing a `Programming Error at desk_service`. Where only the Sqlite (local host) has the template view, while the  postgreSQL database(ElephantSQL) was unable to find the content. | I use the `dumpdata command` to input the content into the postgreSQL database(ElephantSQL), then reran migration: `python3 manage.py dumpdata app.modelsName > modelsName.json` The dumpdata command can be used to generate input for loaddata (https://docs.djangoproject.com/en/4.2/ref/django-admin/#dumpdata). |
+| 2 | When the Services page template was created, I did not make it dynamic and also did not add the content to the admin panel right after creating the template, causing a `Programming Error at desk_service`. Where only the Sqlite (local host) has the template view, while the  postgreSQL database(ElephantSQL) was unable to find the content. | I use the `dumpdata command` to input the content into the postgreSQL database(ElephantSQL), then reran migration: `python3 manage.py dumpdata app.modelsName > modelsName.json` The dumpdata command can be used to generate input for loaddata (https://docs.djangoproject.com/en/4.2/ref/django-admin/#dumpdata). |
 | 3 | A TemplateSyntax Error at /Service/.  ![for loop counter](./READMEimages/service-bug.png). Using the for loop Django syntax wrongly to loop through the services page images and content dynamically. | Django doesn't accept a `modulo` operator. The `divisibleby` fixed the error - {% if not forloop.counter|divisibleby:2 %}. |
 | 4 | Bootstrap Flash messages error from Javascript. `Cannot read properties of null (reading 'defaultPrevented')` . | When I inspected the error message from inside the Chrome DevTools console, a suggestion pointing to use Jquery was found. I included a Jquery script link and the alert class: `$('.alert').delay(3500).fadeOut(1000);` to fix the bug. |
 
@@ -388,8 +387,7 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 
 | Bug | Known Bug |
 | :--- | :--- |
-| Google Map Billing Error displayed in the console. | The free trial ended so, has affected the 'Best Practice' score for all pages in the lighthouse. |
-
+| Known bugs. | No known bugs as of present. |
 
 
 

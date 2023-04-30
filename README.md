@@ -7,10 +7,10 @@
 [Desk HQ](https://desk-hq.herokuapp.com/) is a co-working space website, which offers the perfect destination for entrepreneurs, freelancers, and small businesses looking for a professional and collaborative work environment.
 
 
-![GitHub last commit](https://img.shields.io/github/last-commit/)
-![GitHub contributors](https://img.shields.io/github/contributors/shida/)
-![GitHub language count](https://img.shields.io/github/languages/count/)
-![GitHub top language](https://img.shields.io/github/languages/top/)
+![GitHub last commit](https://img.shields.io/github/last-commit/Shida18719/desk-hq?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/Shida18719/desk-hq?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Shida18719/desk-hq?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/Shida18719/desk-hq?style=for-the-badge)
 
 ## CONTENTS
 
@@ -75,7 +75,7 @@ DESK HQ is targeted at freelancer, startup, or established business, who like to
 
 #### __Client Goals__ 
 
-+ Create a program where the user can easily find information about the amenities and pricing of the space, so that I can make an informed decision about whether it is the right fit for me and my business.
++ Create a program where the user can easily find information about the amenities and pricing of the space, so that they can make an informed decision about whether it is the right fit for their business.
 
 + Create a program that clearly list the available amenities such as high-speed internet, printing facilities, and meeting rooms, as well as the different booking options, such as daily passes, Training Rooms, private offices etc. 
 
@@ -85,12 +85,12 @@ DESK HQ is targeted at freelancer, startup, or established business, who like to
 
 As a first time user of the site I want to be able to:
 
-+ I want to be able to access the website from any device.
++ Access the website from any device.
 + Understand what the site is for and how to navigate the site.
 + Register for an account.
 + Quickly understand the benefits of co-working and how the space can help me grow my business, so that I am motivated to sign up.
 + Contact somebody via the contact form or contact details for enquiry.
-+ Receive feedback from my intaraction with the website
++ Receive feedback from my interaction with the website
 + I want to learn more about the project on github.
 
 #### __Returning Visitor Goals__
@@ -281,7 +281,7 @@ The website is comprised of 10 pages which are extended from a base template.
 
   * Call-to-Action (CTA) which includes buttons that link other part of the website. 
 
-  * Images of DESK HQ office Locations Address which includes buttons that link to the Services page. 
+  * Images of DESK HQ office Locations and Addresses which includes buttons that link to the Services page. 
 
   * Map Toolkit and a description to the locations and a contact details for user to easily communicate. 
 
@@ -312,13 +312,13 @@ The website is comprised of 10 pages which are extended from a base template.
 
 ## Sign Up Page 
 
-* Allows user to an create account.
+* The page where user is able to create an account.
 
 ![](./READMEimages/sign-up-page.png)
 
 ## Login Page 
 
-* Allows user to login into their account.
+* The page where user can login into their account.
 
 ![](./READMEimages/sign-in.png)
 
@@ -342,7 +342,7 @@ The website is comprised of 10 pages which are extended from a base template.
 
 ## Space Booking Page 
 
-* The Space Booking Page allow users to reserve and book various types of spaces for different purposes with the click of button at the bottom of the form. The spaces range from Meeting room, Conference room, Exclusive workstation, Day workstation and co-working workstation. 
+* The Space Booking Page allow users to reserve and book various types of spaces for different purposes with the click of button at the bottom of the form. The spaces range from Meeting room, Conference room, Exclusive workstation, Day workstation and Co-working workstation. 
 
 * The booking form features the location, date, duration, the start of the booking time slot and when the booking ends. 
 
@@ -371,7 +371,7 @@ The website is comprised of 10 pages which are extended from a base template.
 
 * The page displays the current booking details, the user is then able to modify certain aspects of their booking reservation. 
 
-* This Page provides users with a convenient and flexible way to modify their booking details if their plans change. 
+* This page provides users with a convenient and flexible way to modify their booking details if their plans change. 
 
 * After the user has made the desired changes to their booking, user is redirected to the booking details page, where a message is displayed at the top of the page informing the user of the booking updated successfully.
 
@@ -703,12 +703,12 @@ Content for this project was written by Rashidat Adekoya.
 
 I would like to show my sincere appreciation to the following people who helped me along the way in completing this project:
 
-  + My family, for their uderstanding, for being such an important part of my life, and for making every day a little bit brighter.
+  + My family, for their understanding, for being such an important part of my life, and for making every day a little bit brighter.
   + Course provider - Code Institute.
   + Code Institute Tutor support.
   + The slack community, for always being there.
-  + My mentor jubril_mentor, for for providing me with relevant tips.
-  + [Folarin](https://github.com/folarin-ogungbemi) - for is help, advice and suggestions during this projects. 
+  + My mentor jubril_mentor, for providing me with relevant tips.
+  + [Folarin](https://github.com/folarin-ogungbemi) - for his help, advice and suggestions during this projects. 
   + [Kera Cudmore/Kera Cudmore_lead](https://github.com/kera-cudmore) - README webinar. it helped me so incredibly much.
 
 
