@@ -29,8 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-development = os.environ.get('DEVELOPMENT', False)
-DEBUG = development
+# development = os.environ.get('DEVELOPMENT', False)
+DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
