@@ -88,7 +88,7 @@
 
 <!-- Map Location -->
 <div class="container mt-5">
-    <section class="row location-content">
+    <div class="row location-content">
         <div class="col-md-12 col-lg-6 mt-3">
             <div class="row">
                 <div class="col-2">
@@ -121,16 +121,17 @@
         <div class="col-md-12 col-xl-6">
             <div id="map"></div>
         </div>
-    </section>
+    </div>
 
     <!-- Contact Form -->
-    <section id="contact-us">
+    <div id="contact-us">
         <div class="row my-5">
             <div class="col-md-12">
                 <h4 class="text-center"><strong>CONTACT US</strong></h4>
                 <P class="container-fluid col-lg-8 mt-4 mt-lg-0 text-center">Like to know more about our booking? Fill
                     out the form
-                    below and one of our team will reach out to you soon.</P>
+                    below and one of our team will reach out to you soon.
+                </P>
                 <div class="container-fluid col-lg-8 mt-3 mt-lg-0">
                     <form method="POST" action="{% url 'home' %}" class="contact-form">
                         <div class="mb-3">
@@ -163,7 +164,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
 
 <!-- Google Map Cluster -->

@@ -45,19 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
   // Dismisses messages alert after 3.5 seconds
 
     $('.alert').delay(3500).fadeOut(1000);
+});
 
 
-  // Back to top button
+// Back to top button
   // Create toggle
-    window.onscroll = () => {
+  window.onscroll = () => {
         toggleTopButton();
-    };
-
-
-  // When user clicks on the button, scroll to the top of the page with scroll behavior of smooth.
-    function scrollToTop(){
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
+  };
   
   // When user scrolls down 20px from the top of the page, display button
   function toggleTopButton() {
@@ -68,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('back-to-up').classList.add('d-none');
       }
   }
-
-});
 
 
 // Updates footer's copyright year with the current year

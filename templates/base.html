@@ -24,7 +24,6 @@
 
    <!-- jQuery -->
    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
 </head>
 
 <body class="d-flex flex-column">
@@ -38,18 +37,15 @@
           <span class="fs-3 brand-name text-uppercase">Desk HQ</span>
         </a>
       </h1>
-
       <!-- Navigation -->
       <nav class=" navbar">
         <div class="container">
-
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
-
             <div class="offcanvas-header">
               {% if user.is_authenticated %}
               <h2 class="offcanvas-title logo" id="offcanvasNavbarLabel">
@@ -62,7 +58,6 @@
               {% endif %}
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
@@ -97,7 +92,6 @@
       </nav>
     </div>
 
-
     <!--Messages-->
     <div class="container">
       <div class="row">
@@ -122,7 +116,6 @@
   <!-- Footer -->
   <footer class=" container-fluid bg-footer mt-5 text-center">
     <div class="row mt-3">
-
       <div class="col-12 col-md-4">
         <h4><a class="navbar-brand" href="{% url 'home' %}">DESK HQ</a></h4>
           <div class="mb-2">Office Locations London:</div>
@@ -130,7 +123,6 @@
           <div><small>East London</small></div>
           <p class="site-use"><small>This site is not intended for commercial use</small></p>
       </div>
-
       <div class="col-12 col-md-4 mb-3">
         <h4 class="mb-2"><u>Contact Us</u></h4>
           <div>
@@ -146,7 +138,6 @@
             </small>
           </div>
       </div>
-
       <div class="col-12 col-md-4 my-1">
         <h4 class="mb-3">DESK HQ socials</h4>
         <div class="social-links mb-5">
@@ -190,20 +181,20 @@
   <!-- Fontawesome -->
   <script src="https://kit.fontawesome.com/2d736759eb.js" crossorigin="anonymous"></script>
 
-  <!-- Google Map Cluster -->
-  <!-- <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script> -->
-
-  <!-- Google Map -->
-  <!-- <script  async
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkbdGJ_uE8Scsn5U2u0ZjMqninbbeLnTg&callback=initMap&v=3.51">
-  </script> -->
 
   {% block javascript %}
   {% endblock javascript %}
+
+
+  <!-- When user clicks on the button, scroll to the top of the page with scroll behavior of smooth. -->
+  <script>
+  function scrollToTop(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+  </script>
 
   <!-- JAVASCRIPT -->
   <script src="{% static 'js/main.js' %}"></script>
 
 </body>
-
 </html>
