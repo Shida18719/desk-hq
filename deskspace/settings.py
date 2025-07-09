@@ -34,8 +34,8 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-# ALLOWED_HOSTS = ['desk-hq.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['desk-hq.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu96.gitpod.io/',
