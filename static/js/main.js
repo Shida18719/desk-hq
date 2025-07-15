@@ -24,7 +24,13 @@ function initMap() {
         const marker = new google.maps.Marker({
           position,
           label,
+
+          // map,
+          // content: document.createElement('div')
         });
+
+         // Set label as inner text of the marker's content
+        // marker.content.innerText = label;
 
          // open info window when marker is clicked
         marker.addListener("click", () => {
