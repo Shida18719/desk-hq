@@ -35,12 +35,14 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['desk-hq.herokuapp.com', 'localhost']
-# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu96.gitpod.io/',
-    ]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://*.8000-shida18719-deskhq-ey66r8ajijr.ws-eu96.gitpod.io/',
+#     ]
 
+
+CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 
@@ -185,6 +187,7 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
